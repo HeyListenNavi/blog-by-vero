@@ -1,0 +1,36 @@
+:root {
+    --color-bg: #100e0f;
+    --color-fg: #F0E2F3;
+    --color-link-hover: #b3cbf2;
+    --color-title: #eabbb9;
+}
+
+@font-face {
+    font-family: 'uni 05_53';
+    src: url('Uni0553.woff2') format('woff2'),
+        url('Uni0553.woff') format('woff'),
+        url('Uni0553.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: 'uni 05_53';
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    padding: 1em;
+    color: var(--color-fg);
+    transition: all .2s;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
