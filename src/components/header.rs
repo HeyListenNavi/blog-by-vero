@@ -1,10 +1,12 @@
 use yew::prelude::*;
+use crate::components::window::Window;
 
 #[function_component(Header)]
 pub fn header() -> Html {
     html! {
-        <header class="header">
-            <h3>{ "Headr :p" }</h3>
-        </header>
+        <Window title="vero's place" class="header" buttons={3}>
+            <h3>{ "headr :p" }</h3>
+            <p>{ "cooole png :O" }</p>
+        </Window>
     }
 }

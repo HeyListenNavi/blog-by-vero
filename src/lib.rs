@@ -11,8 +11,6 @@ use pages::guest_book::GuestBook;
 use pages::links::Links;
 use pages::camera_roll::CameraRoll;
 use pages::not_found::NotFound;
-use components::header::Header;
-use components::nav_bar::NavBar;
 
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
@@ -50,8 +48,6 @@ pub fn app() -> Html {
     html! {
         <>
             <BrowserRouter>
-                <Header/>
-                <NavBar/>
                 <Switch<Route> render={switch}/>
             </BrowserRouter>
         </>
