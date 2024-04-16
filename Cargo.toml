@@ -1,11 +1,11 @@
 [package]
-name = "blog-by-vero"
+name = "client-by-vero"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 gloo = "0.11.0"
 yew = { version = "0.21.0", features = ["csr"]}
 yew-router = "0.18.0"
+common = { path = "../common" }
+reqwasm = "0.5.0"

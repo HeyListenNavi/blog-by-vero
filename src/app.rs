@@ -1,19 +1,16 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-mod pages;
-mod components;
-
-use pages::home::Home;
-use pages::about_me::AboutMe;
-use pages::diary::Diary;
-use pages::guest_book::GuestBook;
-use pages::links::Links;
-use pages::camera_roll::CameraRoll;
-use pages::not_found::NotFound;
+use crate::pages::home::Home;
+use crate::pages::about_me::AboutMe;
+use crate::pages::diary::Diary;
+use crate::pages::guest_book::GuestBook;
+use crate::pages::links::Links;
+use crate::pages::camera_roll::CameraRoll;
+use crate::pages::not_found::NotFound;
 
 #[derive(Clone, Routable, PartialEq)]
-enum Route {
+pub enum Route {
     #[at("/")]
     Home,
     #[at("/about-me")]

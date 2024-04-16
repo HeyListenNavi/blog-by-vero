@@ -1,3 +1,4 @@
+/* Universal styles 🌌 */
 :root {
     --color-bg: #151515;
     --color-wbg: #100e0f;
@@ -28,37 +29,9 @@ html {
 
 body {
     height: calc(100% - 2em);
-    padding: 1em;
     background: var(--img-bg) repeat;
     color: var(--color-fg);
     font-family: "uni 05_53";
-}
-
-.home {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 20% 1fr 20%;
-    grid-template-rows: 150px auto;
-    grid-gap: 1.5em;
-}
-
-.header {
-    grid-column: 1 / 4;
-}
-
-.navbar {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.main--home {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-.sidebar--home {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
 }
 
 .navbar .window__body {
@@ -100,10 +73,10 @@ body {
 
 .titlebar__buttons button {
     margin: 0 2px;
+    align-self: center;
 }
 
 button {
-    align-self: center;
     height: 20px;
     width: 20px;
     padding: 0 0 4px 0;
@@ -130,3 +103,98 @@ p, a {
 a:hover {
     color: var(--color-link-hover);
 }
+
+.home, .aboutme, .diary, .guestbook, .links, .cameraroll {
+    height: 100%;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: 150px 1fr;
+    grid-gap: 1.5em;
+}
+
+/* Specific styles 🎀 */
+.main {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+}
+
+.navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+/* -> Home <- */
+.home .header {
+    grid-column: 1 / 4;
+}
+
+.home .navbar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.home .main {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.home .sidebar {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+/* -> About me <- */
+/* .aboutme .main {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+}
+
+.aboutme .navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+} */
+    
+/* -> Diary <- */
+/* .diary .main {
+    grid-column: 2 / 4; 
+    grid-row: 1 / 3;
+}
+
+.diary .navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+} */
+
+/* -> Guestbook <- */
+/* .guestbook .main {
+    grid-column: 2 / 4; 
+    grid-row: 1 / 3;
+}
+
+.guestbook .navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+} */
+
+/* -> Links <- */
+/* .links .main {
+    grid-column: 2 / 4; 
+    grid-row: 1 / 3;
+}
+
+.links .navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+} */
+
+/* -> Cameraroll <- */
+/* .cameraroll .main {
+    grid-column: 2 / 4; 
+    grid-row: 1 / 3;
+}
+
+.cameraroll .navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+} */
