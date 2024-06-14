@@ -1,12 +1,13 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use crate::pages::home::Home;
 use crate::pages::about_me::AboutMe;
-use crate::pages::diary::Diary;
-use crate::pages::guest_book::GuestBook;
-use crate::pages::links::Links;
 use crate::pages::camera_roll::CameraRoll;
+use crate::pages::diary::Diary;
+use crate::pages::post::Post;
+use crate::pages::guest_book::GuestBook;
+use crate::pages::home::Home;
+use crate::pages::links::Links;
 use crate::pages::not_found::NotFound;
 
 #[derive(Clone, Routable, PartialEq)]
@@ -17,6 +18,8 @@ pub enum Route {
     AboutMe,
     #[at("/diary")]
     Diary,
+    #[at("/post/:post_title")]
+    Post { post_title: String },
     #[at("/guest-book")]
     GuestBook,
     #[at("/links")]
@@ -33,9 +36,10 @@ fn switch(routes: Route) -> Html {
         Route::Home => html! { <Home/> },
         Route::AboutMe => html! { <AboutMe/> },
         Route::Diary => html! { <Diary/> },
+        Route::Post { post_title } => html! { <Post title={post_title}/> },
         Route::GuestBook => html! { <GuestBook/> },
         Route::Links => html! { <Links/> },
-        Route::CameraRoll => html! { <CameraRoll/> }, 
+        Route::CameraRoll => html! { <CameraRoll/> },
         Route::NotFound => html! { <NotFound/> },
     }
 }

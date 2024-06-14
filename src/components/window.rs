@@ -14,31 +14,30 @@ pub fn window(props: &WindowProps) -> Html {
     html! {
         <div class={ format!("window {}", props.class.clone()) }>  
             <div class="titlebar">
-                <div class="titlebar__text">{ props.title.clone() }</div>
+                <div class="text">{ props.title.clone() }</div>
                 {
                     match props.buttons.clone() {
                         1 => {
                             html! {
-                                <div class="titlebar__buttons">
-
-                                    <button class="titlebar__button--close">{ "x" }</button>
+                                <div class="buttons">
+                                    <button class="button--close">{ "x" }</button>
                                 </div>
                             }
                         }
                         2 => {
                             html! {
-                                <div class="titlebar__buttons">
-                                    <button class="titlebar__button--minimize">{ "-" }</button>
-                                    <button class="titlebar__button--close">{ "x" }</button>
+                                <div class="buttons">
+                                    <button class="button--minimize">{ "-" }</button>
+                                    <button class="button--close">{ "x" }</button>
                                 </div>
                             }
                         }
                         3 | _ => {
                             html! {
-                                <div class="titlebar__buttons">
-                                    <button class="titlebar__button--minimize">{ "-" }</button>
-                                    <button class="titlebar__button--maximize">{ "O" }</button>
-                                    <button class="titlebar__button--close">{ "x" }</button>
+                                <div class="buttons">
+                                    <button class="button--minimize">{ "-" }</button>
+                                    <button class="button--maximize">{ "O" }</button>
+                                    <button class="button--close">{ "x" }</button>
                                 </div>
                             }
                         }
@@ -46,7 +45,7 @@ pub fn window(props: &WindowProps) -> Html {
                 }
                 
             </div>
-            <div class="window__body">
+            <div class="body">
                 { props.children.clone() }
             </div>
         </div>

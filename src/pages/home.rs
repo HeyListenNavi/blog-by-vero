@@ -11,7 +11,7 @@ pub fn home() -> Html {
             <Header/>
             <NavBar/>
             <SideBar/>
-            <Window title="vero's home" class="main--home">
+            <Window title="vero's home" class="main">
                 <h1>{ "this is home" }</h1>
             </Window>
         </div>

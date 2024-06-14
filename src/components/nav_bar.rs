@@ -5,9 +5,9 @@ use crate::components::window::Window;
 
 #[function_component(NavBar)]
 pub fn nav_var() -> Html {
-    html! {
+    html! (
         <Window title="Vero's sailing boat" class="navbar" buttons={1}>
-            <h3>{ "navigation :0" }</h3>
+            <h3>{ "navi-gation :0" }</h3>
             <ul>
                 <li>
                     <Link<Route> to={Route::Home}>{ "Home" }</Link<Route>>
@@ -29,5 +29,5 @@ pub fn nav_var() -> Html {
                 </li>
             </ul>
         </Window>
-   }
+    )
 }
