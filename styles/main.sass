@@ -1,0 +1,183 @@
+/* Universal styles 🌌 */
+@import home.sass
+    
+$assets_path : "assets/"
+
+:root
+    --color-bg: #151515
+    --color-wbg: #100e0f
+    --color-titlebar: #0c0a0a
+    --color-fg: #F0E2F3
+    --color-link-hover: #b3cbf2
+    --color-title: #eabbb9
+    --img-bg: url("https://64.media.tumblr.com/0425c49c3a7408a1b29dace4b04f2f79/tumblr_inline_mlkybvaYlG1r53miq.gif")
+
+@font-face 
+    font-family: "uni 05_53"
+    src: url("#$assets_path/Uni0553.woff2") format(woff2), url("#$assets_path/Uni0553.woff") format(woff), url("#$assets_path/Uni0553.ttf") format(truetype)
+    font-weight: normal
+    font-style: normal
+
+html, body 
+    padding: 0
+    margin: 0
+
+
+html 
+    height: 100vh
+
+
+body 
+    height: 100%
+    background: var(--img-bg) repeat
+    color: var(--color-fg)
+    font-family: "uni 05_53"
+
+
+.navbar .window .body 
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    align-content: flex-start
+
+
+.window 
+    background-color: var(--color-bg)
+    padding: 9px
+    /* cool window border */
+    box-shadow: inset -6px -6px var(--color-bg), inset 6px 6px var(--color-bg), inset 8px 8px #eabbb9, inset -8px -8px #eabbb9
+    .body 
+        padding: 10px
+    .titlebar 
+        padding: 8px
+        background-color: var(--color-titlebar)
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        user-select: none
+        .buttons button 
+            margin: 0 2px
+            align-self: center
+            height: 20px
+            width: 20px
+            padding: 0 0 4px 0
+            line-height: 0
+            font-size: 10px
+
+
+button 
+    font-size: 18px
+    padding: 0 0 4px 0
+    line-height: 0
+    height: 25px
+    width: 25px
+    align-self: center
+    margin: 0 2px
+    font-family: "uni 05_53"
+    color: var(--color-fg)
+    background-color: var(--color-bg)
+    user-select: none
+
+
+h1, h2, h3, h4, h5, h6 
+    font-weight: 100
+
+
+a 
+    color: var(--color-fg)
+    transition: color 0.15s, background-color 0.15s
+    :hover 
+        color: var(--color-link-hover)
+
+p, a 
+    font-size: 16px
+
+
+
+
+.post--list 
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: baseline
+    .post 
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        align-items: center
+        user-select: none
+        margin: 0 10px
+        padding: 10px
+        text-decoration: none
+    .post:hover 
+        color: var(--color-link-hover)
+        background-color: var(--color-wbg)
+        cursor: pointer
+    .post
+        img 
+            width: 100px
+            height: 100px
+        span 
+            width: 100px
+            margin-top: 5px
+            overflow-wrap: break-word
+            text-align: center
+
+
+.post--single 
+    background-color: var(--color-bg)
+    width: 100%
+    height: 100%
+    box-sizing: border-box
+    padding: 1em
+    .titlebar 
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        align-items: center
+        gap: 5px
+        .date 
+            margin: 0
+
+
+.home, .aboutme, .diary, .guestbook, .links, .cameraroll 
+    height: 100%
+    box-sizing: border-box
+    padding: 1em
+    display: grid
+    grid-gap: 1.5em
+
+.notfound 
+    background-color: var(--color-bg)
+    width: 100%
+    height: 100%
+    box-sizing: border-box
+    padding: 1em
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center 
+
+
+.home 
+    grid-template-columns: 20% 1fr 20%
+    grid-template-rows: 150px 1fr
+    grid-template-areas: "header header header" "navbar main sidebar" "navbar main sidebar"
+    /*  <------------- Header -------------->
+        <- Navbar -> <- Main -> <- Sidebar ->
+        <- Narbar -> <- Main -> <- Sidebar ->
+
+
+.aboutme, .diary, .guestbook, .links, .cameraroll 
+    grid-template-columns: 20% 1fr
+    grid-template-rows: 150px 1fr
+    grid-template-areas: "navbar main" "navbar main"
+    /*  <- Navbar -> <- Main ->
+        <- Navbar -> <- Main ->
+    .main
+        grid-column: 2 / 4
+        grid-row: 1 / 3
+    .navbar
+        grid-column: 1 / 2
+        grid-row: 1 / 3
+
