@@ -1,0 +1,48 @@
+.post--list
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: baseline
+    .post
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        align-items: center
+        user-select: none
+        margin: 0 10px
+        padding: 10px
+        text-decoration: none
+    .post:hover
+        color: var(--color-link-hover)
+        background-color: var(--color-wbg)
+        cursor: pointer
+    .post
+        width: 120px
+        img
+            width: 100px
+            height: 100px
+        .description 
+            display: flex
+            flex-direction: column
+            span
+                overflow-wrap: break-word
+                text-align: center
+            .title
+                font-size: 18px
+            .date
+                font-size: 8px
+
+.post--single
+    background-color: var(--color-bg)
+    width: 100%
+    height: 100%
+    box-sizing: border-box
+    padding: 1rem
+    .titlebar
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        align-items: center
+        gap: 5px
+        .date
+            margin: 0

@@ -66,7 +66,10 @@ impl Component for PostsList {
                             html! (
                                 <Link<Route> to={Route::Post { post_title: post_title }} classes="post">
                                     <img src={format!("assets/music-cd.png")}/>
-                                    <span>{ format!("{}, {}", post.title.clone(), post.date.clone()) }</span> 
+                                    <div class="description">
+                                        <span class="title">{ post.title.clone() }</span> 
+                                        <span class="date">{ post.date.clone() }</span>
+                                    </div>
                                 </Link<Route>>
                             )
                         }).collect::<Html>()
