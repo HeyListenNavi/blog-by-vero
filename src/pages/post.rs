@@ -3,7 +3,7 @@ use yew_router::prelude::*;
 use crate::app::Route;
 use reqwest::{Client, StatusCode};
 use implicit_clone::unsync::IString;
-use common::PostData;
+use common::{PostData, SERVER_URL};
 
 pub enum Msg {
     FetchPost,
@@ -33,7 +33,7 @@ impl Component for Post {
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::FetchPost => {
-                let post_url = format!("http://127.0.0.1:8000/api/posts/{}", ctx.props().title.clone().replace(" ", "%20"));
+                let post_url = format!("{SERVER_URL}/api/posts/{}", ctx.props().title.clone().replace(" ", "%20"));
                 ctx.link().send_future(async move {
                     let response = Client::new().get(post_url)
                         .send()
@@ -75,7 +75,7 @@ impl Component for Post {
                         html! (
                             <>
                                 <div class="titlebar">
-                                    <Link<Route> to={Route::Diary}>{ format!("← {}", post.date.clone())  }</Link<Route>>
+                                    <Link<Route> to={Route::Journal}>{ format!("← {}", post.date.clone())  }</Link<Route>>
                                 </div>
                                 <div class="content">
                                     { content_html }

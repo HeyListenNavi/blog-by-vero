@@ -6,7 +6,7 @@ use crate::components::window::Window;
 #[function_component(NavBar)]
 pub fn nav_var() -> Html {
     html! (
-        <Window title="Vero's sailing boat" class="navbar" buttons={1}>
+        <Window title="sailing boat" class="navbar" buttons={1}>
             <h3>{ "navi-gation :0" }</h3>
             <ul>
                 <li>
@@ -16,13 +16,7 @@ pub fn nav_var() -> Html {
                     <Link<Route> to={Route::AboutMe}>{ "About me" }</Link<Route>>
                 </li>
                 <li>
-                    <Link<Route> to={Route::Diary}>{ "Diary" }</Link<Route>>
-                </li>
-                <li>
-                    <Link<Route> to={Route::GuestBook}>{ "Guestbook" }</Link<Route>>
-                </li>
-                <li>
-                    <Link<Route> to={Route::Links}>{ "Links" }</Link<Route>>
+                    <Link<Route> to={Route::Journal}>{ "Journal" }</Link<Route>>
                 </li>
                 <li>
                     <Link<Route> to={Route::CameraRoll}>{ "Cameraroll" }</Link<Route>>

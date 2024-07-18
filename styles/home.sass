@@ -2,6 +2,27 @@
 .home
     .header
         grid-area: header
+        .body
+            display: flex
+            align-items: flex-end
+            justify-content: flex-end
+            padding: 3px 3px
+            background-image: var(--img-header-bg)
+            background-size: cover
+            background-repeat: no-repeat
+            background-clip: content-box
+            background-position: center
+            .title
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                justify-content: flex-end
+                margin: 5px
+                span, h1
+                    background-color: var(--color-bg-lowop)
+                    padding: 2px 5px
+                    margin: 0
+                    user-select: none
     .navbar
         grid-area: navbar
     .main
@@ -10,22 +31,28 @@
         grid-area: sidebar
     .title
         text-align: center
-    .description
+    .description .content
         display: flex
         flex-direction: row-reverse
         justify-content: space-around
         align-items: center
-        gap: 1em
+        gap: 1rem
         img
-            width: 150px
-    .interests
+            width: 180px
+    .more-description
         display: flex
         align-items: center
         justify-content: center
-        gap: 1em
-        img
-            width: 150px
+        gap: 1rem
+        video
+            width: 300px
         ul
             margin: 0
             padding: 0
             list-style: none
+    .thoughts
+        margin-bottom: 2rem
+        .thought
+                border-bottom: 2px solid var(--color-title)
+                &:last-child
+                    border-bottom: none !important

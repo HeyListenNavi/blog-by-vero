@@ -1,61 +1,112 @@
 /* Universal styles 🌌 */
 @import home.sass
-    
-$assets_path : "assets/"
+@import about_me.sass
+@import journal.sass
+
+$assets_path : "assets"
+$window_titlebar_height : 40px
 
 :root
-    --color-bg: #151515
-    --color-wbg: #100e0f
-    --color-titlebar: #0c0a0a
-    --color-fg: #F0E2F3
-    --color-link-hover: #b3cbf2
-    --color-title: #eabbb9
-    --img-bg: url("https://64.media.tumblr.com/0425c49c3a7408a1b29dace4b04f2f79/tumblr_inline_mlkybvaYlG1r53miq.gif")
+    --color-bg: rgb(21, 21, 21)
+    --color-bg-lowop: rgba(21, 21, 21, 0.7)
+    --color-wbg: rgb(16, 14, 15)
+    --color-titlebar: rgb(12, 10, 10)
+    --color-fg: rgb(240, 226, 243)
+    --color-link-hover: rgb(179, 203, 242)
+    --color-link-hover-lowop: rgba(179, 203, 242, 0.7)
+    --color-title: rgb(234, 187, 185)
+    --color-title-lowop: rgba(234, 187, 185, 0.7)
+    --img-bg: url("#{$assets_path}/background-tile.gif")
+    --img-header-bg: url("#{$assets_path}/banner.jpg")
+    //letter-spacing: -0.5px
 
-@font-face 
+@font-face
     font-family: "uni 05_53"
-    src: url("#$assets_path/Uni0553.woff2") format(woff2), url("#$assets_path/Uni0553.woff") format(woff), url("#$assets_path/Uni0553.ttf") format(truetype)
+    src: url("#{$assets_path}/uni0553-webfont.eot") format("embedded-opentype"), url("#{$assets_path}/uni0553-webfont.ttf") format("truetype"), url("#{$assets_path}/uni0553-webfont.woff") format("woff")
     font-weight: normal
     font-style: normal
 
-html, body 
+html, body
     padding: 0
     margin: 0
 
-
-html 
+html
     height: 100vh
 
-
-body 
+body
     height: 100%
     background: var(--img-bg) repeat
     color: var(--color-fg)
     font-family: "uni 05_53"
 
+div
+    box-sizing: border-box
 
-.navbar .window .body 
+ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        align-items: center
+        gap: 1em
+        &::before
+            content: "→ "
+            color: var(--color-title)
+            font-size: 1em
+            padding: 0 0 0 0.5em
+
+::selection
+    background-color: var(--color-link-hover-lowop)
+    color: var(--color-bg)
+
+::-webkit-scrollbar
+    width: 8px
+    height: 8px    
+
+::-webkit-scrollbar-track
+    background-color: var(--color-wbg)
+
+::-webkit-scrollbar-track:horizontal
+    background-color: var(--color-titlebar)
+
+::-webkit-scrollbar-thumb
+    border-radius: 0
+
+::-webkit-scrollbar-thumb
+    background-color: var(--color-title)
+
+.navbar .window .body
     display: flex
     flex-direction: column
     flex-wrap: wrap
     align-content: flex-start
 
-
-.window 
+.window
     background-color: var(--color-bg)
     padding: 9px
     /* cool window border */
-    box-shadow: inset -6px -6px var(--color-bg), inset 6px 6px var(--color-bg), inset 8px 8px #eabbb9, inset -8px -8px #eabbb9
-    .body 
-        padding: 10px
-    .titlebar 
+    box-shadow: inset -6px -6px var(--color-bg), inset 6px 6px var(--color-bg), inset 8px 8px var(--color-title), inset -8px -8px var(--color-title)
+    .body
+        padding: 1rem 2rem
+        height: calc(100% - $window_titlebar_height)
+        overflow-y: overlay
+        .window
+            background-color: var(--color-wbg)
+            box-shadow: inset -6px -6px var(--color-titlebar), inset 6px 6px var(--color-titlebar), inset 8px 8px var(--color-fg), inset -8px -8px var(--color-fg)
+            .body
+                padding: 0.5rem 1rem
+    .titlebar
         padding: 8px
         background-color: var(--color-titlebar)
         display: flex
         flex-direction: row
         justify-content: space-between
         user-select: none
-        .buttons button 
+        max-height: $window_titlebar_height
+        .buttons button
             margin: 0 2px
             align-self: center
             height: 20px
@@ -64,8 +115,7 @@ body
             line-height: 0
             font-size: 10px
 
-
-button 
+button
     font-size: 18px
     padding: 0 0 4px 0
     line-height: 0
@@ -78,97 +128,67 @@ button
     background-color: var(--color-bg)
     user-select: none
 
+.lesbian-flag
+    display: inline-block
+    height: 1em
+    aspect-ratio: 3 / 2
+    line-height: 1
+    border-radius: 10px
+    vertical-align: middle
+    border: 2px solid var(--color-fg)
+    box-shadow: inset 0 0 1px #fff, 0 1px 2px #0004
+    background: linear-gradient(to bottom, #c64425 0% 20%, #d38534 20% 40%, #e9d0b6 40% 60%, #d96596 60% 80%, #9e344e 80% 100%)
 
-h1, h2, h3, h4, h5, h6 
+.transfem-flag
+    display: inline-block
+    height: 1em
+    aspect-ratio: 3 / 2
+    line-height: 1
+    border-radius: 10px
+    vertical-align: middle
+    border: 2px solid var(--color-fg)
+    box-shadow: inset 0 0 1px #fff, 0 1px 2px #0004
+    background: linear-gradient(to bottom, #7996d0 0% 14.3%, #d7a1b9 14.3% 28.6%, #d986ae 28.6% 42.9%, #d06897 42.9% 57.1%, #d986ae 57.1% 71.4%, #d7a1b9 71.4% 85.7%, #7996d0 85.7% 100%)
+
+h1, h2, h3, h4, h5, h6
     font-weight: 100
 
-
-a 
+a
     color: var(--color-fg)
-    transition: color 0.15s, background-color 0.15s
-    :hover 
+    transition: color 0.15s
+    &:hover 
         color: var(--color-link-hover)
 
-p, a 
+p, a
     font-size: 16px
 
-
-
-
-.post--list 
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    align-items: baseline
-    .post 
-        display: flex
-        flex-direction: column
-        flex-wrap: wrap
-        align-items: center
-        user-select: none
-        margin: 0 10px
-        padding: 10px
-        text-decoration: none
-    .post:hover 
-        color: var(--color-link-hover)
-        background-color: var(--color-wbg)
-        cursor: pointer
-    .post
-        img 
-            width: 100px
-            height: 100px
-        span 
-            width: 100px
-            margin-top: 5px
-            overflow-wrap: break-word
-            text-align: center
-
-
-.post--single 
-    background-color: var(--color-bg)
-    width: 100%
+body>.home, body>.aboutme, body>.journal, body>.links, body>.cameraroll
     height: 100%
     box-sizing: border-box
-    padding: 1em
-    .titlebar 
-        display: flex
-        flex-direction: row
-        flex-wrap: wrap
-        align-items: center
-        gap: 5px
-        .date 
-            margin: 0
-
-
-.home, .aboutme, .diary, .guestbook, .links, .cameraroll 
-    height: 100%
-    box-sizing: border-box
-    padding: 1em
+    padding: 1rem
     display: grid
-    grid-gap: 1.5em
+    grid-gap: 1.5rem
 
-.notfound 
+body>.notfound
     background-color: var(--color-bg)
     width: 100%
     height: 100%
     box-sizing: border-box
-    padding: 1em
+    padding: 1rem
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center 
 
-
-.home 
+body>.home
     grid-template-columns: 20% 1fr 20%
-    grid-template-rows: 150px 1fr
+    grid-template-rows: 240px 1fr
     grid-template-areas: "header header header" "navbar main sidebar" "navbar main sidebar"
     /*  <------------- Header -------------->
         <- Navbar -> <- Main -> <- Sidebar ->
         <- Narbar -> <- Main -> <- Sidebar ->
 
-
-.aboutme, .diary, .guestbook, .links, .cameraroll 
+body>.aboutme, body>.journal, body>.links, body>.cameraroll
     grid-template-columns: 20% 1fr
     grid-template-rows: 150px 1fr
     grid-template-areas: "navbar main" "navbar main"
@@ -180,4 +200,3 @@ p, a
     .navbar
         grid-column: 1 / 2
         grid-row: 1 / 3
-

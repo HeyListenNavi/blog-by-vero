@@ -2,7 +2,9 @@ use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
 pub struct WindowProps {
+    #[prop_or("".to_string())]
     pub title: String,
+    #[prop_or("".to_string())]
     pub class: String,
     #[prop_or(0)]
     pub buttons: u32,
