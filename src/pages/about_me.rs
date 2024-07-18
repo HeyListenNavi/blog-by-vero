@@ -421,6 +421,21 @@ pub fn about_me() -> Html {
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "freshman year by Hop Along, Queen Ansleis (album)" }</p>
                             </div>
+                            <div class="music">
+                                <img src={format!("{SERVER_URL}/api/photography/dear-god.jpg")} alt="Dear God song cover" class="cover"/>
+                                <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
+                                <p>{ "Dear God by XTC (song)" }</p>
+                            </div>
+                            <div class="music">
+                                <img src={format!("{SERVER_URL}/api/photography/fin-de-semana.jpg")} alt="Fin de Semana song cover" class="cover"/>
+                                <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
+                                <p>{ "Fin de Semana de Sam Vazquez (cover)" }</p>
+                            </div>
+                            <div class="music">
+                                <img src={format!("{SERVER_URL}/api/photography/ccpseddh.jpg")} alt="¿Cuántas Cosas Podrían Sucederme El Día De Hoy? song cover" class="cover"/>
+                                <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
+                                <p>{ "¿Cuántas Cosas Podrían Sucederme El Día De Hoy? de NXNNI, Sam Vazquez y Alehtse Vargas (single)" }</p>
+                            </div>
                         </Window>
                     </div>
                 </div>
@@ -435,7 +450,10 @@ pub fn about_me() -> Html {
                                 <a href="https://open.spotify.com/user/31wfjfd7x6lie7cvcfxbpkft3zcu?si=7174c0c75c114c18">{ "spotify" }</a>
                             </li>
                             <li>
-                                <a href="https://www.tumblr.com/naviheylisten9?source=share">{ "tumblr" }</a>
+                                <a href="https://www.tumblr.com/naviheylisten9?source=share">{ "tumblr: naviheylisten9" }</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/HeyListenNavi">{ "github: HeyListenNavi" }</a>
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/heylisten.navi?igsh=aGtub3I3dHJhbXRs">{ "instagram" }</a>
