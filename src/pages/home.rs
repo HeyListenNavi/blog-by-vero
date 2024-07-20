@@ -25,7 +25,7 @@ impl Component for Home {
                     <div class="description">
                         <div class="content">
                             <Window title="i love amy" buttons={1}>
-                                <img src={format!("{SERVER_URL}/api/photography/amy-icon.webp")}/>
+                                <img src={format!("{SERVER_URL}/api/assets/amy-icon.webp")}/>
                             </Window>
                             <div>
                                 <h1 class="title">{ "this is home" }</h1>
