@@ -82,7 +82,7 @@ pub fn about_me() -> Html {
                 </div>
                 <div class="favorite">
                     <h2>{ "favorite things" }</h2>
-                    <div class="favorite-stuff">
+                    <div class="content">
                         <Window title="films" class="film--list" buttons={1}>
                             <div class="film">
                                 <img src={format!("{SERVER_URL}/api/assets/i-saw-the-tv-glow-poster.jpg")} alt="I saw the TV Glow (2024) poster"/>
@@ -436,6 +436,36 @@ pub fn about_me() -> Html {
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "¿Cuántas Cosas Podrían Sucederme El Día De Hoy? de NXNNI, Sam Vazquez y Alehtse Vargas (single)" }</p>
                             </div>
+                            <div class="music">
+                                <img src={format!("{SERVER_URL}/api/assets/visions-of-a-life.jpg")} alt="Visions of a Life album cover" class="cover"/>
+                                <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
+                                <p>{ "Don't Delete the Kisses by Wolf Alice (song)" }</p>
+                            </div>
+                            <div class="music">
+                                <img src={format!("{SERVER_URL}/api/assets/cala-vento.jpg")} alt="Cala Vento cover" class="cover"/>
+                                <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
+                                <p>{ "Abril de Cala Vento (song)" }</p>
+                            </div>
+                        </Window>
+                    </div>
+                </div>
+                <div class="playlists">
+                    <h2>{ "mis playlists <3" }</h2>
+                    <div class="content">
+                        <Window title="dependo emocionalmente de la música">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3TZJGahUA0FMdQfV1qnTzC?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </Window>
+                        <Window title="construyendo mis malditas alas">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0FqxaaCa7LNKlss5B34CAN?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </Window>
+                        <Window title="ser joven y no ser revolucionario">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2uaBp593dKM1N9M2uT5Pu3?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </Window>
+                        <Window title="AMO LOS FUCKING MUSICALES">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/28SULrkzqvUr9Jnk4PoD8X?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </Window>
+                        <Window title="she's moody (yo)">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/371xAlIZtbUZPAWDaNusxR?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </Window>
                     </div>
                 </div>
