@@ -3,21 +3,25 @@
     flex-direction: row
     flex-wrap: wrap
     align-items: baseline
+    @media screen and ( max-width: 512px )
+        justify-content: center
+    justify-content: left
+    gap: 5px
     .post
         display: flex
         flex-direction: column
         flex-wrap: wrap
         align-items: center
         user-select: none
-        margin: 0 10px
         padding: 10px
         text-decoration: none
-    .post:hover
-        color: var(--color-link-hover)
-        background-color: var(--color-wbg)
-        cursor: pointer
-    .post
         width: 120px
+        &:hover
+            color: var(--color-link-hover)
+            background-color: var(--color-wbg)
+            cursor: pointer
+        &:active
+            outline: 2px dotted var(--color-fg)
         img
             width: 100px
             height: 100px
@@ -37,7 +41,11 @@
     width: 100%
     height: 100%
     box-sizing: border-box
+    overflow-y: scroll
     padding: 1rem
+    .content
+        max-width: 700px
+        margin: 0 auto
     .titlebar
         display: flex
         flex-direction: row

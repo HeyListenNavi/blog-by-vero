@@ -1,5 +1,9 @@
 .cameraroll
     .main
+        .title
+            margin: 1rem 0
+            h1
+                text-align: center
         .photos, .videos
             &:has(div:nth-child(5))
                 column-count: 1
@@ -19,20 +23,16 @@
                 flex-wrap: wrap
                 gap: 1rem
                 & > div
-                    width: 35%
+                    max-width: 400px
             & > div
                 min-width: 190px
                 p
                     margin: 0.5rem 0
-        .videos .window
-            flex: 1 1 auto
-        & > h1, & > .window
+        .body > h1, .body > .window
             max-width: 1200px
-            margin: 0 auto
+            margin: 1rem auto
         p, h2
             text-align: center
-        .window
-            margin: 1rem 0
 
 .focus
     position: absolute

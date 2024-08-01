@@ -10,16 +10,17 @@ pub fn about_me() -> Html {
             <NavBar/>
             <Window title="yapping about myself" class="main">        
                 <div class="desc">
+                    <Window title="woah" buttons={1}>
+                        <img src={format!("{SERVER_URL}/api/assets/trans-bunny.jpg")} alt="bunny with a trans flag icon"/>
+                    </Window>
                     <div class="content">
-                        <Window title="woah" buttons={1}>
-                            <img src={format!("{SERVER_URL}/api/assets/trans-bunny.jpg")} width="200px" alt="bunny with a trans flag icon"/>
-                        </Window>
-                        <div>
-                            <h1>{ "About me !!1!" }</h1>
-                            <p>{ "holiii, my name's Verónica, i'm a self-made woman (a.k.a. trans), and i study computer science. i'd say i'm a bit of an awkward person (maybe a lot), i don't tend to share much, and social interactions have always been my Achilles heel, but i do love writing stuff, either about how i feel, what i've done, opinions i have, interests, or anything fhjsaf." }</p>
-                        </div>
+                        <h1>{ "About me !!1!" }</h1>
+                        <p>{ "holiii, my name's Verónica, i'm a self-made woman (a.k.a. trans), and i study computer science. i'd say i'm a bit of an awkward person (maybe a lot), i don't tend to share much, and social interactions have always been my Achilles heel, but i do love writing stuff, either about how i feel, what i've done, opinions i have, interests, or anything fhjsaf." }</p>
                     </div>
                 </div>
+
+                <div class="divider"></div>
+                
                 <div class="love">
                     <h2>{ "things i love" }</h2>
                     <ul>
@@ -43,9 +44,12 @@ pub fn about_me() -> Html {
                         </li>
                     </ul>
                 </div>
+
+                <div class="divider"></div>
+
                 <div class="dreamer">
                     <Window title="mitsuki" buttons={1}>
-                        <img src={format!("{SERVER_URL}/api/assets/mitsuki-icon.jpeg")} width="250px" alt="mitsuki icon"/>
+                        <img src={format!("{SERVER_URL}/api/assets/mitsuki-icon.jpeg")} alt="mitsuki icon"/>
                     </Window>
                     <div class="content">
                         <h2>{ "dreamer" }</h2>
@@ -80,6 +84,9 @@ pub fn about_me() -> Html {
                         </ul>
                     </div>
                 </div>
+
+                <div class="divider"></div>
+
                 <div class="favorite">
                     <h2>{ "favorite things" }</h2>
                     <div class="content">
@@ -449,6 +456,9 @@ pub fn about_me() -> Html {
                         </Window>
                     </div>
                 </div>
+
+                <div class="divider"></div>
+
                 <div class="playlists">
                     <h2>{ "mis playlists <3" }</h2>
                     <div class="content">
@@ -469,6 +479,9 @@ pub fn about_me() -> Html {
                         </Window>
                     </div>
                 </div>
+
+                <div class="divider"></div>
+                
                 <div class="social">
                     <Window title="shooting star" buttons={1}>
                         <img src={format!("{SERVER_URL}/api/assets/last-words-of-a-shooting-star-sticker.jpg")} alt="Last Words of a Shooting Star, Mitski sticker"/>

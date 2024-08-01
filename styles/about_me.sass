@@ -1,22 +1,28 @@
 /* -> About Me <- */
 .aboutme
-    .desc
-        h1
-            text-align: center
-        .content
-            display: flex
-            flex-direction: row-reverse
-            align-items: center
-            gap: 1rem
-    .love, .social, .playlists
+    .desc, .love, .dreamer, .favorite, .playlists, .social
+        max-width: 1200px
+        margin: 0 auto
+    .love, .playlists, .social
         h2
             text-align: center
             margin-top: 0
-    .dreamer, .social
+    .desc, .dreamer, .social
         display: flex
         align-items: center
         justify-content: center
         gap: 1rem
+        flex-wrap: wrap
+        @media screen and ( min-width: 870px )
+            flex-wrap: nowrap
+        img
+            max-width: 350px
+    .desc
+        flex-direction: row-reverse
+        .content
+            flex: 0 5 auto
+        h1
+            text-align: center
     .dreamer
         ul li
             margin-bottom: 5px
@@ -26,7 +32,7 @@
             padding: 5px 0
             font-size: 32px
             span[class$="flag"]
-                font-size: 1.5em	
+                font-size: 1.5em
     div[class$="--list"]
         margin: 1rem 0 
         p
@@ -52,7 +58,7 @@
             &:hover
                 box-shadow: 0 0 8px 5px black
                 transform: translateY(-10px)
-                margin-right: 12%
+                margin-right: 130px
                 &:last-child
                     margin-right: 0
                 .disc
@@ -60,19 +66,15 @@
                     left: 45% !important
                     animation: spin 3s linear infinite
                     filter: drop-shadow(0px 0px 8px black)
-    .social
-        img
-            width: 300px
     .playlists
-        margin-bottom: 1rem
         .content
             display: flex
+            flex-direction: row
             flex-wrap: wrap
             justify-content: center
             gap: 1rem
             .window
-                width: 45%
-                min-width: 500px
+                flex: 1 1 450px  
 
 @keyframes spin 
     100%

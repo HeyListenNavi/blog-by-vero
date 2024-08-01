@@ -64,9 +64,11 @@ impl Component for CameraRoll {
         html! {
             <div class="cameraroll">
                 <NavBar/>
-                <Window title="camera" class="main">        
-                    <h1>{ "A couple of pictures i've taken ;w;" }</h1>
-                    <Window title="dress" class="vero"> 
+                <Window title="camera" class="main">
+                    <div class="title">
+                        <h1>{ "A couple of pictures i've taken ;w;" }</h1>
+                    </div>
+                    <Window title="dress"> 
                         <h2>{ "→ october 17, 2023" }</h2>
                         <p>{ "i bought a dress i found on my way to school and decided to see how i look in formal wear ^^" }</p>
                         <div class="photos">
