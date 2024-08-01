@@ -93,7 +93,10 @@ impl Component for CameraRoll {
                         <h2>{ "yes, i drink water from a big ass mayo jar" }</h2>
                         <div class="photos">
                             <div>
-                                <img src={format!("{SERVER_URL}/api/photography/vero/big-ass-mayo-jar.jpg")}/>
+                                <img src={format!("{SERVER_URL}/api/photography/vero/big-ass-mayo-jar/1.jpg")}/>
+                            </div>
+                            <div>
+                                <img src={format!("{SERVER_URL}/api/photography/vero/big-ass-mayo-jar/2.jpg")}/>
                             </div>
                         </div>
                     </Window>
@@ -127,6 +130,9 @@ impl Component for CameraRoll {
                             <div>
                                 <p>{ "in fact my dear, i'm fucking terrified" }</p>
                                 <img src={format!("{SERVER_URL}/api/photography/vero/defender/2.jpg")}/>
+                            </div>
+                            <div>
+                                <img src={format!("{SERVER_URL}/api/photography/vero/defender/3.jpg")}/>
                             </div>
                             <div>
                                 <p>{ "Melanie martinez core :3" }</p>
@@ -618,7 +624,7 @@ impl Component for CameraRoll {
                             </div>
                             <div>
                                 <p>{ "veleros." }</p>
-                                <img src={format!("{SERVER_URL}/api/photography/summer-sale-postal.jpg")}/>
+                                <img src={format!("{SERVER_URL}/api/photography/summer-sale-postal/1.jpg")}/>
                             </div>
                             <div>
                                 <img src={format!("{SERVER_URL}/api/photography/culos-de-lectura.jpg")}/>
