@@ -2,7 +2,7 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 use crate::app::Route;
 use reqwest::{Client, StatusCode};
-use common::{PostData, SERVER_URL};
+use common::{PostData, SERVER_ADDRESS};
 
 pub enum Msg {
     FetchPostList,
@@ -25,7 +25,7 @@ impl Component for PostsList {
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::FetchPostList => {
-                let post_url = format!("{SERVER_URL}/api/posts/list");
+                let post_url = format!("{SERVER_ADDRESS}/api/posts/list");
                 ctx.link().send_future(async move {
                     let response = Client::new().get(post_url)
                         .send()

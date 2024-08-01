@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use crate::components::nav_bar::NavBar;
 use crate::components::window::Window;
-use common::SERVER_URL;
+use common::SERVER_ADDRESS;
 
 #[function_component(AboutMe)]
 pub fn about_me() -> Html {
@@ -11,7 +11,7 @@ pub fn about_me() -> Html {
             <Window title="yapping about myself" class="main">        
                 <div class="desc">
                     <Window title="woah" buttons={1}>
-                        <img src={format!("{SERVER_URL}/api/assets/trans-bunny.jpg")} alt="bunny with a trans flag icon"/>
+                        <img src={format!("{SERVER_ADDRESS}/api/assets/trans-bunny.jpg")} alt="bunny with a trans flag icon"/>
                     </Window>
                     <div class="content">
                         <h1>{ "About me !!1!" }</h1>
@@ -49,7 +49,7 @@ pub fn about_me() -> Html {
 
                 <div class="dreamer">
                     <Window title="mitsuki" buttons={1}>
-                        <img src={format!("{SERVER_URL}/api/assets/mitsuki-icon.jpeg")} alt="mitsuki icon"/>
+                        <img src={format!("{SERVER_ADDRESS}/api/assets/mitsuki-icon.jpeg")} alt="mitsuki icon"/>
                     </Window>
                     <div class="content">
                         <h2>{ "dreamer" }</h2>
@@ -92,364 +92,364 @@ pub fn about_me() -> Html {
                     <div class="content">
                         <Window title="films" class="film--list" buttons={1}>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/i-saw-the-tv-glow-poster.jpg")} alt="I saw the TV Glow (2024) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/i-saw-the-tv-glow-poster.jpg")} alt="I saw the TV Glow (2024) poster"/>
                                 <p>{ "I Saw the TV Glow (Jane Schoenbrun. 2024)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/civil-war-poster.jpg")} alt="Civil War (2024) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/civil-war-poster.jpg")} alt="Civil War (2024) poster"/>
                                 <p>{ "Civil War (Alex Garland. 2024)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/everything-everywhere-all-at-once-poster.jpg")} alt="Everything Everywhere All at Once (2022) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/everything-everywhere-all-at-once-poster.jpg")} alt="Everything Everywhere All at Once (2022) poster"/>
                                 <p>{ "Everything Everywhere All at Once (Daniel Kwan and Daniel Scheinert. 2022)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/lady-bird-poster.jpg")} alt="Lady bird (2017) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/lady-bird-poster.jpg")} alt="Lady bird (2017) poster"/>
                                 <p>{ "Lady Bird (Greta Gerwig. 2017)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/bottoms-poster.jpg")} alt="Bottoms (2023) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/bottoms-poster.jpg")} alt="Bottoms (2023) poster"/>
                                 <p>{ "Bottoms (Emma Seligman. 2023)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/nimona-poster.jpg")} alt="Nimona (2023) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/nimona-poster.jpg")} alt="Nimona (2023) poster"/>
                                 <p>{ "Nimona (Nick Bruno and Troy Quane. 2023)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/a-silent-voice-poster.jpg")} alt="A Silent Voice (2016) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/a-silent-voice-poster.jpg")} alt="A Silent Voice (2016) poster"/>
                                 <p>{ "A Silent Voice (Taichi Ishidate and Naoko Yamada. 2016)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/suzume-poster.jpg")} alt="Suzume (2022) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/suzume-poster.jpg")} alt="Suzume (2022) poster"/>
                                 <p>{ "Suzume (Makoto Shinkai. 2022)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/the-batman-poster.jpg")} alt="The Batman (2022) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-batman-poster.jpg")} alt="The Batman (2022) poster"/>
                                 <p>{ "The Batman (Matt Reeves. 2022)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/spiderman-across-the-spiderverse-poster.jpg")} alt="Spider-man Across the Spider-Verse (2023) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/spiderman-across-the-spiderverse-poster.jpg")} alt="Spider-man Across the Spider-Verse (2023) poster"/>
                                 <p>{ "Spider-Man: Across the Spider-Verse (Joaquim Dos Santos, Kemp Powers and Justin K. Thompson. 2023)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/portrait-of-a-lady-on-fire-poster.jpg")} alt="Portrait of a Lady on Fire (2019) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/portrait-of-a-lady-on-fire-poster.jpg")} alt="Portrait of a Lady on Fire (2019) poster"/>
                                 <p>{ "Portrait of a Lady on Fire (Céline Sciamma. 2019)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/all-the-bright-places-poster.jpg")} alt="All the Bright Places (2020) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/all-the-bright-places-poster.jpg")} alt="All the Bright Places (2020) poster"/>
                                 <p>{ "All the Bright Places (Brett Haley. 2020)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/the-perks-of-being-a-wallflower-poster.jpg")} alt="the perks of being a wallflower (2012) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-perks-of-being-a-wallflower-poster.jpg")} alt="the perks of being a wallflower (2012) poster"/>
                                 <p>{ "the perks of being a wallflower (Stephen Chbosky. 2012)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/una-pelicula-de-policias-poster.jpg")} alt="una película de policías (2021) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/una-pelicula-de-policias-poster.jpg")} alt="una película de policías (2021) poster"/>
                                 <p>{ "Una película de policías (Alonso Ruizpalacios. 2021)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/temporada-de-patos-poster.jpg")} alt="temporada de patos (2004) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/temporada-de-patos-poster.jpg")} alt="temporada de patos (2004) poster"/>
                                 <p>{ "Temporada de patos (Fernando Eimbcke. 2004)" }</p>
                             </div>
                             <div class="film">
-                                <img src={format!("{SERVER_URL}/api/assets/cosas-imposibles-poster.jpg")} alt="Cosas Imposibles (2021) poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/cosas-imposibles-poster.jpg")} alt="Cosas Imposibles (2021) poster"/>
                                 <p>{ "Cosas Imposibles (Ernesto Contreras. 2021)" }</p>
                             </div>
                         </Window>
                         <Window title="series" class="series--list" buttons={1}>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/arcane-poster.jpg")} alt="Arcane poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/arcane-poster.jpg")} alt="Arcane poster"/>
                                 <p>{ "Arcane (Christian Linke and Alex Yee)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/better-call-saul-poster.jpg")} alt="Better Call Saul poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/better-call-saul-poster.jpg")} alt="Better Call Saul poster"/>
                                 <p>{ "Better Call Saul (Vince Gilligan and Peter Gould)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/fleabag-poster.jpg")} alt="Fleabag poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/fleabag-poster.jpg")} alt="Fleabag poster"/>
                                 <p>{ "Fleabag (Phoebe Waller-Bridge)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/wonder-egg-priority-poster.jpg")} alt="Wonder Egg Priority poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/wonder-egg-priority-poster.jpg")} alt="Wonder Egg Priority poster"/>
                                 <p>{ "Wonder Egg Priority (Shinji Nojima)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/inside-job-poster.jpg")} alt="Inside Job poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/inside-job-poster.jpg")} alt="Inside Job poster"/>
                                 <p>{ "Inside Job (Shion Takeuchi and Alex Hirsch)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/moral-orel-poster.jpg")} alt="Moral Orel poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/moral-orel-poster.jpg")} alt="Moral Orel poster"/>
                                 <p>{ "Moral Orel (Dino Stamatopoulos)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/violet-evergarden-poster.jpg")} alt="Violet Evergarden poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/violet-evergarden-poster.jpg")} alt="Violet Evergarden poster"/>
                                 <p>{ "Violet Evergarden (Kana Akatsuki)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/blue-eye-samurai-poster.jpg")} alt="Blue Eye Samurai poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/blue-eye-samurai-poster.jpg")} alt="Blue Eye Samurai poster"/>
                                 <p>{ "Blue Eye Samurai (Michael Green and Amber Noizumi)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/looking-for-alaska-poster.jpg")} alt="Looking for Alaska poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/looking-for-alaska-poster.jpg")} alt="Looking for Alaska poster"/>
                                 <p>{ "Looking for Alaska (Josh Schwartz)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/desenfrenadas-poster.jpg")} alt="Desenfrenadas poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/desenfrenadas-poster.jpg")} alt="Desenfrenadas poster"/>
                                 <p>{ "Desenfrenadas (Diego Martínez Ulanosky)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/baby-reindeer-poster.jpg")} alt="Baby Reindeer poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/baby-reindeer-poster.jpg")} alt="Baby Reindeer poster"/>
                                 <p>{ "Baby Reindeer ()" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/the-owl-house-poster.jpg")} alt="The Owl House poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-owl-house-poster.jpg")} alt="The Owl House poster"/>
                                 <p>{ "The Owl House (Dana Terrace)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/star-vs-the-forces-of-evil-poster.jpg")} alt="Star vs The Forces of Evil poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/star-vs-the-forces-of-evil-poster.jpg")} alt="Star vs The Forces of Evil poster"/>
                                 <p>{ "Star vs The Forces of Evil (Daron Nefcy, Dave Wasson and Jordana Arkin)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/helluva-boss-poster.jpg")} alt="Helluva Boss poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/helluva-boss-poster.jpg")} alt="Helluva Boss poster"/>
                                 <p>{ "Helluva Boss (Vivienne Medrano)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/hazbin-hotel-poster.jpg")} alt="Hazbin Hotel poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/hazbin-hotel-poster.jpg")} alt="Hazbin Hotel poster"/>
                                 <p>{ "Hazbin Hotel (Vivienne Medrano)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/the-boys-poster.jpg")} alt="The Boys poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-boys-poster.jpg")} alt="The Boys poster"/>
                                 <p>{ "The Boys (Eric Kripke)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/bee-and-puppycat-poster.jpg")} alt="Bee and PuppyCat poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/bee-and-puppycat-poster.jpg")} alt="Bee and PuppyCat poster"/>
                                 <p>{ "Bee and PuppyCat (Natasha Allegri)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/fallout-poster.jpg")} alt="Fallout poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/fallout-poster.jpg")} alt="Fallout poster"/>
                                 <p>{ "Fallout (Geneva Robertson-Dworet and Graham Wagner)" }</p>
                             </div>
                             <div class="series">
-                                <img src={format!("{SERVER_URL}/api/assets/the-last-of-us-poster.jpg")} alt="The Last of Us poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-last-of-us-poster.jpg")} alt="The Last of Us poster"/>
                                 <p>{ "The Last of Us (Neil Druckmann and Craig Mazin)" }</p>
                             </div>
                         </Window>
                         <Window title="videogames :3" class="game--list" buttons={1}>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/the-last-of-us-game-poster.jpg")} alt="The Last of Us poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-last-of-us-game-poster.jpg")} alt="The Last of Us poster"/>
                                 <p>{ "The Last of Us" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/the-last-of-us-part-two-game-poster.jpg")} alt="The Last of Us: Part 2 poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-last-of-us-part-two-game-poster.jpg")} alt="The Last of Us: Part 2 poster"/>
                                 <p>{ "The Last of Us: Part II" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/red-dead-redemtion-two-poster.jpg")} alt="Red Dead Redemtion 2 poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/red-dead-redemtion-two-poster.jpg")} alt="Red Dead Redemtion 2 poster"/>
                                 <p>{ "Red Dead Redemtion 2" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/portal-poster.jpg")} alt="Portal poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/portal-poster.jpg")} alt="Portal poster"/>
                                 <p>{ "Portal" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/portal-two-poster.jpg")} alt="Portal 2 poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/portal-two-poster.jpg")} alt="Portal 2 poster"/>
                                 <p>{ "Portal 2" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/resident-evil-2-poster.jpg")} alt="Resident Evil 2 Remake poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/resident-evil-2-poster.jpg")} alt="Resident Evil 2 Remake poster"/>
                                 <p>{ "Resident Evil 2 Remake" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/resident-evil-4-poster.jpg")} alt="Resident Evil 4 poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/resident-evil-4-poster.jpg")} alt="Resident Evil 4 poster"/>
                                 <p>{ "Resident Evil 4" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/resident-evil-6-poster.jpg")} alt="Resident Evil 6 poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/resident-evil-6-poster.jpg")} alt="Resident Evil 6 poster"/>
                                 <p>{ "Resident Evil 6" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/resident-evil-7-poster.jpg")} alt="Resident Evil 7 Biohazard poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/resident-evil-7-poster.jpg")} alt="Resident Evil 7 Biohazard poster"/>
                                 <p>{ "Resident Evil 7: Biohazard" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/resident-evil-8-poster.jpg")} alt="Resident Evil 8 Village poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/resident-evil-8-poster.jpg")} alt="Resident Evil 8 Village poster"/>
                                 <p>{ "Resident Evil 8: Village" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/celeste-poster.jpg")} alt="Celeste poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/celeste-poster.jpg")} alt="Celeste poster"/>
                                 <p>{ "Celeste" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/metroid-prime-trilogy-poster.jpg")} alt="Metroid Prime Trilogy poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/metroid-prime-trilogy-poster.jpg")} alt="Metroid Prime Trilogy poster"/>
                                 <p>{ "Metroid Prime Trilogy" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/metroid-other-m-poster.jpg")} alt="Metroid Other M poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/metroid-other-m-poster.jpg")} alt="Metroid Other M poster"/>
                                 <p>{ "Metroid: Other M" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/the-legend-of-zelda-oot-poster.jpg")} alt="The Legend of Zelda Ocarina of Time poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-legend-of-zelda-oot-poster.jpg")} alt="The Legend of Zelda Ocarina of Time poster"/>
                                 <p>{ "The Legend of Zelda: Ocarina of Time" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/the-legend-of-zelda-ww-poster.jpg")} alt="The Legend of Zelda Wind Waker poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-legend-of-zelda-ww-poster.jpg")} alt="The Legend of Zelda Wind Waker poster"/>
                                 <p>{ "The Legend of Zelda: Wind Waker" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/the-legend-of-zelda-botw-poster.jpg")} alt="The Legend of Zelda Breath of the Wild poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/the-legend-of-zelda-botw-poster.jpg")} alt="The Legend of Zelda Breath of the Wild poster"/>
                                 <p>{ "The Legend of Zelda: Breath of the Wild" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/donkey-kong-64-poster.jpg")} alt="Donkey Kong 64 poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/donkey-kong-64-poster.jpg")} alt="Donkey Kong 64 poster"/>
                                 <p>{ "Donkey Kong 64" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/donkey-kong-country-returns-poster.jpg")} alt="Donkey Kong Country Returns"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/donkey-kong-country-returns-poster.jpg")} alt="Donkey Kong Country Returns"/>
                                 <p>{ "Donkey Kong: Country Returns" }</p>
                             </div>
                             <div class="game">
-                                <img src={format!("{SERVER_URL}/api/assets/minecraft-poster.jpg")} alt="Minecraft poster"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/minecraft-poster.jpg")} alt="Minecraft poster"/>
                                 <p>{ "Minecraft" }</p>
                             </div>
                         </Window>
                         <Window title="m u s i c" class="music--list" buttons={1}>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/be-the-cowboy.jpg")} alt="Be the Cowboy album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/be-the-cowboy.jpg")} alt="Be the Cowboy album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Be the Cowboy by Mitski (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/bury-me-at-makeout-creek.jpg")} alt="Bury Me at Makeout Creek album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/bury-me-at-makeout-creek.jpg")} alt="Bury Me at Makeout Creek album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Bury Me at Makeout Creek by Mitski (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/damn.jpg")} alt="DAMN. album by Kendrick Lamar" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/damn.jpg")} alt="DAMN. album by Kendrick Lamar" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "DAMN. by Kendrick Lamar (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/mr-morale-and-the-big-steppers.jpg")} alt="Mr Morale and the big steppers album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/mr-morale-and-the-big-steppers.jpg")} alt="Mr Morale and the big steppers album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Mr. Morale & The Big Steppers by Kendrick Lamar (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/hit-me-hard-and-soft.jpg")} alt="Hit me Hard and Soft album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/hit-me-hard-and-soft.jpg")} alt="Hit me Hard and Soft album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "HIT ME HARD AND SOFT by Billie Eilish (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/sour.jpg")} alt="Sour album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/sour.jpg")} alt="Sour album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Sour by Olivia Rodrigo (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/guts.jpg")} alt="Guts album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/guts.jpg")} alt="Guts album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Guts by Olivia Rodrigo (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/delusion.jpg")} alt="Delusion album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/delusion.jpg")} alt="Delusion album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Delusión de Bratty (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/tdbn.jpg")} alt="tdbn album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/tdbn.jpg")} alt="tdbn album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "tdbn de Bratty (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/otros-colores.jpg")} alt="Otros Colores single cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/otros-colores.jpg")} alt="Otros Colores single cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Otros Colores de Bratty y Daniel Quién (single)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/sobredosis-de-tempra.jpg")} alt="Sobredosis de Tempra single cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/sobredosis-de-tempra.jpg")} alt="Sobredosis de Tempra single cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Sobredósis de Tempra de Bratty (single)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/axolotes-mexicanos.jpg")} alt=":3 album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/axolotes-mexicanos.jpg")} alt=":3 album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ ":3 de Axolotes Mexicanos (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/porfiado.jpg")} alt="Porfiado album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/porfiado.jpg")} alt="Porfiado album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Porfiado de Cuarteto de Nos (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/blue-banisters.jpg")} alt="Blue Banisters album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/blue-banisters.jpg")} alt="Blue Banisters album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Dealer by Lana del Rey (song)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/no-burden.jpg")} alt="No Burden album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/no-burden.jpg")} alt="No Burden album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "I Don't Wanna Be Funny Anymore by Lucy Dacus (song)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/home-video.jpg")} alt="Home Video album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/home-video.jpg")} alt="Home Video album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Brando by Lucy Dacus (song)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/historian.jpg")} alt="Historian album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/historian.jpg")} alt="Historian album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Night Shift by Lucy Dacus (song)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/bewitched.jpg")} alt="Bewitched album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/bewitched.jpg")} alt="Bewitched album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Dreamer by Laufey (song)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/lumbreras.jpg")} alt="Lumbreras single cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/lumbreras.jpg")} alt="Lumbreras single cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Lumbreras de AQUILES (single)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/labour.jpg")} alt="Labour single cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/labour.jpg")} alt="Labour single cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "labour by Paris Paloma (single)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/1940-carmen.jpg")} alt="1940 Carmen album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/1940-carmen.jpg")} alt="1940 Carmen album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "1940 Carmen de Mon Laferte (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/cabras.jpg")} alt="Cabras single cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/cabras.jpg")} alt="Cabras single cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Cabras de Little Jesus y Jimena Gonzáles (single)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/freshman-year.jpg")} alt="Freshman Year album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/freshman-year.jpg")} alt="Freshman Year album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "freshman year by Hop Along, Queen Ansleis (album)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/dear-god.jpg")} alt="Dear God song cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/dear-god.jpg")} alt="Dear God song cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Dear God by XTC (song)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/fin-de-semana.jpg")} alt="Fin de Semana song cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/fin-de-semana.jpg")} alt="Fin de Semana song cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Fin de Semana de Sam Vazquez (cover)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/ccpseddh.jpg")} alt="¿Cuántas Cosas Podrían Sucederme El Día De Hoy? song cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/ccpseddh.jpg")} alt="¿Cuántas Cosas Podrían Sucederme El Día De Hoy? song cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "¿Cuántas Cosas Podrían Sucederme El Día De Hoy? de NXNNI, Sam Vazquez y Alehtse Vargas (single)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/visions-of-a-life.jpg")} alt="Visions of a Life album cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/visions-of-a-life.jpg")} alt="Visions of a Life album cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Don't Delete the Kisses by Wolf Alice (song)" }</p>
                             </div>
                             <div class="music">
-                                <img src={format!("{SERVER_URL}/api/assets/cala-vento.jpg")} alt="Cala Vento cover" class="cover"/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/cala-vento.jpg")} alt="Cala Vento cover" class="cover"/>
                                 <img src="assets/vinyl-disc.png" alt="Vinyl disc" class="disc"/>
                                 <p>{ "Abril de Cala Vento (song)" }</p>
                             </div>
@@ -484,7 +484,7 @@ pub fn about_me() -> Html {
                 
                 <div class="social">
                     <Window title="shooting star" buttons={1}>
-                        <img src={format!("{SERVER_URL}/api/assets/last-words-of-a-shooting-star-sticker.jpg")} alt="Last Words of a Shooting Star, Mitski sticker"/>
+                        <img src={format!("{SERVER_ADDRESS}/api/assets/last-words-of-a-shooting-star-sticker.jpg")} alt="Last Words of a Shooting Star, Mitski sticker"/>
                     </Window>
                     <div class="content">
                         <h2>{ "social profiles and contact" }</h2>

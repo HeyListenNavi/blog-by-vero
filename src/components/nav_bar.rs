@@ -2,7 +2,7 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 use crate::app::Route;
 use crate::components::window::Window;
-use common::SERVER_URL;
+use common::SERVER_ADDRESS;
 
 #[function_component(NavBar)]
 pub fn nav_var() -> Html {
@@ -29,27 +29,27 @@ pub fn nav_var() -> Html {
             </div>
             <div class="decorations">
                 <div class="blinkies">
-                    <img src={format!("{SERVER_URL}/api/assets/blinkies/trans-lesbians.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/blinkies/bring-up-my-post.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/blinkies/i-view-source.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/blinkies/mitski.webp")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/blinkies/bubblegum-bitch.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/blinkies/reflection-of-venus.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/trans-lesbians.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/bring-up-my-post.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-view-source.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/mitski.webp")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/bubblegum-bitch.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/reflection-of-venus.gif")}/>
                 </div>
                 <div class="stamps">
-                    <img src={format!("{SERVER_URL}/api/assets/stamps/404-not-found.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/stamps/gameboy.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/stamps/nintendo-64-record.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/stamps/404-not-found.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/stamps/gameboy.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/stamps/nintendo-64-record.gif")}/>
                 </div>
                 <div class="buttons">
-                    <img src={format!("{SERVER_URL}/api/assets/buttons/best-viewed-with-eyes.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/buttons/web-design-passion.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/buttons/ao3-freak.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/buttons/parental-advisory.gif")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/buttons/queer-coded.jpg")}/>
-                    <img src={format!("{SERVER_URL}/api/assets/buttons/virtual-diva.jpg")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/best-viewed-with-eyes.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/web-design-passion.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/ao3-freak.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/parental-advisory.gif")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/queer-coded.jpg")}/>
+                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/virtual-diva.jpg")}/>
                 </div>
-                <img src={format!("{SERVER_URL}/api/assets/feel-free-to-make-out.jpg")}/>
+                <img src={format!("{SERVER_ADDRESS}/api/assets/feel-free-to-make-out.jpg")}/>
             </div>
         </Window>
     }

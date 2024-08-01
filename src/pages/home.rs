@@ -3,7 +3,7 @@ use crate::components::header::Header;
 use crate::components::nav_bar::NavBar;
 use crate::components::side_bar::SideBar;
 use crate::components::window::Window;
-use common::SERVER_URL;
+use common::SERVER_ADDRESS;
 
 pub struct Home;
 
@@ -24,7 +24,7 @@ impl Component for Home {
                 <Window title="vero's place" class="main">
                     <div class="description">
                         <Window title="i love amy" buttons={1}>
-                            <img src={format!("{SERVER_URL}/api/assets/amy-icon.webp")}/>
+                            <img src={format!("{SERVER_ADDRESS}/api/assets/amy-icon.webp")}/>
                         </Window>
                         <div class="content">
                             <h1 class="title">{ "this is home" }</h1>
@@ -62,7 +62,7 @@ impl Component for Home {
                                 { "as for the backend, i decided to make a simple server that would store various assets and the posts of my journal in Markdown and turn them into HTML when requested, although i'm planning to add much more things to it. this was done using the Actix Web framework, again... in Rust." }
                             </p>
                             <Window title="rust" buttons={1}>
-                                <img src={format!("{SERVER_URL}/api/assets/project-statistics.png")}/>
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/project-statistics.png")}/>
                             </Window>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ impl Component for Home {
                     <div class="divider"></div>
 
                     <div class="quote">
-                        <img src={format!("{SERVER_URL}/api/assets/reflection-of-venus.png")}/>
+                        <img src={format!("{SERVER_ADDRESS}/api/assets/reflection-of-venus.png")}/>
                         <div class="content">
                             <h2>{ "i'm a reflection of venus" }</h2>
                             <p>{ "\"The Barbie dolls played off reflection of Venus.\"" }</p>
@@ -83,7 +83,7 @@ impl Component for Home {
                     <div class="experience">
                         <h2>{ "BUILD YOUR OWN SITEEE" }</h2>
                         <p>
-                            { "overall, it was a pretty interesting experience, and i believe i learned a lot from this, i think everyone should try to make their own website if they have time, specially if you're a fan of the old web, profile customization, and things like that" }
+                            { "overall, it was a pretty interesting experience, and i believe i learned a lot from this, i think everyone should try to make their own website if they have time, specially if you're a fan of the indie web, profile customization, and things like that" }
                         </p>
                     </div>
 
@@ -91,7 +91,7 @@ impl Component for Home {
                     
                     <div class="more-description">
                         <Window title="∑ the sum of all" buttons={1}>
-                            <img src={format!("{SERVER_URL}/api/assets/retro-computer.png")}/>
+                            <img src={format!("{SERVER_ADDRESS}/api/assets/retro-computer.png")}/>
                         </Window>
                         <div class="content">
                             <h2>{ "my integral self" }</h2>
