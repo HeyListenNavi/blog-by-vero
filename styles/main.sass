@@ -23,7 +23,19 @@ $breakpoint-small : 870px
 
 @font-face
     font-family: "uni 05_53"
-    src: url("#{$assets_path}/uni0553-webfont.eot") format("embedded-opentype"), url("#{$assets_path}/uni0553-webfont.ttf") format("truetype"), url("#{$assets_path}/uni0553-webfont.woff") format("woff")
+    src: url("#{$assets_path}/fonts/uni0553-webfont.eot") format("embedded-opentype"), url("#{$assets_path}/fonts/uni0553-webfont.ttf") format("truetype"), url("#{$assets_path}/fonts/uni0553-webfont.woff") format("woff")
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    font-family: "uni 05_53"
+    src: url("#{$assets_path}/fonts/uni0563-webfont.eot") format("embedded-opentype"), url("#{$assets_path}/fonts/uni0563-webfont.ttf") format("truetype"), url("#{$assets_path}/fonts/uni0563-webfont.woff") format("woff")
+    font-weight: bold
+    font-style: normal
+
+@font-face
+    font-family: "uni 05_54"
+    src: url("#{$assets_path}/fonts/uni0554-webfont.eot") format("embedded-opentype"), url("#{$assets_path}/fonts/uni0554-webfont.ttf") format("truetype"), url("#{$assets_path}/fonts/uni0554-webfont.woff") format("woff")
     font-weight: normal
     font-style: normal
 
@@ -128,7 +140,7 @@ ul
                 align-self: center
                 height: 20px
                 width: 20px
-                padding: 0 0 4px 0
+                padding: 0 0 4px 2px
                 line-height: 0
                 font-size: 10px
 
@@ -220,31 +232,41 @@ body > .notfound
     .body :first-child
         margin-top: 0
 
-.navbar, .sidebar
+.decobar
+    grid-area: decobar
+    .body
+        padding: 1rem
+
+.decobar, .sidebar
     .decorations, .content, .comments
         max-width: 310px
-        margin: 1rem auto
+        margin: 0 auto
     .decorations
         display: flex
         flex-direction: column
         align-items: center
-        .blinkies, .stamps, .buttons
-            display: flex
-            flex-direction: row
-            flex-wrap: wrap
-            align-items: center
-            justify-content: center
-            gap: 5px
-            margin: 0.5rem 0
-        .blinkies img
-            max-width: 150px
-        .stamps img
-            max-width: 88px
-        .buttons img
-            max-width: 88px
-        & > img
-            width: auto
-            max-width: 50%
+
+
+.decorations
+    .blinkies, .stamps, .buttons
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+        gap: 5px
+        margin: 0.5rem 0
+        img
+            image-rendering: pixelated
+    .blinkies img
+        max-width: 150px
+    .stamps img
+        max-width: 99px
+    .buttons img
+        max-width: 88px
+    & > img
+        width: auto
+        max-width: 50%
 
 .quote
     display: flex
@@ -334,8 +356,13 @@ body > .aboutme, body > .journal, body > .links, body > .cameraroll
         grid-area: main
     .navbar
         grid-area: navbar
+    .decobar
+        display: none
     @media screen and ( min-width: $breakpoint-small )
-        grid-template-rows: minmax(0, 1fr)
+        grid-template-rows: minmax(0, auto) minmax(0, 1fr)
         grid-template-columns: minmax(15%, 22%) minmax(620px, 1fr)
-        grid-template-areas: "navbar main"
+        grid-template-areas: "navbar main" "decobar main"
         /*  <- Navbar -> <- Main ->
+            <- Decobar-> <- Main ->
+        .decobar
+            display: block

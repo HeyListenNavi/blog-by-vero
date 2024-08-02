@@ -1,5 +1,6 @@
 use yew::prelude::*;
 use crate::components::nav_bar::NavBar;
+use crate::components::decorations_bar::DecoBar;
 use crate::components::window::Window;
 use common::SERVER_ADDRESS;
 use web_sys::{HtmlElement, Node};
@@ -64,6 +65,7 @@ impl Component for CameraRoll {
         html! {
             <div class="cameraroll">
                 <NavBar/>
+                <DecoBar/>
                 <Window title="camera" class="main">
                     <div class="title">
                         <h1>{ "A couple of pictures i've taken ;w;" }</h1>
@@ -628,6 +630,27 @@ impl Component for CameraRoll {
                             </div>
                             <div>
                                 <img src={format!("{SERVER_ADDRESS}/api/photography/culos-de-lectura.jpg")}/>
+                            </div>
+                        </div>
+                    </Window>
+                    <Window title="moon">
+                        <h2>{ "m o o n" }</h2>
+                        <p>{ "the moon is gorgeus, isn't it?" }</p>
+                        <div class="photos">
+                            <div>
+                                <img src={format!("{SERVER_ADDRESS}/api/photography/moon/1.jpg")}/>
+                            </div>
+                            <div>
+                                <img src={format!("{SERVER_ADDRESS}/api/photography/moon/2.jpg")}/>
+                            </div>
+                            <div>
+                                <img src={format!("{SERVER_ADDRESS}/api/photography/moon/3.jpg")}/>
+                            </div>
+                            <div>
+                                <img src={format!("{SERVER_ADDRESS}/api/photography/moon/4.jpg")}/>
+                            </div>
+                            <div>
+                                <img src={format!("{SERVER_ADDRESS}/api/photography/moon/5.jpg")}/>
                             </div>
                         </div>
                     </Window>

@@ -3,6 +3,7 @@ use crate::components::header::Header;
 use crate::components::nav_bar::NavBar;
 use crate::components::side_bar::SideBar;
 use crate::components::window::Window;
+use crate::components::decorations_bar::DecoBar;
 use common::SERVER_ADDRESS;
 
 pub struct Home;
@@ -20,6 +21,7 @@ impl Component for Home {
             <div class="home">
                 <Header/>
                 <NavBar/>
+                <DecoBar/>
                 <SideBar/>
                 <Window title="vero's place" class="main">
                     <div class="description">
@@ -112,6 +114,63 @@ impl Component for Home {
                                     <span>{ "birthday: late january " }</span>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="decorations">
+                        <h2>{ "visit these too :D" }</h2>
+                        <div class="content">
+                            <p>
+                                { "a list of buttons from various sites i find interesting and also inspired me to make this website" }
+                                <br/>
+                                { "and if you liked my website feel free to use my button!" }
+                            </p>
+                            <div class="buttons">
+                                <a href="https://hillhouse.neocities.org">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/hillhouse.png")}/>
+                                </a>
+                                <a href="https://errormine.net/">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/errormine.gif")}/>
+                                </a>
+                                <a href="https://thegardenofmadeline.neocities.org/pages/foreverandalways">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/garden-of-madeline.gif")}/>
+                                </a>
+                                <a href="https://ilovebeingtrans.neocities.org/">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/i-love-being-trans.png")}/>
+                                </a>
+                                <a href="https://32bit.cafe/">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/32-bits-pcb.png")}/>
+                                </a>
+                                <a href="https://cabbagesorter.neocities.org/">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/cabbage-sorter.gif")}/>
+                                </a>
+                                <a href="https://cloverbell.neocities.org/">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/cloverbell.gif")}/>
+                                </a>
+                                <a href="https://lostlove.neocities.org/">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/lunospace.gif")}/>
+                                </a>
+                                <a href="https://oklama.com/">
+                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/nu-thoughts.jpg")}/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="save">
+                            <span>{ "→" }</span>
+                            <p>
+                                { "to use my button in your own website you can use this code and remember to download the button and upload it to your own website!!" }
+                            </p>
+                            <span>{ "←" }</span>
+                        </div>
+                        <div class="buttons">
+                            <code>
+                                { "<a href=\"https://heylistennavi.neocities.org/\"><img src=\"IMAGE_PATH\" width=\"88\" height=\"31\" alt=\"vero's site button\" style=\"image-rendering: pixelated\"></img></a>" }
+                            </code>
+                            <a href="https://heylistennavi.neocities.org/">
+                                <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/veros-site.gif")}/>
+                            </a>
                         </div>
                     </div>
                 </Window>

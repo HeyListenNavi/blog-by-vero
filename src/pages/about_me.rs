@@ -1,6 +1,7 @@
 use yew::prelude::*;
 use crate::components::nav_bar::NavBar;
 use crate::components::window::Window;
+use crate::components::decorations_bar::DecoBar;
 use common::SERVER_ADDRESS;
 
 #[function_component(AboutMe)]
@@ -8,6 +9,7 @@ pub fn about_me() -> Html {
     html! {
         <div class="aboutme">
             <NavBar/>
+            <DecoBar/>
             <Window title="yapping about myself" class="main">        
                 <div class="desc">
                     <Window title="woah" buttons={1}>
@@ -499,7 +501,7 @@ pub fn about_me() -> Html {
                                 <a href="https://github.com/HeyListenNavi">{ "github: HeyListenNavi" }</a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/heylisten.navi?igsh=aGtub3I3dHJhbXRs">{ "instagram" }</a>
+                                <a href="https://www.instagram.com/heylisten.navi?igsh=aGtub3I3dHJhbXRs">{ "instagram: heylisten.navi" }</a>
                             </li>
                             <li>
                                 <span>{ "discord tag: naviheylisten" }</span>
@@ -509,6 +511,9 @@ pub fn about_me() -> Html {
                             </li>
                             <li>
                                 <span>{ "email: heylistennavi@proton.me" }</span>
+                            </li>
+                            <li>
+                                <a href="https://ko-fi.com/naviheylisten">{ "kofi: naviheylisten" }</a>
                             </li>
                         </ul>
                     </div>
