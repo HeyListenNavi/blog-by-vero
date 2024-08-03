@@ -187,7 +187,7 @@ impl Component for Home {
             let location = window().location().href().unwrap();
             let window_location_filtered = encode(location.as_str()).into_owned();
             
-            let src = format!("https://www.htmlcommentbox.com/jread?page={window_location_filtered}&mod=%241%24wq1rdBcg%24X3OvKZEBYF.ZF%2FQAZxJql1&opts=16798&num=10&ts=1722648702566");
+            let src = format!("https://www.htmlcommentbox.com/jread?page={window_location_filtered}&mod=%241%24wq1rdBcg%24lY61U0cSNderaAvNo.3e0%2F&opts=16798&num=10&ts=1722650541155");
             
             let script_element = document().create_element("script").expect("Expected to create script element");
             script_element.set_attribute("type", "text/javascript").expect("Expected to set type attribute to \"text/javascript\"");
