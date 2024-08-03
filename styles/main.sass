@@ -197,6 +197,13 @@ body
         box-sizing: border-box
         padding: 1rem
 
+html:not(:has(.home))
+    overflow: hidden
+
+body:not(:has(.home)) 
+    position: fixed
+    -webkit-overflow-scrolling: touch
+
 body > .notfound
     background-color: var(--color-bg)
     width: 100%
@@ -337,6 +344,8 @@ body > .notfound
                     width: 20px
                 span
                     font-size: 8px
+            .hcb-link
+                display: none !important
             .hcb-comment-body
                 font-size: 16px !important
         b, .hcb-comment-tb button
