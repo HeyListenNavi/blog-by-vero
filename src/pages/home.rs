@@ -4,6 +4,10 @@ use crate::components::nav_bar::NavBar;
 use crate::components::side_bar::SideBar;
 use crate::components::window::Window;
 use crate::components::decorations_bar::DecoBar;
+use gloo_utils::{window, document, head};
+use urlencoding::encode;
+use web_sys::Node;
+use wasm_bindgen::JsCast;
 use common::SERVER_ADDRESS;
 
 pub struct Home;
@@ -175,6 +179,21 @@ impl Component for Home {
                     </div>
                 </Window>
             </div>
+        }
+    }
+
+    fn rendered(&mut self, _ctx: &Context<Self>, first_render: bool) {
+        if first_render {
+            let location = window().location().href().unwrap();
+            let window_location_filtered = encode(location.as_str()).into_owned();
+            
+            let src = format!("https://www.htmlcommentbox.com/jread?page={window_location_filtered}&mod=%241%24wq1rdBcg%24X3OvKZEBYF.ZF%2FQAZxJql1&opts=16798&num=10&ts=1722648702566");
+            
+            let script_element = document().create_element("script").expect("Expected to create script element");
+            script_element.set_attribute("type", "text/javascript").expect("Expected to set type attribute to \"text/javascript\"");
+            script_element.set_attribute("src", src.as_str()).expect("Expected to set the source of the script element to the link provided by HtmlCommentBox");
+    
+            head().append_child(&script_element.unchecked_into::<Node>()).expect("Expected to append script element into head element");
         }
     }
 }

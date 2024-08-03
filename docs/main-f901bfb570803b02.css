@@ -781,6 +781,7 @@ body > .notfound {
   height: auto;
   border: none !important;
   font-family: "uni 05_53" !important;
+  line-height: normal !important;
 }
 #HCB_comment_box #hcb_form #hcb_form_name_container {
   display: flex;

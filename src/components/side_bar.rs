@@ -4,7 +4,6 @@ use common::SERVER_ADDRESS;
 
 #[function_component(SideBar)]
 pub fn side_bar() -> Html {
-    let server_address_filtered = SERVER_ADDRESS.replace(":", "%3A").replace("/", "%2F");
     html! {
         <Window title="bar" class="sidebar" buttons={1}>
             <div class="content">
@@ -44,7 +43,6 @@ pub fn side_bar() -> Html {
                 </div>
             </div>
             <div class="comments">
-                <script type="text/javascript" src={format!("https://www.htmlcommentbox.com/jread?page={server_address_filtered}&mod=%241%24wq1rdBcg%24X3OvKZEBYF.ZF%2FQAZxJql1&opts=16798&num=10&ts=1722071580458")}></script>
                 <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">{ "Comment Box " }</a>{ "loading comments..." }</div>
             </div>
         </Window>
