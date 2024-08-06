@@ -177,6 +177,35 @@ impl Component for Home {
                             </a>
                         </div>
                     </div>
+
+                    <div class="divider"></div>
+
+                    <div class="quote">
+                        <div class="content">
+                            <p>{ "\"No convierto la sangre en vino pero me lo sé beber, no creo en lo divino pero sí en la mujer.\"" }</p>
+                            <p>{ "- Laura Arroyo Gárate" }</p>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="sponsor">
+                        <Window title="ilysm gaby" buttons={1}>
+                            <img src={format!("{SERVER_ADDRESS}/api/assets/gaby.jpg")}/>
+                        </Window>
+                        <div class="content">
+                            <p>
+                                { "this blog was oficially brought with the help of our sponsor" }
+                                <br/>
+                                <br/>
+                                { "*drumroll*" }
+                            </p>
+                            <a href="https://www.instagram.com/i_stole_your_bacon12/">{ "GABYYY" }</a>
+                            <p>
+                                { "thank you so much gaby for always being there as the good friend you are and for your five bucks" }
+                            </p>
+                        </div> 
+                    </div>
                 </Window>
             </div>
         }

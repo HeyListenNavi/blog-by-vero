@@ -13,7 +13,7 @@ body > .home {
 @media screen and (min-width: 870px) {
   body > .home {
     grid-template-columns: minmax(15%, 20%) 1fr minmax(15%, 22%);
-    grid-template-rows: 240px minmax(0, auto) minmax(0, 1fr);
+    grid-template-rows: 25% minmax(0, auto) minmax(0, 1fr);
     grid-template-areas: "header header header" "navbar main sidebar" "decobar main sidebar";
     /*  <------------- Header -------------->
     *  <- Navbar -> <- Main -> <- Sidebar ->
@@ -24,6 +24,7 @@ body > .home {
 @media screen and (max-width: 870px) {
   body > .home {
     grid-template-rows: 340px 230px repeat(auto-fit, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "header" "navbar" "decobar" "sidebar" "main";
     /*  <-  Header  ->
     *  <-  Navbar  ->
@@ -65,16 +66,16 @@ body > .home {
   user-select: none;
 }
 .home .header .body .text .subtitle {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .home .header .body .text .title {
-  font-size: 32px;
+  font-size: 2rem;
 }
-.home .main .description, .home .main .description--site, .home .main .experience, .home .main .more-description, .home .main .decorations {
+.home .main .body > div {
   max-width: 900px;
   margin: 0 auto;
 }
-.home .main .description, .home .main .description--site .content:first-of-type, .home .main .more-description, .home .main .decorations .content {
+.home .main .description, .home .main .description--site .content:first-of-type, .home .main .more-description, .home .main .decorations .content, .home .main .sponsor {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,10 +83,10 @@ body > .home {
   flex-wrap: wrap;
 }
 @media screen and (min-width: 600px) and (max-width: 870px), (min-width: 1190px) {
-  .home .main .description, .home .main .description--site .content:first-of-type, .home .main .more-description, .home .main .decorations .content {
+  .home .main .description, .home .main .description--site .content:first-of-type, .home .main .more-description, .home .main .decorations .content, .home .main .sponsor {
     flex-wrap: nowrap;
   }
-  .home .main .description .window, .home .main .description--site .content:first-of-type .window, .home .main .more-description .window, .home .main .decorations .content .window {
+  .home .main .description .window, .home .main .description--site .content:first-of-type .window, .home .main .more-description .window, .home .main .decorations .content .window, .home .main .sponsor .window {
     flex: 0 1 auto;
   }
 }
@@ -145,10 +146,20 @@ body > .home {
 .home .main .decorations > .buttons code {
   font-family: "uni 05_54";
   display: block;
-  text-align: center;
   padding: 0.5rem;
-  font-size: 8px;
+  font-size: 0.5rem;
+  word-break: break-all;
   color: var(--color-title);
+}
+.home .main .sponsor {
+  flex-direction: row-reverse;
+  text-align: center;
+}
+.home .main .sponsor a {
+  font-size: 24px;
+}
+.home .main .sponsor img {
+  max-width: 500px;
 }
 .home .main .title {
   text-align: center;
@@ -203,7 +214,7 @@ body > .home {
   display: inline-flex;
   gap: 5px;
   padding: 5px 0;
-  font-size: 32px;
+  font-size: 2rem;
 }
 .aboutme .dreamer .flags span[class$=flag] {
   font-size: 1.5em;
@@ -212,7 +223,7 @@ body > .home {
   margin: 1rem 0;
 }
 .aboutme div[class$="--list"] p {
-  font-size: 8px;
+  font-size: 0.5rem;
   margin: 1rem;
 }
 .aboutme div[class$="--list"] img {
@@ -313,7 +324,7 @@ body > .home {
   font-size: 18px;
 }
 .post--list .post .description .date {
-  font-size: 8px;
+  font-size: 0.5rem;
 }
 
 .post--single {
@@ -461,6 +472,7 @@ html {
 
 body {
   height: 100%;
+  width: 100%;
   background: var(--img-bg) repeat;
   color: var(--color-fg);
   font-family: "uni 05_53";
@@ -580,7 +592,7 @@ ul li::before {
 }
 
 button {
-  font-size: 18px;
+  font-size: 1rem;
   padding: 0 0 4px 0;
   line-height: 0;
   height: 25px;
@@ -630,7 +642,7 @@ a:hover {
 }
 
 p, a {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 body > .home, body > .aboutme, body > .journal, body > .links, body > .cameraroll {
@@ -661,8 +673,7 @@ body > .notfound {
 }
 
 .divider {
-  margin: 2rem auto;
-  max-width: 1200px;
+  margin: 2rem auto !important;
 }
 @media screen and (max-width: 870px) {
   .divider {
@@ -753,7 +764,7 @@ body > .notfound {
 }
 .quote .content p:last-child {
   text-align: right;
-  font-size: 8px;
+  font-size: 0.5rem;
 }
 
 .veros-hearts {
@@ -771,7 +782,7 @@ body > .notfound {
   color: var(--color-title) !important;
 }
 #HCB_comment_box .date {
-  font-size: 16px;
+  font-size: 1rem;
 }
 #HCB_comment_box a:has(img) {
   display: none;
@@ -800,7 +811,7 @@ body > .notfound {
 }
 #HCB_comment_box #hcb_form input, #HCB_comment_box #hcb_form textarea {
   font-family: "uni 05_53" !important;
-  font-size: 16px !important;
+  font-size: 1rem !important;
   color: var(--color-fg);
   background-color: transparent;
   border: solid 3px var(--color-fg);
@@ -823,13 +834,13 @@ body > .notfound {
   width: 20px;
 }
 #HCB_comment_box #comments_list .comment .likes span {
-  font-size: 8px;
+  font-size: 0.5rem;
 }
 #HCB_comment_box #comments_list .comment .hcb-link {
   display: none !important;
 }
 #HCB_comment_box #comments_list .comment .hcb-comment-body {
-  font-size: 16px !important;
+  font-size: 1rem !important;
 }
 #HCB_comment_box #comments_list b, #HCB_comment_box #comments_list .hcb-comment-tb button {
   font-weight: normal !important;
@@ -866,6 +877,6 @@ body > .aboutme .decobar, body > .journal .decobar, body > .links .decobar, body
     *  <- Decobar-> <- Main -> */
   }
   body > .aboutme .decobar, body > .journal .decobar, body > .links .decobar, body > .cameraroll .decobar {
-    display: block;
+    display: flex;
   }
 }

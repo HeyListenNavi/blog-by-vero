@@ -19,7 +19,7 @@ impl Component for PostsList {
 
     fn create(ctx: &Context<Self>) -> Self {
         ctx.link().send_message(Msg::FetchPostList);
-        return Self { posts: Err("No posts found :(".to_string()) }
+        return Self { posts: Err("Loading posts...".to_string()) }
     }
 
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
@@ -48,10 +48,12 @@ impl Component for PostsList {
                 match posts_list {
                     Some(posts) => {
                         self.posts = Ok(posts);
-                        return true;
                     }
-                    None => return false
+                    None => {
+                        self.posts = Err("No posts found :(".to_string());
+                    }
                 }
+                return true;
             }
         }
     }

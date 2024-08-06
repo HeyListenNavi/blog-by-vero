@@ -26,7 +26,7 @@ impl Component for Post {
     fn create(ctx: &Context<Self>) -> Self {
         ctx.link().send_message(Msg::FetchPost);
         return Self {
-            post: Err("Post not found :(".to_string())
+            post: Err("Loading post".to_string())
         };
     }
 
@@ -55,10 +55,12 @@ impl Component for Post {
                 match response_result {
                     Some(post) => {
                         self.post = Ok(post);
-                        return true;
                     }
-                    None => return false
+                    None => {
+                        self.post = Err("Post not found :(".to_string());
+                    }
                 }
+                return true;
             }
         }
         false

@@ -9,7 +9,7 @@ body > .home
     gap: 1rem
     @media screen and ( min-width: $breakpoint_small )
         grid-template-columns: minmax(15%, 20%) 1fr minmax(15%, 22%)
-        grid-template-rows: 240px minmax(0, auto) minmax(0, 1fr)
+        grid-template-rows: 25% minmax(0, auto) minmax(0, 1fr)
         grid-template-areas: "header header header" "navbar main sidebar" "decobar main sidebar"
         /*  <------------- Header -------------->
             <- Navbar -> <- Main -> <- Sidebar ->
@@ -17,6 +17,7 @@ body > .home
             <- Decobar-> <- Main -> <- Sidebar ->
     @media screen and ( max-width: $breakpoint_small )
         grid-template-rows: 340px 230px repeat(auto-fit, minmax(0, 1fr))
+        grid-template-columns: minmax(0, 1fr)
         grid-template-areas: "header" "navbar" "decobar" "sidebar" "main"
         /*  <-  Header  ->
             <-  Navbar  ->
@@ -51,14 +52,14 @@ body > .home
                         margin: 0
                         user-select: none
                 .subtitle
-                    font-size: 16px
+                    font-size: 1rem
                 .title
-                    font-size: 32px
+                    font-size: 2rem
     .main
-        .description, .description--site, .experience, .more-description, .decorations
+        .body > div
             max-width: 900px
             margin: 0 auto
-        .description, .description--site .content:first-of-type, .more-description, .decorations .content 
+        .description, .description--site .content:first-of-type, .more-description, .decorations .content, .sponsor
             display: flex
             align-items: center
             justify-content: center
@@ -113,10 +114,17 @@ body > .home
                 code
                     font-family: "uni 05_54"
                     display: block
-                    text-align: center
                     padding: 0.5rem
-                    font-size: 8px
+                    font-size: 0.5rem
+                    word-break: break-all
                     color: var(--color-title)
+        .sponsor
+            flex-direction: row-reverse
+            text-align: center
+            a
+                font-size: 24px
+            img
+                max-width: 500px
         .title
             text-align: center
         .thoughts
