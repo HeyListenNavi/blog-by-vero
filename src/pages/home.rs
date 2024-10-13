@@ -190,9 +190,6 @@ impl Component for Home {
                     <div class="divider"></div>
 
                     <div class="sponsor">
-                        <Window title="ilysm gaby" buttons={1}>
-                            <img src={format!("{SERVER_ADDRESS}/api/assets/gaby.jpg")}/>
-                        </Window>
                         <div class="content">
                             <p>
                                 { "this blog was oficially brought with the help of our sponsor" }
