@@ -41,9 +41,9 @@ pub fn app() -> Html {
     web_sys::console::log_1(&"Hey! Verónica here:3, if you'd like to take a better look at the code of my site you can use the github repository: https://github.com/HeyListenNavi/blog-by-vero".into());
     html! {
         <>
-            <HashRouter>
+            <BrowserRouter>
                 <Switch<Route> render={switch}/>
-            </HashRouter>
+            </BrowserRouter>
         </>
     }
 }
