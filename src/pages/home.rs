@@ -30,7 +30,7 @@ impl Component for Home {
                 <Window title="vero's place" class="main">
                     <div class="description">
                         <Window title="i love amy" buttons={1}>
-                            <img src={format!("{SERVER_ADDRESS}/api/assets/amy-icon.webp")}/>
+                            <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/amy-icon.webp")}/>
                         </Window>
                         <div class="content">
                             <h1 class="title">{ "this is home" }</h1>
@@ -68,7 +68,7 @@ impl Component for Home {
                                 { "as for the backend, i decided to make a simple server that would store various assets and the posts of my journal in Markdown and turn them into HTML when requested, although i'm planning to add much more things to it. this was done using the Actix Web framework, again... in Rust." }
                             </p>
                             <Window title="rust" buttons={1}>
-                                <img src={format!("{SERVER_ADDRESS}/api/assets/project-statistics.png")}/>
+                                <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/project-statistics.png")}/>
                             </Window>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ impl Component for Home {
                     <div class="divider"></div>
 
                     <div class="quote">
-                        <img src={format!("{SERVER_ADDRESS}/api/assets/reflection-of-venus.png")}/>
+                        <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/reflection-of-venus.png")}/>
                         <div class="content">
                             <h2>{ "i'm a reflection of venus" }</h2>
                             <p>{ "\"The Barbie dolls played off reflection of Venus.\"" }</p>
@@ -97,7 +97,7 @@ impl Component for Home {
                     
                     <div class="more-description">
                         <Window title="∑ the sum of all" buttons={1}>
-                            <img src={format!("{SERVER_ADDRESS}/api/assets/retro-computer.png")}/>
+                            <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/retro-computer.png")}/>
                         </Window>
                         <div class="content">
                             <h2>{ "my integral self" }</h2>
@@ -133,31 +133,31 @@ impl Component for Home {
                             </p>
                             <div class="buttons">
                                 <a href="https://hillhouse.neocities.org">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/hillhouse.png")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/hillhouse.png")}/>
                                 </a>
                                 <a href="https://errormine.net/">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/errormine.gif")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/errormine.gif")}/>
                                 </a>
                                 <a href="https://thegardenofmadeline.neocities.org/pages/foreverandalways">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/garden-of-madeline.gif")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/garden-of-madeline.gif")}/>
                                 </a>
                                 <a href="https://ilovebeingtrans.neocities.org/">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/i-love-being-trans.png")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/i-love-being-trans.png")}/>
                                 </a>
                                 <a href="https://32bit.cafe/">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/32-bits-pcb.png")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/32-bits-pcb.png")}/>
                                 </a>
                                 <a href="https://cabbagesorter.neocities.org/">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/cabbage-sorter.gif")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/cabbage-sorter.gif")}/>
                                 </a>
                                 <a href="https://cloverbell.neocities.org/">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/cloverbell.gif")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/cloverbell.gif")}/>
                                 </a>
                                 <a href="https://lostlove.neocities.org/">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/lunospace.gif")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/lunospace.gif")}/>
                                 </a>
                                 <a href="https://oklama.com/">
-                                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/nu-thoughts.jpg")}/>
+                                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/nu-thoughts.jpg")}/>
                                 </a>
                             </div>
                         </div>
@@ -170,10 +170,10 @@ impl Component for Home {
                         </div>
                         <div class="buttons">
                             <code>
-                                { "<a href=\"https://heylistennavi.neocities.org/\"><img src=\"IMAGE_PATH\" width=\"88\" height=\"31\" alt=\"vero's site button\" style=\"image-rendering: pixelated\"></img></a>" }
+                                { "<a href=\"https://heylistennavi.neocities.org/\"><img loading=\"lazy\" src=\"IMAGE_PATH\" width=\"88\" height=\"31\" alt=\"vero's site button\" style=\"image-rendering: pixelated\"></img></a>" }
                             </code>
                             <a href="https://heylistennavi.neocities.org/">
-                                <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/veros-site.gif")}/>
+                                <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/veros-site.gif")}/>
                             </a>
                         </div>
                     </div>

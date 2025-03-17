@@ -16,30 +16,30 @@ pub fn side_bar() -> Html {
             </div>
             <div class="decorations">
                 <div class="blinkies">
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/addicted-to-the-internet.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-love-css.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-pirate-movies.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/geek-girls-kick-ascii.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-think-therefore-i-am.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/lesbian-pride.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/miku-pls-interact.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/nintendo-ds-lover.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/the-last-of-us.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/twilight-sparkle.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-glow-pink-in-the-night.webp")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-love-pink.webp")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/transfem.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/mitski-cd.webp")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/ive-kissed-you-before.webp")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-love-girls.webp")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/addicted-to-the-internet.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-love-css.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-pirate-movies.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/geek-girls-kick-ascii.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-think-therefore-i-am.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/lesbian-pride.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/miku-pls-interact.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/nintendo-ds-lover.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/the-last-of-us.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/twilight-sparkle.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-glow-pink-in-the-night.webp")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-love-pink.webp")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/transfem.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/mitski-cd.webp")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/ive-kissed-you-before.webp")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/blinkies/i-love-girls.webp")}/>
                 </div>
                 <div class="buttons">
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/made-with-css.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/trans-rights-now.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/neocities-the-web-is-yours.gif")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/glados.webp")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/wii.png")}/>
-                    <img src={format!("{SERVER_ADDRESS}/api/assets/buttons/sparkling-eyes.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/made-with-css.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/trans-rights-now.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/neocities-the-web-is-yours.gif")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/glados.webp")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/wii.png")}/>
+                    <img loading="lazy" src={format!("{SERVER_ADDRESS}/api/assets/buttons/sparkling-eyes.gif")}/>
                 </div>
             </div>
             <div class="comments">

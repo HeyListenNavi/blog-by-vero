@@ -67,7 +67,7 @@ impl Component for PostsList {
                             let post_title = format!("{}%20-%20{}", post.title.clone(), post.date.clone());
                             html! (
                                 <Link<Route> to={Route::Post { post_title: post_title }} classes="post">
-                                    <img src={format!("assets/music-cd.png")}/>
+                                    <img loading="lazy" src={format!("assets/music-cd.png")}/>
                                     <div class="description">
                                         <span class="title">{ post.title.clone() }</span> 
                                         <span class="date">{ post.date.clone() }</span>
