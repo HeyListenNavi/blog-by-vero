@@ -1,0 +1,81 @@
+/* -> About Me <- */
+.aboutme
+    .desc, .love, .dreamer, .favorite, .playlists, .social
+        max-width: 1200px
+        margin: 0 auto
+    .love, .playlists, .social
+        h2
+            text-align: center
+            margin-top: 0
+    .desc, .dreamer, .social
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 1rem
+        flex-wrap: wrap
+        @media screen and ( min-width: 870px )
+            flex-wrap: nowrap
+        img
+            max-width: 350px
+    .desc
+        flex-direction: row-reverse
+        .content
+            flex: 0 5 auto
+        h1
+            text-align: center
+    .dreamer
+        ul li
+            margin-bottom: 5px
+        .flags
+            display: inline-flex
+            gap: 5px
+            padding: 5px 0
+            font-size: 2rem
+            span[class$="flag"]
+                font-size: 1.5em
+    div[class$="--list"]
+        margin: 1rem 0 
+        p
+            font-size: 0.5rem
+            margin: 1rem
+        img
+            width: 200px
+        .body
+            display: flex
+            gap: 1rem
+    .music--list
+        .body
+            padding: 1.5rem 130px 1.5rem 1rem !important
+        .music
+            position: relative
+            transition: box-shadow 0.15s, transform 0.30s, left 0.30s, margin-right 0.30s
+            .disc
+                display: none
+                position: absolute
+                top: 0
+                left: 0
+                z-index: -1
+            &:hover
+                box-shadow: 0 0 8px 5px black
+                transform: translateY(-10px)
+                margin-right: 130px
+                &:last-child
+                    margin-right: 0
+                .disc
+                    display: block
+                    left: 45% !important
+                    animation: spin 3s linear infinite
+                    filter: drop-shadow(0px 0px 8px black)
+    .playlists
+        .content
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: center
+            gap: 1rem
+            .window
+                flex: 1 1 450px  
+
+@keyframes spin 
+    100%
+        transform: rotate(360deg)
