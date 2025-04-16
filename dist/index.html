@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vero's site</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+        <link rel="stylesheet" href="/main-2e920ec68ad2023.css" integrity="sha384&#x2D;8waF6jp4OjYYZ9Yw9npIFXT4Exi4tP69gCqvG0aU7ja2ZPMU6QyW7QWfBnsXAn&#x2B;J"/>
+        
+        <base href="/" />
+    <link rel="modulepreload" href="/client-by-vero-2ab849bd557f7fd.js" crossorigin="anonymous" integrity="sha384-C882CmT4rwdRd2i8MXDh7hrYC6ojUS49fXd03ERmPnm6uNNsYvNS8cOB/dTUsA+g"><link rel="preload" href="/client-by-vero-2ab849bd557f7fd_bg.wasm" crossorigin="anonymous" integrity="sha384-K11kFu8S7pa/JbrpfuMbFGkCkHQGPxE2PdP+U+t5igL42TdgcrybqifNHyp04kl+" as="fetch" type="application/wasm"></head>
+    <body>
+<script type="module">
+import init, * as bindings from '/client-by-vero-2ab849bd557f7fd.js';
+const wasm = await init('/client-by-vero-2ab849bd557f7fd_bg.wasm');
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>
