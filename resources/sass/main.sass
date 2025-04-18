@@ -196,11 +196,10 @@ a
 p, a
     font-size: 1rem
 
-body 
-    & > .home, & > .aboutme, & > .journal, & > .links, & > .cameraroll
-        height: 100%
-        box-sizing: border-box
-        padding: 1rem
+body > .blog-page, body > .home
+    height: 100%
+    box-sizing: border-box
+    padding: 1rem
 
 html:not(:has(.home))
     overflow: hidden
@@ -357,7 +356,7 @@ body > .notfound
             color: var(--color-title)
             padding: 0.5rem
     
-body > .aboutme, body > .journal, body > .links, body > .cameraroll
+body > .blog-page
     display: grid
     gap: 1rem
     grid-template-rows: 230px minmax(0, 1fr)

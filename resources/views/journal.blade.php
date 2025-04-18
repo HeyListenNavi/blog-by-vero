@@ -1,12 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.page')
+
+@section('title', 'journal')
+@section('window_title', 'Journal !!!')
 
 @section('content')
-<div class="journal">
-  <x-navbar/>
-  <x-decobar/>
-  <x-window title="Journal !!!" class="main">        
-      <h1>This is my journal &lt;3 </h1>
-      <h2>pwap</h2>
-  </x-window>
-</div>
+    <div class="journall">
+        <h1>This is my journal &lt;3 </h1>
+        <h2>pwap</h2>
+    </div>
 @endsection

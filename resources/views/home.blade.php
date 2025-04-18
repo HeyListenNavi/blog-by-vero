@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('content')
+@section('title', 'this is home')
+
+@section('body')
     <div class="home">
         <x-header/>
         <x-navbar/>
