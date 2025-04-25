@@ -13,6 +13,7 @@ class PhotographyPost extends Model
 
     protected $fillable = [
         'title',
+        'icon_id',
     ];
 
     public function photographies(): HasMany
