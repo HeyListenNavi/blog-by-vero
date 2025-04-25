@@ -15,10 +15,6 @@ class PostSeeder extends Seeder
     {
         Post::factory()
             ->count(10)
-            ->forIcon()
-            ->hasComments(3)
-            ->hasTags(3)
-            ->hasPostImages(3)
             ->create();
     }
 }

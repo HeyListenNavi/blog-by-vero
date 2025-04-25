@@ -2,13 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Icon;
+use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PhotographyPOst>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PostTag>
  */
-class PhotographyPostFactory extends Factory
+class PostTagFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +19,8 @@ class PhotographyPostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->catchPhrase(),
-            'icon_id' => Icon::inRandomOrder()->first()->id,
+            'post_id' => Post::inRandomOrder()->first()->id,
+            'tag_id'=> Tag::inRandomOrder()->first()->id,
         ];
     }
 }

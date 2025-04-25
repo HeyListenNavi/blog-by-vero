@@ -15,8 +15,6 @@ class IconSeeder extends Seeder
     {
         Icon::factory()
             ->count(10)
-            ->hasPosts(3)
-            ->hasPhotographyPosts(3)
             ->create();
     }
 }

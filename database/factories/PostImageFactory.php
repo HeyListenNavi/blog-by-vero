@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +18,9 @@ class PostImageFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => 'storage/icons/music-disc.png',
-            'title' => $this->faker->title(),
+            'image' => 'https://picsum.photos/200/300',
+            'title' => $this->faker->word(),
+            'post_id' => Post::inRandomOrder()->first()->id,
         ];
     }
 }

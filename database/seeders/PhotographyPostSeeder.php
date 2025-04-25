@@ -15,8 +15,6 @@ class PhotographyPostSeeder extends Seeder
     {
         PhotographyPost::factory()
             ->count(10)
-            ->hasPhotographies(3)
-            ->forIcon()
             ->create();
     }
 }

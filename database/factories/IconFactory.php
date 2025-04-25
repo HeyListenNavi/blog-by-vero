@@ -17,8 +17,8 @@ class IconFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->title(),
-            'icon' => 'storage/icons/music-disc.png',
+            'name' => $this->faker->word(),
+            'icon' => 'https://picsum.photos/40',
         ];
     }
 }
