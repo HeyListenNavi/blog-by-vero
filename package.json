@@ -16,5 +16,12 @@
         "tailwindcss": "^4.0.0",
         "vite": "^6.0.11",
         "vite-plugin-image-optimizer": "^1.1.8"
+    },
+    "dependencies": {
+        "@alpinejs/collapse": "^3.14.9",
+        "@alpinejs/focus": "^3.14.9",
+        "@alpinejs/persist": "^3.14.9",
+        "@marcreichel/alpine-typewriter": "^1.2.1",
+        "alpinejs": "^3.14.9"
     }
 }
