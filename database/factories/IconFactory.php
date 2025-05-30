@@ -18,7 +18,7 @@ class IconFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'icon' => 'https://picsum.photos/40',
+            'icon' => 'https://picsum.photos/seed/' . $this->faker->word . '/100/100',
         ];
     }
 }
