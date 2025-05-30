@@ -8,10 +8,12 @@
     @media screen and ( max-width: 512px )
         justify-content: center
     .post
+        position: relative
         display: flex
         flex-direction: column
         flex-wrap: wrap
         align-items: center
+        justify-content: center
         user-select: none
         padding: 10px
         text-decoration: none
@@ -26,15 +28,35 @@
             width: 100px
             height: 100px
         .description 
+            width: 100%
             display: flex
+            word-break: break-all
             flex-direction: column
             span
-                overflow-wrap: break-word
                 text-align: center
             .title
                 font-size: 18px
             .date
-                font-size: 0.5rem
+                font-size: 1rem
+                margin-top: 0.5rem
+        .context-menu
+            background: var(--color-bg)
+            width: 100%
+            word-break: break-all
+            border: 2px solid var(--color-fg)
+            display: flex
+            flex-direction: column
+            gap: 5px
+            padding: 0.5em 0.5em
+            position: absolute
+            top: 0
+            left: 60%
+            z-index: 10
+            color: var(--color-fg)
+            .tags
+                display: flex
+                gap: 5px
+                flex-direction: column
 
 .post--single
     background-color: var(--color-bg)
