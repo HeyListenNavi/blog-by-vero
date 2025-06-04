@@ -16,5 +16,5 @@ Route::get('/journal', [PagesController::class, 'journal'])
 Route::get('/camera-roll', [PagesController::class, 'cameraRoll'])
   ->name('camera.roll');
 
-Route::get('journal/{post}', [JournalController::class, 'show'])
+Route::get('/journal/{post}', [JournalController::class, 'show'])
   ->name('journal.post');
