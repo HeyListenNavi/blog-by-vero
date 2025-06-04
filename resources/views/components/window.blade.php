@@ -1,6 +1,11 @@
-<div {{ $attributes->except('buttons')->merge(['class' => 'window']) }}>
+@props([
+    'title' => 'title',
+    'buttons' => ['close']
+])
+
+<div {{ $attributes->merge(['class' => 'window']) }}>
     <div class="titlebar">
-        <div class="text">{{ $title ?? 'title' }}</div>
+        <div class="text">{{ $title }}</div>
         <div class="buttons">
             @foreach ($buttons as $button)
               <button class="button--{{ $button }}"></button>
