@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -16,9 +17,10 @@ class PagesController extends Controller
   }
 
   public function journal(): View {
-    return view('journal');
+    $posts = (new JournalController)->postList();
+    return view('journal', $posts);
   }
-
+  
   public function cameraRoll(): View {
     return view('camera-roll');
   }

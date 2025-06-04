@@ -13,6 +13,7 @@
                     <a class="post"
                         x-data="{ open: false }"
                         class="tags"
+                        href="{{ route('journal.post', ['post' => $post->id]) }}"
                         x-on:contextmenu="
                             $event.preventDefault();
                             open = true;
@@ -47,6 +48,9 @@
                     </a>
                 </div>
             @endforeach
+        </div>
+        <div class="pagination">
+            {{ $posts->links() }}
         </div>
     </div>
 @endsection
