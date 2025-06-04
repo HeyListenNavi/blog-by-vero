@@ -10,7 +10,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('about-me') }}">
+            <a href="{{ route('about.me') }}">
               About me
             </a>
           </li>
@@ -20,7 +20,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('camera-roll') }}">
+            <a href="{{ route('camera.roll') }}">
               Cameraroll
             </a>
           </li>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class JournalController extends Controller
 {
-    public function postList() {
+    public function index() {
         $posts = Post::with(['tags', 'icon'])
             ->latest()
             ->paginate(10);

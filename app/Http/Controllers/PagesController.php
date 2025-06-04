@@ -17,7 +17,7 @@ class PagesController extends Controller
   }
 
   public function journal(): View {
-    $posts = (new JournalController)->postList();
+    $posts = (new JournalController)->index();
     return view('journal', $posts);
   }
   

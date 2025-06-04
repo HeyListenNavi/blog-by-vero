@@ -8,13 +8,13 @@ Route::get('/', [PagesController::class, 'home'])
   ->name('home');
 
 Route::get('/about-me', [PagesController::class, 'aboutMe'])
-  ->name('about-me');
+  ->name('about.me');
 
 Route::get('/journal', [PagesController::class, 'journal'])
   ->name('journal');
 
 Route::get('/camera-roll', [PagesController::class, 'cameraRoll'])
-  ->name('camera-roll');
+  ->name('camera.roll');
 
 Route::get('journal/{post}', [JournalController::class, 'show'])
   ->name('journal.post');
