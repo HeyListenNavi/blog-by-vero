@@ -24,4 +24,8 @@ class PagesController extends Controller
   public function cameraRoll(): View {
     return view('camera-roll');
   }
+
+  public function login(): View {
+    return view('login');
+  }
 }
