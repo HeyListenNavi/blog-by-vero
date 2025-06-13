@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class PagesController extends Controller
 {
   public function home(): View {
-    return view('home');
+    return view('home-test');
   }
 
   public function aboutMe(): View {

@@ -36,6 +36,7 @@ export default defineConfig({
       alias: {
         '@': '/resources',
         '@images': '/resources/images',
+        '@fonts': '/resources/fonts'
       },
     },
 });

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Styles / Scripts -->
-    @vite(['resources/sass/main.sass', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-background h-dvh text-foreground p-4">
     @yield('body')
 </body>
 
