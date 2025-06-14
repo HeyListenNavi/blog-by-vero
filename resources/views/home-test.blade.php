@@ -4,6 +4,11 @@
 
 @section('body')
 <div class="flex flex-col flex-wrap h-full content-start">
-    <x-file></x-file>
+    <x-app title="File 1">
+        <p>File 1</p>
+    </x-app>
+    <x-app title="File 2">
+        <p>File 2</p>
+    </x-app>
 </div>
 @endsection

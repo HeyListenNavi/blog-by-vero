@@ -10,7 +10,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-background h-dvh text-foreground p-4">
+<body id="desktop" class="bg-background h-dvh text-foreground p-4 relative">
     @yield('body')
 </body>
 
