@@ -10,6 +10,8 @@
     --font-sans: "uni 05_53";
     --font-mono: "uni 05_54";
 
+    --spacing: 4px;
+
     --color-background-primary: #151515;
     --color-background-secondary: #100e0f;
     --color-background-tertiary: #0c0a0a;
@@ -20,7 +22,8 @@
     --background-image-background: url("@images/background-tile.gif");
     --background-image-header: url("@images/banner.jpg");
 
-    --text-shadow-outline: -1px -1px 0, 1px -1px 0, -1px 1px 0 #15151570, 1px 1px 0;
+    --text-shadow-outline: -1px -1px 0, 1px -1px 0, -1px 1px 0, 1px 1px 0;
+    --shadow-window-outline: inset -6px -6px var(--color-background-tertiary), inset 6px 6px var(--color-background-tertiary), inset 8px 8px var(--color-highlight), inset -8px -8px var(--color-highlight);
 
     --text-display-large: 72px;
     --text-display-large--line-height: 120%;

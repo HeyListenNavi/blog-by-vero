@@ -2,10 +2,10 @@
     'title' => 'File',
     'icon' => Vite::image('music-cd.png'),
     'href' => '#',
-    'open' => 'false'
+    'open' => false
 ])
 
-<div {{ $attributes->merge(["x-data" => "{ open: $open }"]) }}>
+<div x-data="{ open: '{{ $open }}' }">
     <script>
         function initDraggable() {
             gsap.set('#app', {
@@ -31,13 +31,14 @@
         <img class="w-full" src="{{ $icon }}">
         <p class="text-shadow-outline text-shadow-background-primary/60">{{ $title }}</p>
     </a>
-    <div
+    <x-window
         x-show="open"
         x-cloak
         x-init="initDraggable()"
         id="app"
-        class="w-92 h-64 flex items-center justify-center bg-background-primary z-50"
+        title="{{ $title }}"
+        :buttons="['minimize', 'maximize', 'close']"
     >
         {{ $slot }}
-    </div>
+    </x-window>
 </div>
