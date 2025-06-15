@@ -17,7 +17,7 @@
             });
             window.Draggable.create('#app', {
                 inertia: true,
-                bounds: "#desktop",
+                bounds: '#desktop',
                 onClick: () => console.log('clicked'),
                 onDragEnd: () => console.log('drag ended'),
             });
