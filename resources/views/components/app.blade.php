@@ -38,6 +38,7 @@
         id="app"
         title="{{ $title }}"
         :buttons="['minimize', 'maximize', 'close']"
+        x-on:close-window="open = !open"
     >
         {{ $slot }}
     </x-window>
