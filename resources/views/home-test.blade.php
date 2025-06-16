@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.desktop')
 
 @section('title', 'this is home')
 
-@section('body')
+@section('content')
 <div class="flex flex-col flex-wrap h-full content-start">
     <x-app title="File 1" :open="true" class="h-full">
         <p>File 1</p>

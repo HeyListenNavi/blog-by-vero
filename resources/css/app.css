@@ -9,6 +9,7 @@
 @theme {
     --font-sans: "uni 05_53";
     --font-mono: "uni 05_54";
+    --font-emoji: "Vero's Emojis";
 
     --spacing: 4px;
 
@@ -83,6 +84,11 @@
     font-family: "uni 05_54";
     src: url("@fonts/uni0554-webfont.woff") format("woff");
     font-weight: normal;
+}
+
+@font-face {
+    font-family: "Vero's Emojis";
+    src: url("@fonts/EmojiFont.ttf") format("OpenType");
 }
 
 [x-cloak] {
