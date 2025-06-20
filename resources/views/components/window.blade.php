@@ -3,33 +3,29 @@
     'buttons' => ['close']
 ])
 
-<div
-    {{ $attributes->merge(["class" => "flex flex-col bg-background-primary shadow-window-outline p-2 min-w-42"]) }}
->
+@php
+$buttonMap = [
+    'close' => ['label' => 'x', 'event' => 'close-window'],
+    'minimize' => ['label' => '-', 'event' => 'minimize-window'],
+    'maximize' => ['label' => 'O', 'event' => 'maximize-window'],
+];
+@endphp
+
+<div {{ $attributes->merge(["class" => "flex flex-col bg-background-primary shadow-window-outline p-2 min-w-42"]) }}>
     <div class="flex justify-between items-center p-2 bg-background-secondary">
         <div>
             {{ $title }}
         </div>
-        <div>
+        <div x-data>
             @foreach ($buttons as $button)
-                <button 
-                    class="w-6 pb-1 border-2 border-foreground/30 [border-style:_inset]"
-                    @if ($button == "close")
-                        x-on:click="$dispatch('close-window')" 
-                    @endif 
-                >
-                    @switch($button)
-                        @case("close")
-                            x
-                            @break
-                        @case("minimize")
-                            -
-                            @break
-                        @case("maximize")
-                            O
-                            @break
-                    @endswitch
-                </button>
+                @php $config = $buttonMap[$button] ?? null; @endphp
+
+                @if ($config)
+                    <button class="w-6 pb-1 border-2 border-foreground/30 cursor-pointer [border-style:_inset]"
+                        x-on:click="$dispatch('{{ $config['event'] }}')">
+                        {{ $config['label'] }}
+                    </button>
+                @endif
             @endforeach
         </div>
     </div>

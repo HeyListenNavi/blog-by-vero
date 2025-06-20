@@ -8,9 +8,10 @@
 
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('scripts')
 </head>
 
-<body id="desktop" class="min-h-dvh text-foreground relative">
+<body class="min-h-dvh text-foreground relative">
     @yield('body')
 </body>
 
