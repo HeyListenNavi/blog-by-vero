@@ -5,7 +5,7 @@
 
 @pushOnce('scripts')
     <script>
-        function makeDraggable(id) {
+        function makeWindowDraggable(id) {
             gsap.set(`#${id}`, {
                 position: 'absolute',
                 top: '50%',
@@ -16,7 +16,7 @@
             Draggable.create(`#${id}`, {
                 inertia: true,
                 bounds: '#screen',
-                trigger: '#titlebar'
+                trigger: `#${id} > #titlebar`
             });
         }
     </script>
@@ -25,7 +25,7 @@
 <x-window
     x-data="{ id: $id('window') }"
     x-bind:id="id"
-    x-init="makeDraggable(id)"
+    x-init="makeWindowDraggable(id)"
 
     x-show="$store.windowManager.get(id)?.minimized === false"
     x-bind:class="{ 

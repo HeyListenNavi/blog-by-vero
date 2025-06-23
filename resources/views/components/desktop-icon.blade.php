@@ -12,20 +12,35 @@
 
 @pushOnce('scripts')       
     <script>
-
+        function makeIconDraggable(id) {
+            Draggable.create(`#${id}`, {
+                inertia: true,
+                bounds: '#desktop',
+                snap: function(endValue) { 
+                    return Math.round(endValue / 112) * 112;
+                },
+                throwResistance: 100000,
+                maxDuration: 0.1,
+                allowContextMenu: true,
+            });
+        }
     </script>
 @endPushOnce
 
 <div
     x-data="{ id: $id('icon') }"
+    x-init="makeIconDraggable(id)"
     @if ($open)
-        x-init="$store.windowManager.spawn($refs.properties)"
+        x-init="
+            makeDraggable(id);
+            $store.windowManager.spawn($refs.properties);
+        "
     @endif
     
     x-on:click="$store.windowManager.spawn($refs.app)"
     x-on:contextmenu.prevent="$store.windowManager.spawn($refs.properties)"
     x-on:long-press.prevent="$store.windowManager.spawn($refs.properties)"
-
+    
     x-bind:id="id"
     class="icon w-28 h-28 py-2 flex flex-col gap-2 items-center justify-center select-none hover:bg-background-primary/30 hover:text-highlight-secondary"
 >
