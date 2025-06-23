@@ -1,17 +1,35 @@
 @props([
-    'id',
     'name',
     'buttons' => ['minimize', 'maximize', 'close'],
 ])
 
+@pushOnce('scripts')
+    <script>
+        function makeDraggable(id) {
+            gsap.set(`#${id}`, {
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                xPercent: -50,
+                yPercent: -50
+            });
+            Draggable.create(`#${id}`, {
+                inertia: true,
+                bounds: '#screen',
+                trigger: '#titlebar'
+            });
+        }
+    </script>
+@endPushOnce
+
 <x-window
-    x-data="{ id: '{{ $id }}' }"
-    x-init="windowDraggable(id);"
+    x-data="{ id: $id('window') }"
     x-bind:id="id"
+    x-init="makeDraggable(id)"
 
     x-show="$store.windowManager.get(id)?.minimized === false"
     x-bind:class="{ 
-        'w-full h-full top-0 left-0 translate-0': $store.windowManager.get(id)?.maximized,
+        'w-full h-full !top-0 !left-0 !transform-none': $store.windowManager.get(id)?.maximized,
     }"
 
     x-on:close-window="$store.windowManager.close(id)"
@@ -23,7 +41,7 @@
     
     :buttons="$buttons"
     
-    {{ $attributes->merge(['class' => 'absolute top-1/2 left-1/2 -translate-1/2 w-fit']) }}
+    {{ $attributes->merge(['class' => 'w-fit']) }}
 >
     {{ $slot }}
 </x-window>
