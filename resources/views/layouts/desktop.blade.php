@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('body')
-<div id="desktop" class="overflow-hidden w-screen h-dvh grid grid-rows-[1fr_auto] grid-cols-1 bg-background">
-    <div class="p-4">
+<div id="screen" class="overflow-hidden w-screen h-dvh grid grid-rows-[1fr_auto] grid-cols-1 bg-background">
+    <div id="desktop" class="p-4 z-0">
         @yield('content')
     </div>
     <div class="bg-background-primary p-2 flex gap-4 items-center">

@@ -12,7 +12,7 @@ $buttonMap = [
 @endphp
 
 <div {{ $attributes->merge(["class" => "flex flex-col bg-background-primary shadow-window-outline p-2 min-w-42"]) }}>
-    <div class="flex justify-between items-center p-2 bg-background-secondary">
+    <div id="titlebar" class="flex justify-between items-center p-2 bg-background-secondary select-none">
         <div>
             {{ $title }}
         </div>
