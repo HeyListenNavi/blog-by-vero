@@ -4,11 +4,11 @@
 
 @section('content')
 <div class="flex flex-col flex-wrap h-full content-start">
-    <x-app title="File 1" :open="true" class="h-full">
+    <x-desktop-icon name="File 1" :open="true" class="h-full">
         <p>File 1</p>
-    </x-app>
-    <x-app title="File 2">
+    </x-desktop-icon>
+    <x-desktop-icon name="File 2">
         <p>File 2</p>
-    </x-app>
+    </x-desktop-icon>
 </div>
 @endsection
