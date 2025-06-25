@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->text('title');
+            $table->string('slug')->unique();
             $table->mediumText('content');
             $table->date('date');
             $table->foreignId('icon_id')->nullable()->constrained()->onDelete('cascade');
