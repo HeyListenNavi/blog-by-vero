@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Site extends Model
 {
-    /** @use HasFactory<\Database\Factories\SiteFactory> */
     use HasFactory;
 
     protected $fillable = [
