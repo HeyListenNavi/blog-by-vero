@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
+use App\Models\Site;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,5 +22,21 @@ class CommentFactory extends Factory
             'user_id' => User::inRandomOrder()->first()->id,
             'content' => $this->faker->text(),
         ];
+    }
+
+    public function configure()
+    {
+        return $this->for(
+            static::factoryForModel($this->commentable()),
+            'commentable',
+        );
+    }
+
+    public function commentable()
+    {
+        return $this->faker->randomElement([
+            User::class,
+            Site::class,
+        ]);
     }
 }
