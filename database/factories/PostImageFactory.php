@@ -18,7 +18,7 @@ class PostImageFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => 'https://picsum.photos/seed/' . $this->faker->word . '/200/300',
+            'path' => 'https://picsum.photos/seed/' . $this->faker->word . '/200/300',
             'title' => $this->faker->word(),
             'post_id' => Post::inRandomOrder()->first()->id,
         ];

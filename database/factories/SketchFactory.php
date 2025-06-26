@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Site>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Sketch>
  */
-class SiteFactory extends Factory
+class SketchFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,9 @@ class SiteFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->paragraph(),
+            'path' => $this->faker->randomHtml(),
         ];
     }
 }

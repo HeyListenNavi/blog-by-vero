@@ -19,7 +19,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->catchPhrase(),
-            'content' => $this->faker->text(),
+            'content' => $this->faker->text(5000),
             'date' => $this->faker->date(),
             'icon_id' => Icon::inRandomOrder()->first()->id,
         ];

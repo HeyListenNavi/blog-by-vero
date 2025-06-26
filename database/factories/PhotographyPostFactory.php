@@ -18,7 +18,8 @@ class PhotographyPostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->catchPhrase(),
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->paragraph(),
             'icon_id' => Icon::inRandomOrder()->first()->id,
         ];
     }
