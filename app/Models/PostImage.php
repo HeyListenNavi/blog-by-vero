@@ -11,7 +11,7 @@ class PostImage extends Model
     use HasFactory;
 
     protected $fillable = [
-        'image',
+        'path',
         'title',
         'post_id',
     ];

@@ -12,7 +12,7 @@ class Photography extends Model
 
     protected $fillable = [
         'title',
-        'photography',
+        'path',
         'photography_post_id',
     ];
 

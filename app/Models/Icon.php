@@ -12,7 +12,7 @@ class Icon extends Model
 
     protected $fillable = [
         'name',
-        'icon',
+        'path',
     ];
 
     public function posts(): HasMany 

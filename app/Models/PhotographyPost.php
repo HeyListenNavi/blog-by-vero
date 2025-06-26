@@ -13,6 +13,7 @@ class PhotographyPost extends Model
 
     protected $fillable = [
         'title',
+        'description',
         'icon_id',
     ];
 
