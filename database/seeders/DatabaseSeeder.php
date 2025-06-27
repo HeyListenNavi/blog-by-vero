@@ -14,16 +14,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            SketchSeeder::class,
+            SiteSeeder::class,
             ThoughtSeeder::class,
             IconSeeder::class,
             PostSeeder::class,
             PhotographyPostSeeder::class,
             PostImageSeeder::class,
             PhotographySeeder::class,
+            UserSeeder::class,
             CommentSeeder::class,
-            TagSeeder::class,
-            PostTagSeeder::class,
-            UserSeeder::class
         ]);
     }
 }
