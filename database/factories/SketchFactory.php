@@ -19,7 +19,7 @@ class SketchFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(),
-            'path' => $this->faker->randomHtml(),
+            'path' => $this->faker->word(),
         ];
     }
 }

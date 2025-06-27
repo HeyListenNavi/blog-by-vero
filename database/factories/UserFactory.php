@@ -23,7 +23,7 @@ class UserFactory extends Factory
             'avatar_color' => $this->faker->hexColor(),
             'favorite_color' => $this->faker->hexColor(),
             'favorite_fruit' => $this->faker->word(),
-            'password' => $this->faker->password(),
+            'password' => bcrypt('password'),
             'role' => 'User',
         ];
     }

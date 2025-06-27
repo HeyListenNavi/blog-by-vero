@@ -18,18 +18,13 @@ class CommentFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'user_id' => User::inRandomOrder()->first()->id,
-            'content' => $this->faker->text(),
-        ];
-    }
+        $commentable = $this->commentable();
 
-    public function configure()
-    {
-        return $this->for(
-            static::factoryForModel($this->commentable()),
-            'commentable',
-        );
+        return [
+            'content' => $this->faker->text(),
+            'commentable_type' => $commentable,
+            'commentable_id' => $commentable::inRandomOrder()->first(),
+        ];
     }
 
     public function commentable()
