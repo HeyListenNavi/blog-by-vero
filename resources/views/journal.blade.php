@@ -1,57 +1,29 @@
-@extends('layouts.page')
+@extends('layouts.app')
 
-@section('title', 'journal')
-@section('window_title', 'Journal !!!')
-
-@section('content')
-<div class="journal">
-    <h1>This is my journal &lt;3 </h1>
-    <h2>pwap</h2>
-    <div class="post--list">
+@section('body')
+<div class="h-screen grid grid-rows-[auto_1fr_auto] gap-4">
+    <div>
+        <h1>This is my journal &lt;3 </h1>
+        <h2>pwap</h2>
+    </div>
+    <div class="grid grid-cols-5 justify-items-center gap-2 max-h-96"> 
         @foreach ($posts as $post)
-            <div>
-                <a class="post"
-                    x-data="{ open: false }"
-                    class="tags"
-                    href="{{ route('journal.post', ['post' => $post->id]) }}"
-                    x-on:contextmenu="
-                        $event.preventDefault();
-                        open = true;
-                    "
-                    x-on:click.outside="open = false"
-                    x-on:contextmenu.outside="open = false"
-                >
-                    <img loading="lazy" src="{{ $post->icon->icon }}"/>
-                    <div class="description">
-                        <span class="title">{{ $post->title }}</span>
-                        <span class="date">{{ $post->date }}</span>
-                    </div>
-                    <div
-                        class="context-menu"
-                        x-show="open"
-                        x-cloak
-                        x-collapse
-                    >
-                        <span>About</span>
-                        @if ($post->tags->isNotEmpty())
-                            <div class="tags">
-                                @foreach ($post->tags as $tag)
-                                    <span
-                                        class="tag" 
-                                        style="background-color: {{ $tag->color }}"
-                                    >
-                                        {{ $tag->title }}
-                                    </span>
-                                @endforeach
-                            </div>
-                        @endif
-                    </div>
-                </a>
-            </div>
+        <div class="w-28">
+            <a 
+                href="{{ route('journal.post', ['post' => $post->slug]) }}"
+                target="_parent"
+            >
+                <img class="size-28" src="{{ $post->icon->path }}"/>
+                <div class="wrap-break-word">
+                    <span>{{ $post->title }}</span>
+                    <span>{{ $post->date }}</span>
+                </div>
+            </a>
+        </div>
         @endforeach
     </div>
-    <div class="pagination">
-        {{ $posts->links() }}
+    <div>
+        {{ $posts->links('components.pagination') }}
     </div>
 </div>
 @endsection

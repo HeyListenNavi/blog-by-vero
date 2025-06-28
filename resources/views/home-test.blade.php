@@ -4,8 +4,22 @@
 
 @section('content')
 <div class="flex flex-col flex-wrap h-full content-start">
-    <x-desktop-icon name="File 1" :open="true" class="h-full">
-        <p>File 1</p>
+    <x-desktop-icon
+        name="Journal"
+        extension="md"
+        description="bunch of rambles compressed into a list"
+        location="/home/naviheylisten/vero/thoughts"
+        :open="true"
+    >
+        <iframe
+            src="{{ route('journal') }}"
+            frameborder="0"
+            loading="lazy"
+            class="min-w-[600px] min-h-[500px] w-full h-full"
+        >
+            <p>Your browser does not support iframes.</p>
+        </iframe>
+        
     </x-desktop-icon>
     <x-desktop-icon name="File 2">
         <p>File 2</p>
