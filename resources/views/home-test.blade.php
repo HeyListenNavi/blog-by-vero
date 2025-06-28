@@ -15,7 +15,7 @@
             src="{{ route('journal') }}"
             frameborder="0"
             loading="lazy"
-            class="min-w-[600px] min-h-[500px] w-full h-full"
+            class="min-w-[700px] min-h-[550px] w-full h-full"
         >
             <p>Your browser does not support iframes.</p>
         </iframe>
