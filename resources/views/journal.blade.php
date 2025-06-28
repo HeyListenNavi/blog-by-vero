@@ -8,18 +8,12 @@
     </div>
     <div class="grid grid-cols-5 justify-items-center gap-2 max-h-96"> 
         @foreach ($posts as $post)
-        <div class="w-28">
-            <a 
-                href="{{ route('journal.post', ['post' => $post->slug]) }}"
-                target="_parent"
-            >
-                <img class="size-28" src="{{ $post->icon->path }}"/>
-                <div class="wrap-break-word">
-                    <span>{{ $post->title }}</span>
-                    <span>{{ $post->date }}</span>
-                </div>
-            </a>
-        </div>
+        <x-post
+            :title="$post->title"
+            :date="$post->date"
+            :icon="$post->icon->path"
+            :href="route('journal.post', ['post' => $post->slug])"
+        />
         @endforeach
     </div>
     <div>
