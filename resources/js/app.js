@@ -27,50 +27,111 @@ Alpine.plugin(typewriter)
 
 window.Alpine = Alpine
 
-Alpine.store('windowManager', {
-    windows: [],
-    desktop: document.getElementById("screen"),
+class Window {
+    id;
+    template;
+    element;
+    title;
+    maximized;
+    minimized;
+    desktop;
 
-    spawn(appTemplate) {
-        const app = appTemplate.content.cloneNode(true);
-        this.desktop.appendChild(app);
+    constructor(template, title, desktop, callback) {
+        this.minimized = false;
+        this.maximized = false;
+        this.desktop = desktop;
+        this.title = title;
 
-        const window = this.desktop.lastElementChild;
+        const app = template.content.cloneNode(true);
+        desktop.appendChild(app);
+
+        const window = desktop.lastElementChild;
 
         setTimeout(() => {
-            this.windows.push(
-                {
-                    id: window.id,
-                    title: window.getAttribute("name") || "Untitled",
-                    minimized: false,
-                    maximized: false,
-                    element: window,
-                }
-            );
+            this.id = window.id;
+            this.element = window;
+
+            this.makeDraggable();
+            callback();
         })
 
+    }
+
+    minimize() {
+        this.minimized = !this.minimized;
+    }
+
+    maximize() {
+        this.maximized = !this.maximized;
+    }
+
+    close() {
+        this.desktop.removeChild(this.element);
+    }
+
+    makeDraggable() {
+        gsap.set(`#${this.id}`, {
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            xPercent: -50,
+            yPercent: -50
+        });
+
+        const iframes = document.querySelectorAll('iframe');
+        Draggable.create(`#${this.id}`, {
+            inertia: true,
+            bounds: '#screen',
+            trigger: `#${this.id} > #titlebar`,
+            onPress: function() {
+                iframes.forEach(iframe => {
+                    iframe.style.pointerEvents = 'none';
+                });
+            },
+            onRelease: function() {
+                iframes.forEach(iframe => {
+                    iframe.style.pointerEvents = 'auto';
+                });
+            },
+        });
+    }
+}
+
+Alpine.store('windowManager', {
+    windows: [],
+    desktop: document.getElementById('screen'),
+
+    spawn(appTemplate) {
+        let window = new Window(
+            appTemplate,
+            appTemplate.getAttribute('name') || 'Untitled',
+            this.desktop,
+            () => {
+                this.windows.push(window);
+            }
+        );
     },
 
     minimize(id) {
-        const index = this.findWindowIndex(id);
+        const index = this.findWindowByIndex(id);
         if (index === -1) return;
 
-        this.windows[index].minimized = !this.windows[index].minimized;
+        this.windows[index].minimize();
     },
 
     maximize(id) {
-        const index = this.findWindowIndex(id);
+        const index = this.findWindowByIndex(id);
         if (index === -1) return;
 
-        this.windows[index].maximized = !this.windows[index].maximized;
+        this.windows[index].maximize();
     },
 
     close(id) {
-        const index = this.findWindowIndex(id);
+        const index = this.findWindowByIndex(id);
         if (index === -1) return;
 
         const window = this.windows[index];
-        this.desktop.removeChild(window.element);
+        window.close();
         this.windows.splice(index, 1);
     },
 
@@ -80,14 +141,16 @@ Alpine.store('windowManager', {
         });
     },
 
-    findWindowIndex(id) {
+    findWindowByIndex(id) {
         return this.windows.findIndex(function (window) {
             return window.id === id;
         });
     },
 
     get(id) {
-        return this.windows.find(win => win.id === id);
+        return this.windows.find(function(window) {
+            return window.id === id;
+        });
     }
 })
 

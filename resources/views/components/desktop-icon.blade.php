@@ -58,13 +58,13 @@
     <img class="h-full pointer-events-none" src="{{ $icon }}">
     <p class="text-shadow-outline text-shadow-background-primary/60">{{ $name }}</p>
 
-    <template x-ref="app">
+    <template x-ref="app" name="{{ $name }}">
         <x-window.desktop name="{{ $name }}">
             {{ $slot }}
         </x-window.desktop>
     </template>
 
-    <template x-ref="properties">
+    <template x-ref="properties" name="{{ $name }} Properties">
         <x-window.properties
             name="{{ $name }} Properties"
             icon="{{ $icon }}"

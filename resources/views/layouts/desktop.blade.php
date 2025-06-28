@@ -12,7 +12,7 @@
         <div x-data class="flex gap-2 overflow-x-auto max-w-full">
             <template x-for="window in $store.windowManager.windows">
                 <button
-                    x-on:click="$store.windowManager.minimize(window.id)"
+                    x-on:click="$store.windowManager.minimize(window.id);"
                     x-bind:class="{
                         'bg-foreground/10': window.minimized
                     }"
