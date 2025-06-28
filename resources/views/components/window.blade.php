@@ -21,10 +21,15 @@ $buttonMap = [
                 @php $config = $buttonMap[$button] ?? null; @endphp
 
                 @if ($config)
-                    <button class="w-6 pb-1 border-2 border-foreground/30 cursor-pointer [border-style:_inset]"
-                        x-on:click="$dispatch('{{ $config['event'] }}')">
-                        {{ $config['label'] }}
-                    </button>
+                    <x-button
+                        type="button"
+                        class="size-6 relative"
+                        x-on:click="$dispatch('{{ $config['event'] }}')"
+                    >
+                        <span class="absolute top-1/2 left-1/2 -translate-1/2 -translate-y-[calc(50%+2px)]">
+                            {{ $config['label'] }}
+                        </span>
+                    </x-button>
                 @endif
             @endforeach
         </div>

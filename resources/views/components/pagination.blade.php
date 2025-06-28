@@ -8,20 +8,20 @@
         of
         {{ $paginator->total() }}
     </p>
-    <div>
+    <div class="flex gap-1">
         @if ($paginator->onFirstPage())
-        <span>Previous</span>
+        <x-button>← Previous</x-button>
         @else
-        <a href="{{ $paginator->previousPageUrl() }}">
-            Previous
-        </a>
+        <x-button href="{{ $paginator->previousPageUrl() }}">
+            ← Previous
+        </x-button>
         @endif
         @if ($paginator->onLastPage())
-        <span>Next</span>
+        <x-button>Next →</x-button>
         @else
-        <a href="{{ $paginator->nextPageUrl() }}">
-            Next
-        </a>
+        <x-button href="{{ $paginator->nextPageUrl() }}">
+            Next →
+        </x-button>
         @endif
     </div>
 </nav>
