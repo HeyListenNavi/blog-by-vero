@@ -13,6 +13,7 @@
 @pushOnce('scripts')       
     <script>
         function makeIconDraggable(id) {
+            const iframes = document.querySelectorAll('iframe');
             Draggable.create(`#${id}`, {
                 inertia: true,
                 bounds: '#desktop',
@@ -22,6 +23,16 @@
                 throwResistance: 100000,
                 maxDuration: 0.1,
                 allowContextMenu: true,
+                onPress: function() {
+                    iframes.forEach(iframe => {
+                        iframe.style.pointerEvents = 'none';
+                    });
+                },
+                onRelease: function() {
+                    iframes.forEach(iframe => {
+                        iframe.style.pointerEvents = 'auto';
+                    });
+                },
             });
         }
     </script>
@@ -29,13 +40,13 @@
 
 <div
     x-data="{ id: $id('icon') }"
-    x-init="makeIconDraggable(id)"
     @if ($open)
         x-init="
-            makeDraggable(id);
-            $store.windowManager.spawn($refs.properties);
+            $store.windowManager.spawn($refs.app);
+            makeIconDraggable(id);
         "
     @endif
+    x-init="makeIconDraggable(id)"
     
     x-on:click="$store.windowManager.spawn($refs.app)"
     x-on:contextmenu.prevent="$store.windowManager.spawn($refs.properties)"

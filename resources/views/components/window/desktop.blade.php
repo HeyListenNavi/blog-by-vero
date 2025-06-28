@@ -13,10 +13,22 @@
                 xPercent: -50,
                 yPercent: -50
             });
+
+            const iframes = document.querySelectorAll('iframe');
             Draggable.create(`#${id}`, {
                 inertia: true,
                 bounds: '#screen',
-                trigger: `#${id} > #titlebar`
+                trigger: `#${id} > #titlebar`,
+                onPress: function() {
+                    iframes.forEach(iframe => {
+                        iframe.style.pointerEvents = 'none';
+                    });
+                },
+                onRelease: function() {
+                    iframes.forEach(iframe => {
+                        iframe.style.pointerEvents = 'auto';
+                    });
+                },
             });
         }
     </script>
@@ -41,7 +53,7 @@
     
     :buttons="$buttons"
     
-    {{ $attributes->merge(['class' => 'w-fit']) }}
+    {{ $attributes->merge(['class' => 'w-fit max-h-svh']) }}
 >
     {{ $slot }}
 </x-window>
