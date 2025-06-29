@@ -19,7 +19,7 @@ class PhotographyFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
-            'path' => 'https://picsum.photos/seed/' . $this->faker->word . '/200/300',
+            'path' => 'https://picsum.photos/seed/' . $this->faker->word . '/300/200',
             'photography_post_id' => PhotographyPost::inRandomOrder()->first()->id,
         ];
     }

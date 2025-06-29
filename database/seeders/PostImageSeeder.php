@@ -14,7 +14,7 @@ class PostImageSeeder extends Seeder
     public function run(): void
     {
         PostImage::factory()
-            ->count(10)
+            ->count(500)
             ->create();
     }
 }
