@@ -1,13 +1,28 @@
+@props([
+    'direction' => 'horizontal'
+])
+
 @if ($paginator->hasPages())
-<nav class="flex justify-between">
+<nav
+    @if ($direction == 'vertical')
+        class="flex flex-col-reverse items-center gap-2"
+    @else
+        class="flex justify-between"
+    @endif
+>
     <p>
-        Showing
-        {{ $paginator->firstItem() }}
-        to
-        {{ $paginator->lastItem() }}
+        @if ($direction == 'vertical')
+            {{ $paginator->currentPage() }}
+        @else
+            Showing
+            {{ $paginator->firstItem() }}
+            to
+            {{ $paginator->lastItem() }}
+        @endif
         of
         {{ $paginator->total() }}
     </p>
+
     <div class="flex gap-1">
         @if ($paginator->onFirstPage())
         <x-button>← Previous</x-button>
