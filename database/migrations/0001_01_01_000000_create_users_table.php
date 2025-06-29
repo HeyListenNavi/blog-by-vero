@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
+            $table->string('username')->unique();
             $table->text('description')->nullable();
             $table->string('avatar_color')->nullable();
             $table->string('favorite_color')->nullable();

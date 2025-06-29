@@ -17,7 +17,8 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->userName(),
+            'username' => $this->faker->userName(),
+            'name' => $this->faker->name(),
             'email' => $this->faker->safeEmail(),
             'description' => $this->faker->paragraph(),
             'avatar_color' => $this->faker->hexColor(),

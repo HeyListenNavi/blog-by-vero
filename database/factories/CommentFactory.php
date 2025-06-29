@@ -21,6 +21,7 @@ class CommentFactory extends Factory
         $commentable = $this->commentable();
 
         return [
+            'user_id' => User::inRandomOrder()->first(),
             'content' => $this->faker->text(),
             'commentable_type' => $commentable,
             'commentable_id' => $commentable::inRandomOrder()->first(),
