@@ -22,6 +22,7 @@ class JournalController extends Controller
     // }
 
     public function show(Post $post) {
-        return view('layouts.post', ['post' => $post]);
+        $post->load('postImages');
+        return view('layouts.post', compact('post'));
     }
 }
