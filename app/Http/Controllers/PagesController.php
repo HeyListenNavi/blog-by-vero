@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class PagesController extends Controller
 {
   public function home(): View {
-    return view('home-test');
+    $site = Site::first();
+    $site->load('comments.user');
+
+    return view('home-test', compact('site'));
   }
 
   public function aboutMe(): View {
@@ -21,8 +25,9 @@ class PagesController extends Controller
     return view('journal', $posts);
   }
   
-  public function cameraRoll(): View {
-    return view('camera-roll');
+  public function camera(): View {
+    $posts = (new PhotographyPostController)->index();
+    return view('camera', $posts);
   }
 
   public function login(): View {
