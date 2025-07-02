@@ -4,13 +4,14 @@ import focus from '@alpinejs/focus'
 import collapse from '@alpinejs/collapse'
 import persist from '@alpinejs/persist'
 import typewriter from '@marcreichel/alpine-typewriter';
+import resize from '@alpinejs/resize'
 
 import { gsap } from "gsap";
-    
+
 import { Draggable } from "gsap/Draggable";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 
-gsap.registerPlugin(Draggable,InertiaPlugin);
+gsap.registerPlugin(Draggable, InertiaPlugin);
 
 window.Draggable = Draggable;
 window.gsap = gsap;
@@ -24,6 +25,7 @@ Alpine.plugin(persist)
 Alpine.plugin(focus)
 Alpine.plugin(collapse)
 Alpine.plugin(typewriter)
+Alpine.plugin(resize)
 
 window.Alpine = Alpine
 
@@ -70,7 +72,7 @@ class Window {
     }
 
     makeDraggable() {
-        gsap.set(`#${this.id}`, {
+        gsap.set(this.element, {
             position: 'absolute',
             top: '50%',
             left: '50%',
@@ -79,16 +81,17 @@ class Window {
         });
 
         const iframes = document.querySelectorAll('iframe');
-        Draggable.create(`#${this.id}`, {
+
+        Draggable.create(this.element, {
             inertia: true,
             bounds: '#screen',
             trigger: `#${this.id} > #titlebar`,
-            onPress: function() {
+            onPress: function () {
                 iframes.forEach(iframe => {
                     iframe.style.pointerEvents = 'none';
                 });
             },
-            onRelease: function() {
+            onRelease: function () {
                 iframes.forEach(iframe => {
                     iframe.style.pointerEvents = 'auto';
                 });
@@ -98,7 +101,7 @@ class Window {
 }
 
 Alpine.store('windowManager', {
-    windows: [],
+    windows: {},
     desktop: document.getElementById('screen'),
 
     spawn(appTemplate) {
@@ -107,52 +110,220 @@ Alpine.store('windowManager', {
             appTemplate.getAttribute('name') || 'Untitled',
             this.desktop,
             () => {
-                this.windows.push(window);
+                this.windows[window.id] = window;
             }
         );
     },
 
     minimize(id) {
-        const index = this.findWindowByIndex(id);
-        if (index === -1) return;
-
-        this.windows[index].minimize();
+        this.windows[id].minimize();
     },
 
     maximize(id) {
-        const index = this.findWindowByIndex(id);
-        if (index === -1) return;
-
-        this.windows[index].maximize();
+        this.windows[id].maximize();
     },
 
     close(id) {
-        const index = this.findWindowByIndex(id);
-        if (index === -1) return;
-
-        const window = this.windows[index];
-        window.close();
-        this.windows.splice(index, 1);
+        this.windows[id].close();
+        delete this.windows[id];
     },
 
     isOpen(id) {
-        return this.windows.some(function (window) {
-            return window.id === id;
-        });
-    },
-
-    findWindowByIndex(id) {
-        return this.windows.findIndex(function (window) {
-            return window.id === id;
-        });
+        return id in this.windows;
     },
 
     get(id) {
-        return this.windows.find(function(window) {
-            return window.id === id;
-        });
+        return this.windows[id];
     }
 })
+
+class Command {
+    constructor(name, handler) {
+        this.name = name;
+        this.handler = handler;
+    }
+
+    run(flags, args, terminal) {
+        return this.handler(flags, args, terminal);
+    }
+}
+
+const commandRegistry = {
+    help: new Command('help', () => {
+        const list = Object.keys(commandRegistry)
+            .join('\n');
+
+        return `commands:\n${list}`;
+    }),
+
+    clear: new Command('clear', (_, __, terminal) => {
+        terminal.clear();
+        return;
+    }),
+
+    echo: new Command('echo', (_, args) => {
+        return args.join(' ');
+    }),
+
+    elmaifriend: new Command('elmaifriend', () => {
+        const confirmed = confirm('Are you sure you want to ban yourself from the site?');
+
+        if (confirmed) {
+            return 'chao chaooo';
+        } else {
+            return 'welcome back!';
+        }
+    }),
+
+    420169: new Command('420169', () => {
+        return 'this blog was oficially brought with the help of our sponsor\n*drumroll*\nGABYYY\nthank you so much gaby for always being there as the good friend you are and for your five bucks';
+    }),
+
+    ls: new Command('ls', (_, args, terminal) => {
+        return Object.keys(terminal.fileSystem).join('\n');
+    }),
+
+    cat: new Command('cat', (_, args, terminal) => {
+        if (args.length === 0) {
+            return 'cat: missing file operand';
+        }
+
+        const file = terminal.fileSystem[args[0]];
+        
+        if (!file) {
+            return 'cat: no such file'
+        };
+
+        return file;
+    }),
+
+    git: new Command('git', (_, __, terminal) => {
+        fetch('https://api.github.com/repos/HeyListenNavi/blog-by-vero/commits')
+            .then(res => res.json())
+            .then(commits => {
+                const latest = commits[0];
+
+                if (!latest) {
+                    terminal.outputHistory.push('No commits found.');
+                    return;
+                }
+
+                const message = latest.commit.message;
+                const author = latest.commit.author.name;
+                const date = latest.commit.author.date;
+
+                const formatted = `=> ${message} \n\t\t(by ${author} on ${date})`;
+                terminal.print(formatted);
+            })
+            .catch(err => {
+                terminal.print('Error fetching commit.');
+                console.error(err);
+            });
+
+        return;
+    }),
+
+    kofi: new Command('kofi', () => {
+        return 'Buy me a Kofi! \nhttps://ko-fi.com/naviheylisten';
+    }),
+
+    byte: new Command('byte', () => {
+        return 'Also check my job! ByteByte Studio\n@bytebytestudio in all social media\ngo to bytebytestudio.com'
+    }),
+};
+
+const files = {
+    'pompompurin.txt':
+`⠀     ⢠⠔⠚⠒⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢠⠏⠀⠀⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢸⡀⠀⠀⠀⡇⠀⠀⢀⠀⣠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢧⠀⠀⠀⢳⣾⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⢀⡀⠀⠀
+⠀⠀⠀⠀⠑⡶⠀⠀⠙⠛⠻⠿⣿⣿⣿⣿⠷⠶⠒⠚⠉⠉⠉⠓⡄
+⠀⠀⠀⠀⡼⠁⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇
+⠀⡴⠲⢤⠇⠀⠀⠀⠀⣆⡸⠂⠀⠀⠐⠀⠀⠀⢶⣤⣀⣀⡤⠞⠁
+⠀⢧⡀⠈⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⢈⡷⠒⢆⠀⠀⠀
+⠀⠀⢹⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠏⠀⠀⠀
+⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠁⠀⠀⠀⠀
+⢰⠒⠻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀
+⢹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠃⠀⠀⠀⠀⠀
+⠀⠙⠲⠞⠓⠢⢤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣹⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠛⠳⠤⠖⠃`,
+
+    'cat.txt': 
+`╱|_
+(＞.＜7
+ |       \\ 
+ | |  | |  \\ノ`,
+
+    'bow': 
+`⠀⣾⣿⣦⣀⣴⣿⣷
+⠀⠛⣻⣿⠛⣿⣟⠛
+⢠⣾⣿⡏ ⠀⢹⣿⣷⡄
+⠀⠀⡟ ⠀⠀⠀⢻⡀`,
+
+    'navi': '@heylisten.navi in ig',
+    'github': 'https://github.com/HeyListenNavi/blog-by-vero'
+};
+
+Alpine.data('terminal', () => ({
+    outputHistory: [],
+    commandHistory: [],
+    historyIndex: 0,
+    fileSystem: files,
+    input: '',
+    user: 'user',
+    currentPath: '~',
+    commands: commandRegistry,
+
+    userPrompt() {
+        return `${this.user}@verOS: ${this.currentPath}$`;
+    },
+
+    runCommand(input) {
+        const [inputCommand, ...options] = input.trim().split(/\s+/);
+        const command = this.commands[inputCommand];
+
+        const flags = options.filter(p => p.startsWith('-'));
+        const args = options.filter(p => !p.startsWith('-'));
+
+        this.commandHistory.push(input);
+        this.historyIndex = this.commandHistory.length;
+        this.input = '';
+
+        if (!command) {
+            this.print('Command not found');
+            return;
+        }
+
+        const output = command.run(flags, args, this);
+
+        if (typeof output === 'string' && output.trim() !== '') {
+            this.print(input, output);
+        }
+    },
+
+    print(command, output) {
+        this.outputHistory.push(`${this.currentPath}$ ${command} \n${output ?? ''}`);
+    },
+
+    nextCommand() {
+        if (this.commandHistory.length === this.historyIndex) return;
+
+        this.historyIndex++;
+        this.input = this.commandHistory[this.historyIndex]
+    },
+
+    previousCommand() {
+        if (this.historyIndex === 0) return;
+
+        this.historyIndex--;
+        this.input = this.commandHistory[this.historyIndex];
+    },
+
+    clear() {
+        this.outputHistory = [];
+    }
+}))
 
 Alpine.start()
 

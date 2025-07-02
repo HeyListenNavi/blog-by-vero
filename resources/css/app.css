@@ -25,6 +25,7 @@
 
     --text-shadow-outline: -1px -1px 0, 1px -1px 0, -1px 1px 0, 1px 1px 0;
     --shadow-window-outline: inset -6px -6px var(--color-background-tertiary), inset 6px 6px var(--color-background-tertiary), inset 8px 8px var(--color-highlight), inset -8px -8px var(--color-highlight);
+    --text-shadow-terminal-glow: 0 0 2px, 0 0 2px, 0 0 3px;
 
     --text-display-large: 72px;
     --text-display-large--line-height: 120%;

@@ -58,7 +58,6 @@
         extension=".user"
         description="create your very own profile"
         location="/profiles"
-        :open="true"
     >
         <iframe
             src="{{ route('camera') }}"
@@ -68,6 +67,43 @@
         >
             <p>Your browser does not support iframes</p>
         </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
+        name="Terminal"
+        extension=""
+        description="checkout all these crazy commands"
+        location="/usr/bin/kitty"
+        :open="true"
+    >
+        <div
+            x-data="terminal" 
+            class="text-shadow-terminal-glow text-shadow-highlight/60 font-mono space-y-4"
+        >
+            <div class="space-y-2">
+                <template x-for="output in outputHistory">
+                    <pre class="wrap-break-word" x-text="output"></pre>
+                </template>
+            </div>
+            <div class="grid grid-cols-[auto_1fr]">
+                <label
+                    x-text="userPrompt" 
+                    for="input"
+                ></label>
+                <input
+                    x-ref="input" 
+                    x-on:keyup.enter="runCommand(input)" 
+                    x-on:keydown.up.prevent="previousCommand" 
+                    x-on:keydown.down.prevent="nextCommand" 
+                    x-text="input" 
+                    x-model="input" 
+                    class="px-1 outline-0"
+                    placeholder="Type here" 
+                    type="text" 
+                    name="input"
+                >
+            </div>
+        </div>
     </x-desktop-icon>
 </div>
 @endsection
