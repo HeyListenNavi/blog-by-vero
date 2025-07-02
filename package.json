@@ -21,6 +21,7 @@
         "@alpinejs/collapse": "^3.14.9",
         "@alpinejs/focus": "^3.14.9",
         "@alpinejs/persist": "^3.14.9",
+        "@alpinejs/resize": "^3.14.9",
         "@marcreichel/alpine-typewriter": "^1.2.1",
         "alpinejs": "^3.14.9",
         "gsap": "^3.13.0"
