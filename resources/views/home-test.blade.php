@@ -16,7 +16,7 @@
             loading="lazy"
             class="min-w-[650px] min-h-[650px] w-full h-full"
         >
-            <p>Your browser does not support iframes.</p>
+            <p>Your browser does not support iframes</p>
         </iframe>
     </x-desktop-icon>
 
@@ -32,7 +32,7 @@
             loading="lazy"
             class="min-w-[700px] min-h-[600px] w-full h-full"
         >
-            <p>Your browser does not support iframes.</p>
+            <p>Your browser does not support iframes</p>
         </iframe>
     </x-desktop-icon>
 
@@ -41,19 +41,33 @@
         extension=".txt"
         description="leave any comments you'd like here"
         location="/home/naviheylisten/blog/"
+        :buttons="['close']"
+    >
+        <iframe
+            src="{{ route('comments') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-56 h-96 space-y-4 mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
+        name="Profile"
+        extension=".user"
+        description="create your very own profile"
+        location="/profiles"
         :open="true"
     >
-        <div class="w-56 h-96 space-y-4">
-            @forelse ($site->comments as $comment)
-                <div>
-                    <p>{{ $comment->content }}</p>
-                    <span class="font-medium">{{ $comment->user->username }}</span>
-                    <p>{{ $comment->created_at->format('M d, Y H:i') }}</p>
-                </div>
-            @empty
-                <p class="text-gray-600 italic">No comments yet for this site.</p>
-            @endforelse
-        </div>
+        <iframe
+            src="{{ route('camera') }}"
+            frameborder="0"
+            loading="lazy"
+            class="min-w-[800px] min-h-[600px] w-full h-full"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
     </x-desktop-icon>
 </div>
 @endsection

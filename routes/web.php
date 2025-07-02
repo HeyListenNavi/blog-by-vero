@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotographyPostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'home'])
@@ -23,6 +25,12 @@ Route::get('/journal', [PagesController::class, 'journal'])
 
 Route::get('/journal/{post}', [JournalController::class, 'show'])
     ->name('journal.post');
+
+Route::get('/comments', [CommentController::class, 'show'])
+    ->name('comments');
+
+Route::get('/profile', [UserController::class, 'show'])
+    ->name('profile');
 
 Route::get('/login', [PagesController::class, 'login'])
     ->name('login');

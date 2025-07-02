@@ -9,28 +9,30 @@ use Illuminate\View\View;
 
 class PagesController extends Controller
 {
-  public function home(): View {
-    $site = Site::first();
-    $site->load('comments.user');
+    public function home(): View
+    {
+        return view('home-test');
+    }
 
-    return view('home-test', compact('site'));
-  }
+    public function aboutMe(): View
+    {
+        return view('about-me');
+    }
 
-  public function aboutMe(): View {
-    return view('about-me');
-  }
+    public function journal(): View
+    {
+        $posts = (new JournalController)->index();
+        return view('journal', $posts);
+    }
 
-  public function journal(): View {
-    $posts = (new JournalController)->index();
-    return view('journal', $posts);
-  }
-  
-  public function camera(): View {
-    $posts = (new PhotographyPostController)->index();
-    return view('camera', $posts);
-  }
+    public function camera(): View
+    {
+        $posts = (new PhotographyPostController)->index();
+        return view('camera', $posts);
+    }
 
-  public function login(): View {
-    return view('login');
-  }
+    public function login(): View
+    {
+        return view('login');
+    }
 }
