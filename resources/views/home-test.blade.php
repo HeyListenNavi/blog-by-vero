@@ -10,14 +10,16 @@
         description="bunch of rambles compressed into a list"
         location="/home/naviheylisten/vero/thoughts"
     >
-        <iframe
-            src="{{ route('journal') }}"
-            frameborder="0"
-            loading="lazy"
-            class="min-w-[650px] min-h-[650px] w-full h-full"
-        >
-            <p>Your browser does not support iframes</p>
-        </iframe>
+        <x-window-container>
+            <iframe
+                src="{{ route('journal') }}"
+                frameborder="0"
+                loading="lazy"
+                class="min-w-[650px] min-h-[650px] w-full h-full"
+            >
+                <p>Your browser does not support iframes</p>
+            </iframe>
+        </x-window-container>
     </x-desktop-icon>
 
     <x-desktop-icon
@@ -26,14 +28,16 @@
         description="all of veronicas camera roll"
         location="/home/naviheylisten/vero/camera"
     >
-        <iframe
-            src="{{ route('camera') }}"
-            frameborder="0"
-            loading="lazy"
-            class="min-w-[700px] min-h-[600px] w-full h-full"
-        >
-            <p>Your browser does not support iframes</p>
-        </iframe>
+        <x-window-container>
+            <iframe
+                src="{{ route('camera') }}"
+                frameborder="0"
+                loading="lazy"
+                class="min-w-[700px] min-h-[600px] w-full h-full"
+            >
+                <p>Your browser does not support iframes</p>
+            </iframe>
+        </x-window-container>
     </x-desktop-icon>
 
     <x-desktop-icon
@@ -43,14 +47,16 @@
         location="/home/naviheylisten/blog/"
         :buttons="['close']"
     >
-        <iframe
-            src="{{ route('comments') }}"
-            frameborder="0"
-            loading="lazy"
-            class="w-56 h-96 space-y-4 mx-auto"
-        >
-            <p>Your browser does not support iframes</p>
-        </iframe>
+        <x-window-container>
+            <iframe
+                src="{{ route('comments') }}"
+                frameborder="0"
+                loading="lazy"
+                class="w-56 h-96 space-y-4 mx-auto"
+            >
+                <p>Your browser does not support iframes</p>
+            </iframe>
+        </x-window-container>
     </x-desktop-icon>
 
     <x-desktop-icon
@@ -59,14 +65,16 @@
         description="create your very own profile"
         location="/profiles"
     >
-        <iframe
-            src="{{ route('camera') }}"
-            frameborder="0"
-            loading="lazy"
-            class="min-w-[800px] min-h-[600px] w-full h-full"
-        >
-            <p>Your browser does not support iframes</p>
-        </iframe>
+        <x-window-container>
+            <iframe
+                src="{{ route('camera') }}"
+                frameborder="0"
+                loading="lazy"
+                class="min-w-[800px] min-h-[600px] w-full h-full"
+            >
+                <p>Your browser does not support iframes</p>
+            </iframe>
+        </x-window-container>
     </x-desktop-icon>
 
     <x-desktop-icon
@@ -76,9 +84,10 @@
         location="/usr/bin/kitty"
         :open="true"
     >
-        <div
+        <x-window-container
             x-data="terminal" 
-            class="text-shadow-terminal-glow text-shadow-highlight/60 font-mono space-y-4"
+            x-ref="terminal"
+            class="text-shadow-terminal-glow text-shadow-highlight/60 font-mono space-y-4 !max-h-96"
         >
             <div class="space-y-2">
                 <template x-for="output in outputHistory">
@@ -103,7 +112,7 @@
                     name="input"
                 >
             </div>
-        </div>
+        </x-window-container>
     </x-desktop-icon>
 </div>
 @endsection

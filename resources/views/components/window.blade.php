@@ -34,7 +34,5 @@ $buttonMap = [
             @endforeach
         </div>
     </div>
-    <div class="h-full overflow-auto p-2">
-        {{ $slot }}
-    </div>
+    {{ $slot }}
 </div>

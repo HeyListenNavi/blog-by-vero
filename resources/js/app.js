@@ -189,7 +189,7 @@ const commandRegistry = {
         }
 
         const file = terminal.fileSystem[args[0]];
-        
+
         if (!file) {
             return 'cat: no such file'
         };
@@ -234,7 +234,7 @@ const commandRegistry = {
 
 const files = {
     'pompompurin.txt':
-`⠀     ⢠⠔⠚⠒⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        `⠀     ⢠⠔⠚⠒⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⢠⠏⠀⠀⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⢸⡀⠀⠀⠀⡇⠀⠀⢀⠀⣠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⢧⠀⠀⠀⢳⣾⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⢀⡀⠀⠀
@@ -249,14 +249,14 @@ const files = {
 ⠀⠙⠲⠞⠓⠢⢤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣹⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠛⠳⠤⠖⠃`,
 
-    'cat.txt': 
-`╱|_
+    'cat.txt':
+        `╱|_
 (＞.＜7
  |       \\ 
  | |  | |  \\ノ`,
 
-    'bow': 
-`⠀⣾⣿⣦⣀⣴⣿⣷
+    'bow':
+        `⠀⣾⣿⣦⣀⣴⣿⣷
 ⠀⠛⣻⣿⠛⣿⣟⠛
 ⢠⣾⣿⡏ ⠀⢹⣿⣷⡄
 ⠀⠀⡟ ⠀⠀⠀⢻⡀`,
@@ -304,6 +304,10 @@ Alpine.data('terminal', () => ({
 
     print(command, output) {
         this.outputHistory.push(`${this.currentPath}$ ${command} \n${output ?? ''}`);
+        setTimeout(() => {
+            const container = this.$refs.terminal;
+            container.scrollTop = container.scrollHeight;
+        });
     },
 
     nextCommand() {
