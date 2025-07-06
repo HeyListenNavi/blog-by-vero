@@ -4,16 +4,14 @@
 <div class="w-full h-screen grid grid-rows-[auto_1fr]">
     <div class="py-1 px-6 w-full bg-background-tertiary">
         <div class="max-w-xl mx-auto grid grid-cols-[20%_1fr_20%] items-center justify-items-center">
-            <a class="underline cursor-pointer hover:text-highlight-secondary transition-colors" href="{{ route('profile', Auth::user()->id) }}">← Profile</a>
+            <button class="underline cursor-pointer hover:text-highlight-secondary transition-colors" onclick="history.back()">← Profile</button>
             <div class="py-1 px-8 bg-background-primary">naviheylisten.space</div>
             <span class="font-emoji text-4xl">B</span>
         </div>
     </div>
     <div class="mx-auto max-w-xl p-4 flex flex-col gap-2">
         <div class="grid grid-cols-[auto_1fr] items-center gap-4">
-            <div class="size-32 shrink-0 flex items-center justify-center bg-highlight-secondary/80 text-7xl font-emoji">
-                {{ $user->username[0] }}
-            </div>
+            <x-profile-picture letter="{{ $user->username[0] }}"/>
             <div>
                 <p>
                     <span class="font-bold">Name:</span>
