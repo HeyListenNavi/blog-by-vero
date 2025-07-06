@@ -32,7 +32,7 @@ class UserFactory extends Factory
     public function setAdminRole() {
         return $this->state(function (array $state) {
             return [
-                'role' => 'admin'
+                'role' => 'Admin'
             ];
         });
     }
