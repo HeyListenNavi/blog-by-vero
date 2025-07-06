@@ -38,7 +38,7 @@
 
     <x-desktop-icon
         name="Comments"
-        extension=".txt"
+        extension="txt"
         description="leave any comments you'd like here"
         location="/home/naviheylisten/blog/"
         :buttons="['close']"
@@ -55,7 +55,7 @@
 
     <x-desktop-icon
         name="Profile"
-        extension=".user"
+        extension="user"
         description="create your very own profile"
         location="/profiles"
         :open="true"
