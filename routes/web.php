@@ -17,11 +17,14 @@ Route::get('/about-me', [PagesController::class, 'aboutMe'])
 Route::get('/camera', [PagesController::class, 'camera'])
     ->name('camera');
 
-Route::get('/camera-roll/{post}', [PhotographyPostController::class, 'show'])
-    ->name('camera.roll');
-
 Route::get('/journal', [PagesController::class, 'journal'])
     ->name('journal');
+
+Route::get('/terminal', [PagesController::class, 'terminal'])
+    ->name('terminal');
+
+Route::get('/camera-roll/{post}', [PhotographyPostController::class, 'show'])
+    ->name('camera.roll');
 
 Route::get('/journal/{post}', [JournalController::class, 'show'])
     ->name('journal.post');
@@ -29,11 +32,23 @@ Route::get('/journal/{post}', [JournalController::class, 'show'])
 Route::get('/comments', [CommentController::class, 'show'])
     ->name('comments');
 
-Route::get('/profile', [UserController::class, 'show'])
-    ->name('profile');
 
-Route::get('/login', [PagesController::class, 'login'])
-    ->name('login');
+Route::middleware('guest')->group(function () {    
+    Route::post('/register', [AuthController::class, 'register'])
+        ->name('register');
+    
+    Route::post('/login', [AuthController::class, 'login'])
+        ->name('login'); 
+    
+    Route::get('/auth', [PagesController::class, 'auth'])
+        ->name('auth');
+});
 
-Route::post('/login', [AuthController::class, 'login'])
-    ->name('login.submit');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile/{user}', [UserController::class, 'show'])
+        ->name('profile');
+});
+
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->name('logout');

@@ -9,7 +9,7 @@
 
     x-show="$store.windowManager.get(id)?.minimized === false"
     x-bind:class="{ 
-        'w-full h-full !top-0 !left-0 !transform-none': $store.windowManager.get(id)?.maximized,
+        '!w-full !h-full !top-0 !left-0 !transform-none': $store.windowManager.get(id)?.maximized,
     }"
 
     x-on:close-window="$store.windowManager.close(id)"

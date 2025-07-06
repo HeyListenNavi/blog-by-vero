@@ -11,7 +11,7 @@
     @stack('scripts')
 </head>
 
-<body class="min-h-dvh text-foreground relative">
+<body class="min-h-dvh text-foreground flex flex-col items-center justify-center relative">
     @yield('body')
 </body>
 

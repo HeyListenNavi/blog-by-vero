@@ -7,7 +7,7 @@
     @if ($direction == 'vertical')
         class="flex flex-col-reverse items-center gap-2"
     @else
-        class="flex justify-between"
+        class="flex justify-between items-center"
     @endif
 >
     <p>
