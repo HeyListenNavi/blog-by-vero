@@ -5,6 +5,10 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+html {
+  font-size: 16px;
+}
+
 /* 🌀 Theme */
 @theme {
     --font-sans: "uni 05_53";
