@@ -31,8 +31,13 @@ class PagesController extends Controller
         return view('camera', $posts);
     }
 
-    public function login(): View
+    public function auth(): View
     {
-        return view('login');
+        return view('auth');
+    }
+    
+    public function terminal(): View
+    {
+        return view('terminal');
     }
 }
