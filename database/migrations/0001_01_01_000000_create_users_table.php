@@ -27,7 +27,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->enum('role', ['Admin', 'User']);
+            $table->enum('role', ['Admin', 'User'])->default('User');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
