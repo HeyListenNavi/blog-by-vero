@@ -58,7 +58,6 @@
         extension="user"
         description="create your very own profile"
         location="/profiles"
-        :open="true"
     >
         <iframe
             @guest
@@ -82,12 +81,30 @@
         extension=""
         description="checkout all these crazy commands"
         location="/usr/bin/kitty"
-        >
+    >
         <iframe
             src="{{ route('terminal') }}"
             frameborder="0"
             loading="lazy"
             class="min-h-[350px] min-w-[450px] w-full h-full"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    
+    <x-desktop-icon
+        name="Community"
+        extension="user"
+        description="connect with others that loved this website"
+        location="/usr/share"
+        :open="true"
+    >
+        <iframe
+            src="{{ route('community') }}"
+            frameborder="0"
+            loading="lazy"
+            class="min-h-[550px] min-w-[650px] w-full h-full"
         >
             <p>Your browser does not support iframes</p>
         </iframe>

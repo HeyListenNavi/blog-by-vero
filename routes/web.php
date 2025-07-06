@@ -23,6 +23,9 @@ Route::get('/journal', [PagesController::class, 'journal'])
 Route::get('/terminal', [PagesController::class, 'terminal'])
     ->name('terminal');
 
+Route::get('/community', [PagesController::class, 'community'])
+    ->name('community');
+
 Route::get('/camera-roll/{post}', [PhotographyPostController::class, 'show'])
     ->name('camera.roll');
 

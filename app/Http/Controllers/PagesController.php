@@ -40,4 +40,10 @@ class PagesController extends Controller
     {
         return view('terminal');
     }
+
+    public function community(): View
+    {
+        $users = (new UserController)->index();
+        return view('community', $users);
+    }
 }
