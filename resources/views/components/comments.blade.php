@@ -19,7 +19,7 @@
     
     <div>
         @guest
-        <p>Go to profile and Sign In to comment!</p>
+        <p class="font-bold">Go to profile and Sign In to comment!</p>
         @endguest
     
         @auth
