@@ -19,10 +19,7 @@ class UserController extends Controller
     {
         $user->load('comments');
 
-        $isLoggedInProfile = false;
-        if (Auth::check()) {
-            $isLoggedInProfile = ($user->id === Auth::user()->id);
-        };
+        $isLoggedInProfile = Auth::check() && ($user->id === Auth::user()->id);
 
         return view('profile', compact('user', 'isLoggedInProfile'));
     }
