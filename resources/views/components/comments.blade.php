@@ -5,13 +5,7 @@
 <div class="space-y-4">
     <div class="space-y-2">
         @forelse ($comments as $comment)
-        <div>
-            <div class="flex gap-2">
-                <span class="font-medium">{{ $comment->user->username }}</span>
-                <p class="text-foreground/30 tracking-tighter">{{ $comment->created_at->diffForHumans() }}</p>
-            </div>
-            <p>{{ $comment->content }}</p>
-        </div>
+        <x-comment user="{{ $comment->user->username }}" date="{{ $comment->created_at->diffForHumans() }}" comment="{{ $comment->content }}"/>
         @empty
         <p class="text-foreground/30 italic">No comments yet for this site.</p>
         @endforelse
