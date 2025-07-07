@@ -34,7 +34,9 @@ Route::get('/journal/{post}', [JournalController::class, 'show'])
 
 Route::get('/comments', [CommentController::class, 'show'])
     ->name('comments');
-
+    
+Route::get('/profile/{user}', [UserController::class, 'show'])
+    ->name('profile');
 
 Route::middleware('guest')->group(function () {    
     Route::post('/register', [AuthController::class, 'register'])
@@ -47,10 +49,7 @@ Route::middleware('guest')->group(function () {
         ->name('auth');
 });
 
-
 Route::middleware('auth')->group(function () {
-    Route::get('/profile/{user}', [UserController::class, 'show'])
-        ->name('profile');
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])
