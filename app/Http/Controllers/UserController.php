@@ -15,9 +15,14 @@ class UserController extends Controller
         return compact('users');
     }
 
-    public function show(User $user) {
+    public function show(User $user)
+    {
         $user->load('comments');
-        $isLoggedInProfile = ($user->id === Auth::user()->id);
+
+        $isLoggedInProfile = false;
+        if (Auth::check()) {
+            $isLoggedInProfile = ($user->id === Auth::user()->id);
+        };
 
         return view('profile', compact('user', 'isLoggedInProfile'));
     }
