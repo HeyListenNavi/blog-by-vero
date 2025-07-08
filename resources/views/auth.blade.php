@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('body')
-<div x-data="{ page: 0 }" class="w-screen h-svh grid grid-rows-[auto_1fr] items-center justify-items-center gap-4">
-    <div class="w-screen flex">
+<main x-data="{ page: 0 }" class="w-screen h-svh grid grid-rows-[auto_1fr] items-center justify-items-center gap-4">
+    <header class="w-screen flex">
         <x-button class="w-full" x-on:click="page = 0" type="button">Login</x-button>
         <x-button class="w-full" x-on:click="page = 1" type="button">Register</x-button>
-    </div>
+    </header>
 
     <div class="max-w-xs">
         <form x-cloak x-show="page === 0" method="POST" action="{{ route('login') }}">
@@ -102,5 +102,5 @@
             </div>
         </form>
     </div>
-</div>
+</main>
 @endsection

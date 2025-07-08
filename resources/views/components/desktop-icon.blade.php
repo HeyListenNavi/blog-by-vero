@@ -38,7 +38,7 @@
     </script>
 @endPushOnce
 
-<div
+<article
     x-data="{ id: $id('icon') }"
     @if ($open)
         x-init="
@@ -75,4 +75,4 @@
             location="{{ $location }}"
         />
     </template>
-</div>
+</article>

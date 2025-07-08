@@ -12,7 +12,7 @@ $buttonMap = [
 @endphp
 
 <div {{ $attributes->merge(["class" => "flex flex-col bg-background-primary shadow-window-outline p-2 min-w-42"]) }}>
-    <div id="titlebar" class="flex justify-between gap-1 items-center p-2 bg-background-secondary select-none">
+    <header id="titlebar" class="flex justify-between gap-1 items-center p-2 bg-background-secondary select-none">
         <div>
             {{ $title }}
         </div>
@@ -33,6 +33,6 @@ $buttonMap = [
                 @endif
             @endforeach
         </div>
-    </div>
+    </header>
     {{ $slot }}
 </div>

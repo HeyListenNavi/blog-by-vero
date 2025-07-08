@@ -3,7 +3,7 @@
 @section('title', 'this is home')
 
 @section('content')
-<div class="flex flex-col flex-wrap h-full content-start">
+<main class="flex flex-col flex-wrap h-full content-start">
     <x-desktop-icon
         name="Journal"
         extension="md"
@@ -58,6 +58,7 @@
         extension="user"
         description="create your very own profile"
         location="/profiles"
+        :open="true"
     >
         <iframe
             @guest
@@ -98,7 +99,6 @@
         extension="user"
         description="connect with others that loved this website"
         location="/usr/share"
-        :open="true"
     >
         <iframe
             src="{{ route('community') }}"
@@ -109,5 +109,5 @@
             <p>Your browser does not support iframes</p>
         </iframe>
     </x-desktop-icon>
-</div>
+</main>
 @endsection

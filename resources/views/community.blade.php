@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('body')
-<div class="min-h-svh w-screen p-2 grid grid-rows-[1fr_auto]">
-    <div class="grid grid-cols-4 gap-4 content-center max-w-3xl mx-auto">
+<main class="min-h-svh w-screen p-2 grid grid-rows-[1fr_auto]">
+    <header class="px-4 flex flex-col gap-1">
+        <h1 class="text-body-large">Community Section!</h1>
+        <h2>register and checkout your profile here:O</h2>
+    </header>
+
+    <section class="grid grid-cols-4 gap-4 content-center max-w-3xl mx-auto">
     @forelse ($users as $user)
         <a
             href="{{ route('profile', $user->id) }}"
@@ -14,7 +19,10 @@
     @empty
         <p>No users registered yet ;_;</p>
     @endforelse
-    </div>
-    {{ $users->links('components.pagination') }}
-</div>
+    </section>
+
+    <section>
+        {{ $users->links('components.pagination') }}
+    </section>
+</main>
 @endsection
