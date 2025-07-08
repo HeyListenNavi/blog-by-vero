@@ -13,7 +13,7 @@ class PhotographyPostController extends Controller
             ->latest()
             ->paginate(1);
 
-        return compact('posts');
+        return view('camera', compact('posts'));
     }
 
     public function show(PhotographyPost $post)

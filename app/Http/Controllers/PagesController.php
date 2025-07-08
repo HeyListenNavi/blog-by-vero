@@ -19,18 +19,6 @@ class PagesController extends Controller
         return view('about-me');
     }
 
-    public function journal(): View
-    {
-        $posts = (new JournalController)->index();
-        return view('journal', $posts);
-    }
-
-    public function camera(): View
-    {
-        $posts = (new PhotographyPostController)->index();
-        return view('camera', $posts);
-    }
-
     public function auth(): View
     {
         return view('auth');
@@ -49,11 +37,5 @@ class PagesController extends Controller
     public function terminal(): View
     {
         return view('terminal');
-    }
-
-    public function community(): View
-    {
-        $users = (new UserController)->index();
-        return view('community', $users);
     }
 }

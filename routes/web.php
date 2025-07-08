@@ -14,16 +14,16 @@ Route::get('/', [PagesController::class, 'home'])
 Route::get('/about-me', [PagesController::class, 'aboutMe'])
     ->name('about.me');
 
-Route::get('/camera', [PagesController::class, 'camera'])
+Route::get('/camera', [PhotographyPostController::class, 'index'])
     ->name('camera');
 
-Route::get('/journal', [PagesController::class, 'journal'])
+Route::get('/journal', [JournalController::class, 'index'])
     ->name('journal');
 
 Route::get('/terminal', [PagesController::class, 'terminal'])
     ->name('terminal');
 
-Route::get('/community', [PagesController::class, 'community'])
+Route::get('/community', [UserController::class, 'index'])
     ->name('community');
 
 Route::get('/camera-roll/{post}', [PhotographyPostController::class, 'show'])

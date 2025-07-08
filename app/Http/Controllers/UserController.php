@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $users = User::latest()->paginate(10);
 
-        return compact('users');
+        return view('community', compact('users'));
     }
 
     public function show(User $user)

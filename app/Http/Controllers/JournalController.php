@@ -12,7 +12,7 @@ class JournalController extends Controller
             ->latest()
             ->paginate(10);
 
-        return compact('posts');
+        return view('journal', compact('posts'));
     }
 
     // This is what Laravel internally does when you use the route model binding
