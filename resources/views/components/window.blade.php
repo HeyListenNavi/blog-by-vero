@@ -23,10 +23,10 @@ $buttonMap = [
                 @if ($config)
                     <x-button
                         type="button"
-                        class="size-6 relative"
+                        class="size-6 relative !p-0"
                         x-on:click="$dispatch('{{ $config['event'] }}')"
                     >
-                        <span class="absolute top-1/2 left-1/2 -translate-1/2 -translate-y-[calc(50%+2px)]">
+                        <span class="absolute leading-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%]">
                             {{ $config['label'] }}
                         </span>
                     </x-button>
