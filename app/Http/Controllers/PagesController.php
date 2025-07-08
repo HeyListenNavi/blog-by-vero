@@ -35,6 +35,16 @@ class PagesController extends Controller
     {
         return view('auth');
     }
+
+    public function login(): View
+    {
+        return view('auth.login');
+    }
+
+    public function register(): View
+    {
+        return view('auth.register');
+    }
     
     public function terminal(): View
     {

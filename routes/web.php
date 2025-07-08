@@ -40,13 +40,19 @@ Route::get('/profile/{user}', [UserController::class, 'show'])
 
 Route::middleware('guest')->group(function () {    
     Route::post('/register', [AuthController::class, 'register'])
-        ->name('register');
+        ->name('register.submit');
     
     Route::post('/login', [AuthController::class, 'login'])
-        ->name('login'); 
+        ->name('login.submit'); 
     
     Route::get('/auth', [PagesController::class, 'auth'])
         ->name('auth');
+
+    Route::get('/login', [PagesController::class, 'login'])
+        ->name('login');
+
+    Route::get('/register', [PagesController::class, 'register'])
+        ->name('register');
 });
 
 Route::middleware('auth')->group(function () {
