@@ -5,6 +5,7 @@ import collapse from '@alpinejs/collapse'
 import persist from '@alpinejs/persist'
 import typewriter from '@marcreichel/alpine-typewriter';
 import resize from '@alpinejs/resize'
+import anchor from '@alpinejs/anchor'
 
 import { gsap } from "gsap";
 
@@ -26,6 +27,7 @@ Alpine.plugin(focus)
 Alpine.plugin(collapse)
 Alpine.plugin(typewriter)
 Alpine.plugin(resize)
+Alpine.plugin(anchor)
 
 window.Alpine = Alpine
 
