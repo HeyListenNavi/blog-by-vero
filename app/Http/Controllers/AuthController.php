@@ -41,7 +41,7 @@ class AuthController extends Controller
         $rules = [
             'email' => 'required|email|unique:users',
             'name' => 'required|string|max:255',
-            'username' => 'required|max:50|unique:users',
+            'username' => 'required|string|max:50|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ];
 
@@ -55,6 +55,7 @@ class AuthController extends Controller
             'name.max' => 'what, if your name is that long sorry but im not remembering that, put a shorter name or smth',
 
             'username.required' => 'your username is required :p',
+            'username.string' => 'thats simply not an username wtf',
             'username.max' => 'pleeaaasee just use a normal username, i only have space for 50 characters',
             'username.unique' => 'hmmm, weird, i already have you in my book of users, did you forget your account?',
 
@@ -67,10 +68,10 @@ class AuthController extends Controller
         $credentials = $request->validate($rules, $messages);
 
         $user = User::create([
-            'username' => $request->username,
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'username' => $credentials['username'],
+            'name' => $credentials['name'],
+            'email' => $credentials['email'],
+            'password' => Hash::make($credentials['password']),
             'role' => 'User',
         ]);
 
