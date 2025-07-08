@@ -25,7 +25,7 @@ class AuthController extends Controller
 
         $credentials = $request->validate($rules, $messages);
 
-        if (!Auth::attempt($credentials, $request->remember)) {
+        if (!Auth::attempt($credentials, $request->boolean('remember'))) {
             throw ValidationException::withMessages([
                 'credentials' => 'The email and password don\'t match'
             ]);
@@ -33,7 +33,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('profile', Auth::user()->id));
+        return redirect()->intended(route('profile', Auth::user()));
     }
 
     public function register(Request $request): RedirectResponse
@@ -76,7 +76,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('profile', $user->id);
+        return redirect()->route('profile', $user);
     }
 
     public function logout(Request $request): RedirectResponse

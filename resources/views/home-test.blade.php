@@ -66,7 +66,7 @@
             @endguest
 
             @auth
-            src="{{ route('profile', Auth::user()->id) }}"
+            src="{{ route('profile', Auth::user()) }}"
             @endauth
             
             frameborder="0"
