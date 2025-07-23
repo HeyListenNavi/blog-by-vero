@@ -31,7 +31,7 @@ Route::get('/camera-roll/{post}', [PhotographyPostController::class, 'show'])
 Route::get('/journal/{post}', [JournalController::class, 'show'])
     ->name('journal.post');
 
-Route::get('/comments', [CommentController::class, 'show'])
+Route::get('/comments', [CommentController::class, 'index'])
     ->name('comments');
     
 Route::get('/profile/{user}', [UserController::class, 'show'])
