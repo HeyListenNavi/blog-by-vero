@@ -28,7 +28,7 @@ Route::get('/community', [UserController::class, 'index'])
 Route::get('/camera-roll/{photographyPost}', [PhotographyPostController::class, 'show'])
     ->name('camera.roll');
 
-Route::get('/journal/{post}', [JournalController::class, 'show'])
+Route::get('/journal/{post}', [PostController::class, 'show'])
     ->name('journal.post');
 
 Route::get('/comments', [CommentController::class, 'index'])
