@@ -8,7 +8,7 @@
 >
     <section>
         <x-comment-list :comments="$site->comments" :action="route('comment.store', ['model' => 'site', 'id' => $site->id])"/>
+        <span x-ref="bottomComments" class="block h-px invisible"></span>
     </section>
-    <span x-ref="bottomComments" class="block h-px invisible"></span>
 </main>
 @endsection
