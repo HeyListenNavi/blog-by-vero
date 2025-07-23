@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\PagesController;
@@ -39,10 +38,10 @@ Route::get('/profile/{user}', [UserController::class, 'show'])
     ->name('profile');
 
 Route::middleware('guest')->group(function () {    
-    Route::post('/register', [AuthController::class, 'register'])
+    Route::post('/register', [UserController::class, 'register'])
         ->name('register.submit');
     
-    Route::post('/login', [AuthController::class, 'login'])
+    Route::post('/login', [UserController::class, 'login'])
         ->name('login.submit'); 
     
     Route::get('/auth', [PagesController::class, 'auth'])

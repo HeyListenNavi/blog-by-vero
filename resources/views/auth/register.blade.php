@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('body')
-<form method="POST" action="{{ route('register.submit') }}" class="p-2 max-w-xs mx-auto" target="_parent">
+<form method="POST" action="{{ route('register.submit') }}" class="p-2 max-w-xs mx-auto">
     @csrf
     <h1>Register</h1>
 
