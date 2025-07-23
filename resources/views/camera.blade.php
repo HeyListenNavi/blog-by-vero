@@ -8,14 +8,14 @@
     </header>
 
     <section class="mx-auto max-w-md">
-        @forelse ($posts as $post)
+        @forelse ($photographyPosts as $post)
         <article class="flex flex-col gap-8 items-center justify-center">
             <div class="flex flex-col gap-4 items-center">
                 <h1 class="text-center text-body-medium leading-tight">{{ $post->title }}</h1>
                 <img class="size-48" src="{{ $post->icon->path }}">
                 <p class="text-center">{{ $post->description }}</p>
             </div>
-            <x-button href="{{ route('camera.roll', ['post' => $post->id]) }}">Open this Camera Roll</x-button>
+            <x-button href="{{ route('camera.roll', $post) }}">Open this Camera Roll</x-button>
         </article>
         @empty
         <p>No camera rolls yet, check back later!</p> 
@@ -23,7 +23,7 @@
     </section>
 
     <section>
-        {{ $posts->links('components.pagination', ['direction' => 'vertical']) }}
+        {{ $photographyPosts->links('components.pagination', ['direction' => 'vertical']) }}
     </section>
 </main>
 @endsection

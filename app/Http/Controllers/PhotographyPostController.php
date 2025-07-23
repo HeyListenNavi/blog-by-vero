@@ -5,20 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\PhotographyPost;
 use Illuminate\Http\Request;
 
-class PhotographyPostController extends Controller
+class PhotographyPostController
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $posts = PhotographyPost::with(['icon'])
+        $photographyPosts = PhotographyPost::with(['icon'])
             ->latest()
             ->paginate(1);
 
-        return view('camera', compact('posts'));
+        return view('camera', compact('photographyPosts'));
     }
 
-    public function show(PhotographyPost $post)
+    /**
+     * Display the specified resource.
+     */
+    public function show(PhotographyPost $photographyPost)
     {
-        $post->load('photographies');
-        return view('layouts.camera-roll', compact('post'));
+        $photographyPost->load('photographies');
+        return view('layouts.camera-roll', compact('photographyPost'));
     }
 }
