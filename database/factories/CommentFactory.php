@@ -31,8 +31,8 @@ class CommentFactory extends Factory
     public function commentable()
     {
         return $this->faker->randomElement([
-            User::class,
-            Site::class,
+            'user',
+            'site',
         ]);
     }
 }

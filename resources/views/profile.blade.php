@@ -60,7 +60,7 @@
 
         <section class="space-y-2">
             <h2 class="font-bold">Comments</h2>
-            <x-comments :comments="$user->comments"/>
+            <x-comments :comments="$user->comments" :action="route('comment.store', ['model' => 'user', 'id' => $user->id])"/>
         </section>
     </main>
 </div>

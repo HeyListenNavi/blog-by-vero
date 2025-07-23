@@ -56,6 +56,8 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::post('/comment/{model}/{id}', [CommentController::class, 'store'])
+        ->name('comment.store');
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])

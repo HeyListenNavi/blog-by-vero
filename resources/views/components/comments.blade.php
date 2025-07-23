@@ -1,5 +1,6 @@
 @props([
-    'comments' => []
+    'comments' => [],
+    'action'
 ])
 
 <section class="space-y-4">
@@ -17,7 +18,7 @@
         @endguest
     
         @auth
-        <x-comment-box/>
+        <x-comment-box action="{{ $action }}"/>
         @endauth
     </section>
 </section>
