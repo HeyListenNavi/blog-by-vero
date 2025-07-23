@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\JournalController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotographyPostController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +16,7 @@ Route::get('/about-me', [PagesController::class, 'aboutMe'])
 Route::get('/camera', [PhotographyPostController::class, 'index'])
     ->name('camera');
 
-Route::get('/journal', [JournalController::class, 'index'])
+Route::get('/journal', [PostController::class, 'index'])
     ->name('journal');
 
 Route::get('/terminal', [PagesController::class, 'terminal'])
