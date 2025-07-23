@@ -59,5 +59,5 @@ Route::middleware('auth')->group(function () {
         ->name('comment.store');
 });
 
-Route::post('/logout', [AuthController::class, 'logout'])
+Route::post('/logout', [UserController::class, 'logout'])
     ->name('logout');
