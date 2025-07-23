@@ -5,15 +5,13 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
-html {
-  font-size: 16px;
-}
-
 /* 🌀 Theme */
 @theme {
-    --font-sans: "uni 05_53";
-    --font-mono: "uni 05_54";
+    --font-sans: "Pixeloid";
+    --font-mono: "Pixeloid Mono";
     --font-emoji: "Vero's Emojis";
+
+    --text-base: 12px;
 
     --spacing: 4px;
 
@@ -74,20 +72,20 @@ html {
 
 /* 🪐 Font Faces */
 @font-face {
-    font-family: "uni 05_53";
-    src: url("@fonts/uni0553-webfont.woff") format("woff");
+    font-family: "Pixeloid";
+    src: url("@fonts/PixeloidSans.woff") format("woff");
     font-weight: normal;
 }
 
 @font-face {
-    font-family: "uni 05_53";
-    src: url("@fonts/uni0563-webfont.woff") format("woff");
+    font-family: "Pixeloid";
+    src: url("@fonts/PixeloidSans-Bold.woff") format("woff");
     font-weight: bold;
 }
 
 @font-face {
-    font-family: "uni 05_54";
-    src: url("@fonts/uni0554-webfont.woff") format("woff");
+    font-family: "Pixeloid Mono";
+    src: url("@fonts/PixeloidMono.woff") format("woff");
     font-weight: normal;
 }
 
