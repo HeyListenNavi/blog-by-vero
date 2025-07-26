@@ -22,7 +22,7 @@
         @forelse ($comments as $comment)
         <x-comment user="{{ $comment->user->username }}" date="{{ $comment->created_at->diffForHumans() }}" comment="{{ $comment->content }}"/>
         @empty
-        <p class="text-foreground/30 italic">No comments yet for this site</p>
+        <p class="text-foreground/30 italic">No comments yet</p>
         @endforelse
     </section>
     
