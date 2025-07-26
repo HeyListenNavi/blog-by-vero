@@ -62,6 +62,8 @@ class CommentController
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+
+        return redirect()->back();
     }
 }
