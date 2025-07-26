@@ -60,7 +60,7 @@ class UserController
             'name' => $credentials['name'],
             'email' => $credentials['email'],
             'password' => Hash::make($credentials['password']),
-            'description' => $credentials['description'],
+            'description' => $credentials['description'] ?? null,
             'role' => 'User',
         ]);
 
