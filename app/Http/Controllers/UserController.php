@@ -111,39 +111,43 @@ class UserController
     {
         $user->load('comments');
 
-        $isLoggedInProfile = Auth::check() && ($user->id === Auth::user()->id);
-
-        return view('profile', compact('user', 'isLoggedInProfile'));
+        return view('profile', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit()
     {
-        //
+        $user = Auth::user();
+        
+        return view('profile-edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
+        $user = Auth::user();
+
         $rules = [
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:50|unique:users',
+            'email' => 'nullable|email|unique:users,email,' . $user->id,
+            'name' => 'nullable|string|max:255',
+            'username' => 'nullable|string|max:50|unique:users,username,' . $user->id,
             'description' => 'nullable|string|max:1000',
         ];
 
         $messages = [
-            'name.required' => 'how am i supposed to call you?!?? please enter your name',
+            'email.email' => 'what youre not fooling me, thats not an email',
+            'email.unique' => 'you cant steal someone elses email you know...',
+
             'name.string' => 'thats for sure not a name dude, enter your actual name',
             'name.max' => 'what, if your name is that long sorry but im not remembering that, put a shorter name or smth',
 
-            'username.required' => 'your username is required :p',
             'username.string' => 'thats simply not an username wtf',
             'username.max' => 'pleeaaasee just use a normal username, i only have space for 50 characters',
-            'username.unique' => 'hmmm, weird, i already have you in my book of users, did you forget your account?',
+            'username.unique' => 'that username is already in use :(',
 
             'description.string' => 'uh thats not a description',
             'description.max' => 'i love yappers but i can not store that much ;_;',

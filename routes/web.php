@@ -34,7 +34,7 @@ Route::get('/journal/{post}', [PostController::class, 'show'])
 Route::get('/comments', [CommentController::class, 'index'])
     ->name('comments');
     
-Route::get('/profile/{user}', [UserController::class, 'show'])
+Route::get('{user}/profile', [UserController::class, 'show'])
     ->name('profile');
 
 Route::middleware('guest')->group(function () {    
@@ -57,6 +57,12 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/comment/{model}/{id}', [CommentController::class, 'store'])
         ->name('comment.store');
+
+    Route::post('/profile/edit', [UserController::class, 'update'])
+        ->name('profile.update');
+
+    Route::get('/profile/edit', [UserController::class, 'edit'])
+        ->name('profile.edit');
 });
 
 Route::post('/logout', [UserController::class, 'logout'])

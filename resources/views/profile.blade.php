@@ -1,27 +1,27 @@
 @extends('layouts.app')
 
 @section('body')
-<div class="w-full h-screen grid grid-rows-[auto_1fr]">
+<div class="w-full min-h-screen grid grid-rows-[auto_1fr] bg-background-primary">
     <nav class="py-1 px-6 w-full bg-background-tertiary">
         <div class="max-w-xl mx-auto grid grid-cols-[20%_1fr_20%] items-center justify-items-center">
-            <a class="underline cursor-pointer hover:text-highlight-secondary transition-colors" href="{{ route('profile', Auth::user()) }}">← Profile</a>
+            <a class="underline cursor-pointer hover:text-highlight-secondary transition-colors" href="{{ route('community') }}">← Profile</a>
             <div class="py-1 px-8 bg-background-primary">naviheylisten.space</div>
             <span class="font-emoji text-4xl">B</span>
         </div>
     </nav>
 
-    <main class="mx-auto max-w-xl p-4 flex flex-col gap-4">
+    <main class="mx-auto w-full max-w-xl p-4 flex flex-col gap-4">
         <section class="relative grid grid-cols-[auto_1fr] items-center gap-4">
             <x-profile-picture letter="{{ $user->username[0] }}"/>
             <div>
-                @if ($isLoggedInProfile)
+                @if (Auth::id() === $user->id)
                 <x-profile-options>
-                    <button
+                    <a
                         class="px-2 py-1 text-start w-full appearance-none hover:bg-background-primary text-foreground/30 cursor-pointer hover:text-foreground/80 transition-colors" 
-                        href=""
+                        href="{{ route('profile.edit') }}"
                     >
                         Edit Profile
-                    </button>
+                    </a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button
@@ -60,7 +60,7 @@
 
         <section class="space-y-2">
             <h2 class="font-bold">Comments</h2>
-            <x-comment-list :comments="$user->comments" :action="route('comment.store', ['model' => 'user', 'id' => $user->id])"/>
+            <x-comment-list :comments="$user->comments" :action="route('comment.store', ['model' => 'user', 'id' => $user->id])" :reverse="true"/>
         </section>
     </main>
 </div>

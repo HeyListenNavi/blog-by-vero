@@ -1,10 +1,24 @@
 @props([
     'comments' => [],
-    'action'
+    'action',
+    'reverse' => false
 ])
 
-<section class="space-y-4">
-    <section class="space-y-2">
+<section 
+    @if ($reverse)
+    class="flex gap-4 flex-col-reverse"
+    @else
+    class="flex gap-4 flex-col"
+    @endif
+>
+    <section 
+        @if ($reverse)
+        class="flex gap-2 flex-col-reverse"
+        @else
+        class="flex gap-2 flex-col"
+        @endif
+    >
+
         @forelse ($comments as $comment)
         <x-comment user="{{ $comment->user->username }}" date="{{ $comment->created_at->diffForHumans() }}" comment="{{ $comment->content }}"/>
         @empty
