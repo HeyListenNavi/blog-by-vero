@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Site;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Comment>
@@ -23,7 +24,7 @@ class CommentFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first(),
             'content' => $this->faker->text(),
-            'commentable_type' => $commentable,
+            'commentable_type' => Relation::getMorphAlias($commentable),
             'commentable_id' => $commentable::inRandomOrder()->first(),
         ];
     }
@@ -31,8 +32,8 @@ class CommentFactory extends Factory
     public function commentable()
     {
         return $this->faker->randomElement([
-            'user',
-            'site',
+            User::class,
+            Site::class,
         ]);
     }
 }
