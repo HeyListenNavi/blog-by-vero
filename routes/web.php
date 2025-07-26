@@ -63,6 +63,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profile/edit', [UserController::class, 'edit'])
         ->name('profile.edit');
+
+    Route::delete('/comment/{comment}/delete', [CommentController::class, 'destroy'])
+        ->name('comment.destroy');
 });
 
 Route::post('/logout', [UserController::class, 'logout'])

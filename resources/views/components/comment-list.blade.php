@@ -1,6 +1,7 @@
 @props([
     'comments' => [],
-    'action',
+    'type',
+    'commentableid',
     'reverse' => false
 ])
 
@@ -20,7 +21,29 @@
     >
 
         @forelse ($comments as $comment)
-        <x-comment user="{{ $comment->user->username }}" date="{{ $comment->created_at->diffForHumans() }}" comment="{{ $comment->content }}"/>
+        <article class="relative">
+            @auth
+                @if ($comment->user->id == Auth::id())
+                <x-options-button>
+                    <form method="POST" action="{{ route('comment.destroy', $comment) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button
+                            class="px-2 py-1 text-start w-full appearance-none hover:bg-background-primary text-foreground/30 cursor-pointer hover:text-foreground/80 transition-colors" 
+                            type="submit"
+                        >
+                            Delete
+                        </button>
+                    </form>
+                </x-options-button>
+                @endif
+            @endauth
+            <div class="flex gap-2">
+                <span class="font-medium">{{ $comment->user->username }}</span>
+                <p class="text-foreground/30 tracking-tighter">{{ $comment->created_at->diffForHumans() }}</p>
+            </div>
+            <p>{{ $comment->content }}</p>
+        </article>
         @empty
         <p class="text-foreground/30 italic">No comments yet</p>
         @endforelse
@@ -32,7 +55,7 @@
         @endguest
     
         @auth
-        <x-comment-box action="{{ $action }}"/>
+        <x-comment-box :action="route('comment.store', ['model' => $type, 'id' => $commentableid])"/>
         @endauth
     </section>
 </section>

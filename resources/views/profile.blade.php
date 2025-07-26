@@ -15,7 +15,7 @@
             <x-profile-picture letter="{{ $user->username[0] }}"/>
             <div>
                 @if (Auth::id() === $user->id)
-                <x-profile-options>
+                <x-options-button>
                     <a
                         class="px-2 py-1 text-start w-full appearance-none hover:bg-background-primary text-foreground/30 cursor-pointer hover:text-foreground/80 transition-colors" 
                         href="{{ route('profile.edit') }}"
@@ -31,7 +31,7 @@
                             Log out →
                         </button>
                     </form>
-                </x-profile-options>
+                </x-options-button>
                 @endif
                
                 <div class="space-y-1">
@@ -60,7 +60,7 @@
 
         <section class="space-y-2">
             <h2 class="font-bold">Comments</h2>
-            <x-comment-list :comments="$user->comments" :action="route('comment.store', ['model' => 'user', 'id' => $user->id])" :reverse="true"/>
+            <x-comment-list :comments="$user->comments" type="user" :commentableid="$user->id" :reverse="true"/>
         </section>
     </main>
 </div>

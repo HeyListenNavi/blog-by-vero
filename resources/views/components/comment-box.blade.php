@@ -1,5 +1,5 @@
 @props([
-    'action' => ''
+    'action'
 ])
 
 <form action="{{ $action }}" method="POST" class="flex flex-col gap-2" x-data>

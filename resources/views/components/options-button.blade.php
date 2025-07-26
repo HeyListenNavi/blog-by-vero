@@ -13,7 +13,7 @@
         x-anchor.bottom-end="$refs.showMore"
         x-cloak
         x-show="show"
-        class="w-max p-3 bg-background-tertiary"
+        class="w-max p-3 bg-background-tertiary z-100"
     >
         {{ $slot }}        
     </div>
