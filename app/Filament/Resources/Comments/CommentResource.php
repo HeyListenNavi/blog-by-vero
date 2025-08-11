@@ -20,12 +20,11 @@ class CommentResource extends Resource
 {
     protected static ?string $model = Comment::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $modelLabel = 'Site Comment';
+    
+    protected static ?string $pluralModelLabel = 'Site Comments';
 
-    public static function form(Schema $schema): Schema
-    {
-        return CommentForm::configure($schema);
-    }
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function infolist(Schema $schema): Schema
     {
@@ -48,9 +47,6 @@ class CommentResource extends Resource
     {
         return [
             'index' => ListComments::route('/'),
-            'create' => CreateComment::route('/create'),
-            'view' => ViewComment::route('/{record}'),
-            'edit' => EditComment::route('/{record}/edit'),
         ];
     }
 }

@@ -11,15 +11,13 @@ class CommentInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('user.name')
-                    ->numeric(),
-                TextEntry::make('commentable_type'),
-                TextEntry::make('commentable_id')
-                    ->numeric(),
+                TextEntry::make('user.name'),
+                TextEntry::make('user.username'),
+                TextEntry::make('user.email'),
                 TextEntry::make('created_at')
-                    ->dateTime(),
-                TextEntry::make('updated_at')
-                    ->dateTime(),
+                    ->dateTime('d-M-y h:i A'),
+                TextEntry::make('content')
+                    ->columnSpanFull(),
             ]);
     }
 }
