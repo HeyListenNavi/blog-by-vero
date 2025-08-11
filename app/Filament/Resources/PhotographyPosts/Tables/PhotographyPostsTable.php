@@ -2,10 +2,13 @@
 
 namespace App\Filament\Resources\PhotographyPosts\Tables;
 
+use App\Models\PhotographyPost;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Support\Enums\FontWeight;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -15,16 +18,19 @@ class PhotographyPostsTable
     {
         return $table
             ->columns([
-                TextColumn::make('icon.name')
-                    ->numeric()
-                    ->sortable(),
+                ImageColumn::make('icon.path'),
+                TextColumn::make('title')
+                    ->description(fn(PhotographyPost $photographyPost): string => str($photographyPost->description)->limit(90, '...'))
+                    ->weight(FontWeight::Bold)
+                    ->sortable()
+                    ->searchable(['title', 'description']),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Date')
+                    ->since()
+                    ->description(fn(PhotographyPost $photographyPost): string => $photographyPost->created_at->format('d-M-y h:i A'))
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
+                    ->grow(false)
+                    ->alignment('end')
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([

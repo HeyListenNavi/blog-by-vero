@@ -11,6 +11,8 @@ use App\Filament\Resources\PhotographyPosts\Schemas\PhotographyPostInfolist;
 use App\Filament\Resources\PhotographyPosts\Tables\PhotographyPostsTable;
 use App\Models\PhotographyPost;
 use BackedEnum;
+use Filament\Pages\Enums\SubNavigationPosition;
+use Filament\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -20,7 +22,13 @@ class PhotographyPostResource extends Resource
 {
     protected static ?string $model = PhotographyPost::class;
 
+    protected static ?string $modelLabel = 'Camera Roll';
+
+    protected static ?string $pluralModelLabel = 'Camera Rolls';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static ?SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Top;
 
     public static function form(Schema $schema): Schema
     {
@@ -52,5 +60,13 @@ class PhotographyPostResource extends Resource
             'view' => ViewPhotographyPost::route('/{record}'),
             'edit' => EditPhotographyPost::route('/{record}/edit'),
         ];
+    }
+
+    public static function getRecordSubNavigation(Page $page): array
+    {
+        return $page->generateNavigationItems([
+            ViewPhotographyPost::class,
+            EditPhotographyPost::class,
+        ]);
     }
 }
