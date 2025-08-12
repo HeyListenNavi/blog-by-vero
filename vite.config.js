@@ -6,7 +6,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/sass/main.sass', 'resources/js/app.js'],
+            input: ['resources/css/app.cs', 'resources/js/app.js'],
             refresh: true,
         }),
         tailwindcss(),
