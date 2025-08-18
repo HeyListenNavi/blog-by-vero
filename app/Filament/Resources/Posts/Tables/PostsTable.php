@@ -8,6 +8,8 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\ImageColumn;
+use App\Models\Post;
 
 class PostsTable
 {
@@ -15,18 +17,19 @@ class PostsTable
     {
         return $table
             ->columns([
-                TextColumn::make('slug')
+                ImageColumn::make('icon.path'),
+                TextColumn::make('title')
+                    ->grow(true)
                     ->searchable(),
                 TextColumn::make('date')
                     ->date()
                     ->sortable(),
-                TextColumn::make('icon.name')
-                    ->numeric()
-                    ->sortable(),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Published At')
+                    ->since()
+                    ->description(fn(Post $post): string => $post->created_at->format('d-M-y h:i A'))
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->alignment('end'),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()

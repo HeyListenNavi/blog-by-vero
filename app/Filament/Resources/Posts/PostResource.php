@@ -9,6 +9,8 @@ use App\Filament\Resources\Posts\Pages\ViewPost;
 use App\Filament\Resources\Posts\Schemas\PostForm;
 use App\Filament\Resources\Posts\Schemas\PostInfolist;
 use App\Filament\Resources\Posts\Tables\PostsTable;
+use Filament\Pages\Enums\SubNavigationPosition;
+use Filament\Pages\Page;
 use App\Models\Post;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -21,6 +23,8 @@ class PostResource extends Resource
     protected static ?string $model = Post::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static ?SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Top;
 
     public static function form(Schema $schema): Schema
     {
@@ -52,5 +56,13 @@ class PostResource extends Resource
             'view' => ViewPost::route('/{record}'),
             'edit' => EditPost::route('/{record}/edit'),
         ];
+    }
+
+    public static function getRecordSubNavigation(Page $page): array
+    {
+        return $page->generateNavigationItems([
+            ViewPost::class,
+            EditPost::class,
+        ]);
     }
 }
