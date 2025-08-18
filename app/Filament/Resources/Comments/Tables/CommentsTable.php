@@ -22,21 +22,21 @@ class CommentsTable
         return $table
             ->defaultSort('created_at', 'desc')
             ->columns([
-                TextColumn::make('user.name')
+                TextColumn::make('user.username')
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('user.username')
+                TextColumn::make('user.name')
+                    ->label('Comment')
                     ->description(fn(Comment $comment): string => str($comment->content)->limit(70, '...'))
                     ->weight(FontWeight::Bold)
-                    ->sortable()
+                    ->grow(true)
                     ->searchable(['content', 'name']),
                 TextColumn::make('created_at')
                     ->label('Date')
                     ->since()
                     ->description(fn(Comment $comment): string => $comment->created_at->format('d-M-y h:i A'))
                     ->sortable()
-                    ->grow(false)
-                    ->alignment('end'),
+                    ->alignEnd(),
             ])
             ->recordActions([
                 DeleteAction::make()
