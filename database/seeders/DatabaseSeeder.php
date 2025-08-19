@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             PhotographySeeder::class,
             UserSeeder::class,
             CommentSeeder::class,
+            DefaultAdminSeeder::class,
         ]);
     }
 }
