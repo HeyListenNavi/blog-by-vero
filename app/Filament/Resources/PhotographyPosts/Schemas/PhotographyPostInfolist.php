@@ -30,17 +30,20 @@ class PhotographyPostInfolist
                         ])
                             ->verticallyAlignCenter()
                             ->columnSpanFull(),
+
                         TextEntry::make('created_at')
                             ->label('Published at')
                             ->badge()
                             ->color('success')
                             ->dateTime(),
+
                         TextEntry::make('updated_at')
                             ->label('Last Update')
                             ->badge()
                             ->color('gray')
                             ->dateTime(),
                     ]),
+
                 Section::make('Description')
                     ->collapsible()
                     ->schema([
@@ -48,6 +51,7 @@ class PhotographyPostInfolist
                             ->markdown()
                             ->hiddenLabel(),
                     ]),
+                    
                 Section::make('Photographies')
                     ->columnSpanFull()
                     ->collapsible()

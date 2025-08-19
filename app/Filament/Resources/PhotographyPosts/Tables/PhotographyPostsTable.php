@@ -20,11 +20,13 @@ class PhotographyPostsTable
             ->columns([
                 ImageColumn::make('icon.path')
                     ->disk('public'),
+
                 TextColumn::make('title')
                     ->description(fn(PhotographyPost $photographyPost): string => str($photographyPost->description)->limit(90, '...'))
                     ->weight(FontWeight::Bold)
-                    ->sortable()
+                    ->grow(true)
                     ->searchable(['title', 'description']),
+
                 TextColumn::make('created_at')
                     ->label('Date')
                     ->since()

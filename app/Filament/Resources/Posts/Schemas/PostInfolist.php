@@ -27,20 +27,25 @@ class PostInfolist
                         ])
                             ->verticallyAlignCenter()
                             ->columnSpanFull(),
+                            
                         TextEntry::make('slug'),
+
                         TextEntry::make('date')
                             ->date(),
+
                         TextEntry::make('created_at')
                             ->label('Published at')
                             ->badge()
                             ->color('success')
                             ->dateTime(),
+
                         TextEntry::make('updated_at')
                             ->label('Last Update')
                             ->badge()
                             ->color('gray')
                             ->dateTime(),
                     ]),
+
                 Section::make('Content')
                     ->columnSpanFull()
                     ->collapsible()

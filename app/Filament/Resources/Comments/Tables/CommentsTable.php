@@ -25,12 +25,14 @@ class CommentsTable
                 TextColumn::make('user.username')
                     ->sortable()
                     ->searchable(),
+
                 TextColumn::make('user.name')
                     ->label('Comment')
                     ->description(fn(Comment $comment): string => str($comment->content)->limit(70, '...'))
                     ->weight(FontWeight::Bold)
                     ->grow(true)
                     ->searchable(['content', 'name']),
+
                 TextColumn::make('created_at')
                     ->label('Date')
                     ->since()
@@ -42,6 +44,7 @@ class CommentsTable
                 DeleteAction::make()
                     ->button()
                     ->size(Size::ExtraSmall),
+                    
                 ViewAction::make()
                     ->hiddenLabel()
                     ->icon(null),
