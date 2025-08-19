@@ -29,7 +29,7 @@ class PostsTable
                     ->since()
                     ->description(fn(Post $post): string => $post->created_at->format('d-M-y h:i A'))
                     ->sortable()
-                    ->alignment('end'),
+                    ->alignEnd(),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()

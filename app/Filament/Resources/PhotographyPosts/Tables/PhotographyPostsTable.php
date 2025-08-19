@@ -29,8 +29,7 @@ class PhotographyPostsTable
                     ->since()
                     ->description(fn(PhotographyPost $photographyPost): string => $photographyPost->created_at->format('d-M-y h:i A'))
                     ->sortable()
-                    ->grow(false)
-                    ->alignment('end')
+                    ->alignEnd()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([

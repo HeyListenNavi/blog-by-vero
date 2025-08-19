@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use App\Filament\Schemas\IconForm;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -32,28 +33,10 @@ class PostForm
                     ->relationship('icon', 'id')
                     ->searchable()
                     ->preload()
-                    ->columnSpanFull()
-                    ->createOptionForm([
-                        TextInput::make('name')
-                            ->required(),
-                        FileUpload::make('path')
-                            ->image()
-                            ->required(),
-                    ])
-                    ->editOptionForm([
-                        TextInput::make('name')
-                            ->required(),
-                        FileUpload::make('path')
-                            ->image()
-                            ->required(),
-                    ])
+                    ->createOptionForm(fn ($schema) => IconForm::configure($schema))
+                    ->editOptionForm(fn ($schema) => IconForm::configure($schema))
                     ->allowHtml()
-                    ->getOptionLabelFromRecordUsing(fn(Icon $icon) => new HtmlString("
-                        <div style='display: flex; align-items: center; gap: 10px;'>
-                            <img src='{$icon->path}' alt='{$icon->name}' style='width: 48px; height: 48px; object-fit: cover;'>
-                            <span>{$icon->name}</span>
-                        </div>
-                    ")),
+                    ->getOptionLabelFromRecordUsing(fn(Icon $icon) => view('components.icon-option', compact('icon'))),
 
                 MarkdownEditor::make('content')
                     ->required()

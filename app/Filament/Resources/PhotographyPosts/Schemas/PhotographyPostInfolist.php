@@ -9,6 +9,7 @@ use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Flex;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 
 class PhotographyPostInfolist
@@ -43,6 +44,7 @@ class PhotographyPostInfolist
                     ->collapsible()
                     ->schema([
                         TextEntry::make('description')
+                            ->markdown()
                             ->hiddenLabel(),
                     ]),
                 Section::make('Photographies')
