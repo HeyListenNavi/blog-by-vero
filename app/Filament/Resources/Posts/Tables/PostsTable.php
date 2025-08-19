@@ -10,6 +10,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\ImageColumn;
 use App\Models\Post;
+use Filament\Support\Enums\FontWeight;
 
 class PostsTable
 {
@@ -19,18 +20,24 @@ class PostsTable
             ->columns([
                 ImageColumn::make('icon.path')
                     ->disk('public'),
+
                 TextColumn::make('title')
                     ->grow(true)
-                    ->searchable(),
+                    ->weight(FontWeight::Bold)
+                    ->description(fn(Post $post): string => str($post->content)->limit(90, '...'))
+                    ->searchable(['title', 'content']),
+
                 TextColumn::make('date')
                     ->date()
                     ->sortable(),
+
                 TextColumn::make('created_at')
                     ->label('Published At')
                     ->since()
                     ->description(fn(Post $post): string => $post->created_at->format('d-M-y h:i A'))
                     ->sortable()
                     ->alignEnd(),
+                    
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
