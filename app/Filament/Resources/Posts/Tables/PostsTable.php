@@ -17,7 +17,8 @@ class PostsTable
     {
         return $table
             ->columns([
-                ImageColumn::make('icon.path'),
+                ImageColumn::make('icon.path')
+                    ->disk('public'),
                 TextColumn::make('title')
                     ->grow(true)
                     ->searchable(),

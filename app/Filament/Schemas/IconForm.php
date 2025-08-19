@@ -22,8 +22,8 @@ class IconForm
                     ->image()
                     ->imageEditor()
                     ->imageEditorAspectRatios(['1:1'])
-                    // ->imageResizeMode('cover')
-                    // ->imageCropAspectRatio('1:1')
+                    ->imageResizeMode('cover')
+                    ->imageCropAspectRatio('1:1')
                     ->required(),
             ]);
     }

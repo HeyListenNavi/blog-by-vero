@@ -18,7 +18,8 @@ class PhotographyPostsTable
     {
         return $table
             ->columns([
-                ImageColumn::make('icon.path'),
+                ImageColumn::make('icon.path')
+                    ->disk('public'),
                 TextColumn::make('title')
                     ->description(fn(PhotographyPost $photographyPost): string => str($photographyPost->description)->limit(90, '...'))
                     ->weight(FontWeight::Bold)
