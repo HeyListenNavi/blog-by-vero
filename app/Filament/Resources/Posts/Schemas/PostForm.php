@@ -33,10 +33,12 @@ class PostForm
                     ->relationship('icon', 'id')
                     ->searchable()
                     ->preload()
-                    ->createOptionForm(fn ($schema) => IconForm::configure($schema))
-                    ->editOptionForm(fn ($schema) => IconForm::configure($schema))
+                    ->createOptionForm(fn($schema) => IconForm::configure($schema))
+                    ->editOptionForm(fn($schema) => IconForm::configure($schema))
                     ->allowHtml()
-                    ->getOptionLabelFromRecordUsing(fn(Icon $icon) => view('components.icon-option', compact('icon'))),
+                    ->getOptionLabelFromRecordUsing(fn(Icon $icon) => view('components.icon-option', compact('icon')))
+                    ->required()
+                    ->columnSpanFull(),
 
                 MarkdownEditor::make('content')
                     ->required()

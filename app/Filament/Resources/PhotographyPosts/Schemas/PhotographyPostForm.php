@@ -32,7 +32,8 @@ class PhotographyPostForm
                     ->createOptionForm(fn ($schema) => IconForm::configure($schema))
                     ->editOptionForm(fn ($schema) => IconForm::configure($schema))
                     ->allowHtml()
-                    ->getOptionLabelFromRecordUsing(fn(Icon $icon) => view('components.icon-option', compact('icon'))),
+                    ->getOptionLabelFromRecordUsing(fn(Icon $icon) => view('components.icon-option', compact('icon')))
+                    ->required(),
 
                 MarkdownEditor::make('description')
                     ->required()
