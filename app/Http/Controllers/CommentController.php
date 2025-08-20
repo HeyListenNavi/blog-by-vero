@@ -7,6 +7,7 @@ use App\Models\Site;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class CommentController
 {
@@ -44,7 +45,7 @@ class CommentController
 
         if (!Relation::getMorphedModel($model)::find($id))
         {
-            return back()->withErrors(['id' => 'Commentable not found']); 
+            return back()->withErrors(['id' => 'Commentable not found']);
         }
 
         Comment::create([
@@ -62,8 +63,11 @@ class CommentController
      */
     public function destroy(Comment $comment)
     {
-        $comment->delete();
+        if (Gate::denies('delete-comment', $comment)) {
+            abort(403);
+        }
 
+        $comment->delete();
         return redirect()->back();
     }
 }
