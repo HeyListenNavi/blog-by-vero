@@ -8,26 +8,111 @@
     </header>
 
     <div class="w-full h-full">
-        <iframe
+        <form
+            method="POST"
+            action="{{ route('login.submit') }}"
+            class="p-2 max-w-xs mx-auto"
             x-show="page == 'login'"
             x-cloak
-            src="{{ route('login') }}"
-            frameborder="0"
-            loading="lazy"
-            class="w-full h-full"
         >
-            <p>Your browser does not support iframes</p>
-        </iframe>
-        <iframe
+            @csrf
+            <h1>Login</h1>
+                
+            @if($errors->login->any())
+                @foreach ($errors->login->all() as $error)
+                    <p style="color: red">{{ $error }}</p>
+                @endforeach
+            @endif
+                    
+            <div class="flex flex-col gap-2">
+                <x-text-input
+                    label="Email:"
+                    id="email"
+                    type="email"
+                    :required="true"
+                    placeholder="email"
+                    :autofocus="true"
+                    value="{{ old('email') }}"
+                />
+                <x-text-input
+                    label="Password:"
+                    id="password"
+                    type="password"
+                    :required="true"
+                    placeholder="password"
+                />
+
+                <label class="flex gap-1 items-center select-none">
+                    <input class="accent-highlight" type="checkbox" name="remember">
+                    Remember me
+                </label>
+
+                <x-button class="self-end" type="submit">Log in</x-button>
+            </div>
+        </form>
+       
+        <form
+            method="POST"
+            action="{{ route('register.submit') }}"
+            class="p-2 max-w-xs mx-auto"
             x-show="page == 'register'"
             x-cloak
-            src="{{ route('register') }}"
-            frameborder="0"
-            loading="lazy"
-            class="w-full h-full"
         >
-            <p>Your browser does not support iframes</p>
-        </iframe>
+            @csrf
+            <h1>Register</h1>
+
+            @if($errors->register->any())
+                @foreach ($errors->register->all() as $error)
+                    <p style="color: red">{{ $error }}</p>
+                @endforeach
+            @endif
+            
+            <div class="flex flex-col gap-2">
+                <x-text-input
+                    label="Email:"
+                    id="email"
+                    type="email"
+                    :required="true"
+                    placeholder="email"
+                    :autofocus="true"
+                    value="{{ old('email') }}"
+                />
+
+                <x-text-input
+                    label="Name:"
+                    id="name"
+                    :required="true"
+                    placeholder="name"
+                    value="{{ old('name') }}"
+                />
+
+                <x-text-input
+                    label="Username:"
+                    id="username"
+                    :required="true"
+                    placeholder="username"
+                    value="{{ old('username') }}"
+                />
+
+                <x-text-input
+                    label="Password:"
+                    id="password"
+                    type="password"
+                    :required="true"
+                    placeholder="password"
+                />
+
+                <x-text-input
+                    label="Password:"
+                    id="password_confirmation"
+                    type="password"
+                    :required="true"
+                    placeholder="repeat your password"
+                />
+
+                <x-button class="self-end" type="submit">Register</x-button>
+            </div>
+        </form>
     </div>
 </main>
 @endsection

@@ -33,39 +33,33 @@ Route::get('/journal/{post}', [PostController::class, 'show'])
 
 Route::get('/comments', [CommentController::class, 'index'])
     ->name('comments');
-    
+
 Route::get('{user}/profile', [UserController::class, 'show'])
     ->name('profile');
 
-Route::middleware('guest')->group(function () {    
+Route::middleware('guest')->group(function () {
     Route::post('/register', [UserController::class, 'register'])
         ->name('register.submit');
-    
+
     Route::post('/login', [UserController::class, 'login'])
-        ->name('login.submit'); 
-    
+        ->name('login.submit');
+
     Route::get('/auth', [PagesController::class, 'auth'])
         ->name('auth');
-
-    Route::get('/login', [PagesController::class, 'login'])
-        ->name('login');
-
-    Route::get('/register', [PagesController::class, 'register'])
-        ->name('register');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('/comment/{model}/{id}', [CommentController::class, 'store'])
+    Route::post('/comments/{model}/{id}', [CommentController::class, 'store'])
         ->name('comment.store');
+
+    Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])
+        ->name('comment.destroy');
 
     Route::post('/profile/edit', [UserController::class, 'update'])
         ->name('profile.update');
 
     Route::get('/profile/edit', [UserController::class, 'edit'])
         ->name('profile.edit');
-
-    Route::delete('/comment/{comment}', [CommentController::class, 'destroy'])
-        ->name('comment.destroy');
 });
 
 Route::post('/logout', [UserController::class, 'logout'])

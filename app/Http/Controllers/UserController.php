@@ -53,7 +53,7 @@ class UserController
             'description.max' => 'i love yappers but i can not store that much ;_;',
         ];
 
-        $credentials = $request->validate($rules, $messages);
+        $credentials = $request->validateWithBag('register', $rules, $messages);
 
         $user = User::create([
             'username' => $credentials['username'],
@@ -64,7 +64,7 @@ class UserController
             'role' => 'User',
         ]);
 
-        Auth::login($user);
+        Auth::login($user, $request->remember);
 
         return redirect()->route('profile', $user);
     }
@@ -81,12 +81,12 @@ class UserController
             'password' => 'A password is required'
         ];
 
-        $credentials = $request->validate($rules, $messages);
+        $credentials = $request->validateWithBag('login', $rules, $messages);
 
         if (!Auth::attempt($credentials, $request->remember)) {
             throw ValidationException::withMessages([
                 'credentials' => 'The email and password don\'t match'
-            ]);
+            ])->errorBag('login');
         }
 
         $request->session()->regenerate();
