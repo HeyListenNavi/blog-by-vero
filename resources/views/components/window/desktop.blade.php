@@ -13,7 +13,15 @@
     }"
 
     x-on:close-window="$store.windowManager.close(id)"
-    x-on:maximize-window="$store.windowManager.maximize(id)"
+    x-on:maximize-window="
+        $store.windowManager.maximize(id);
+        $el.querySelectorAll('iframe').forEach(iframe => {
+            iframe.classList.toggle('!max-w-full');
+            iframe.classList.toggle('!w-full');
+            iframe.classList.toggle('!max-h-full');
+            iframe.classList.toggle('!h-full');
+        });
+    "
     x-on:minimize-window="$store.windowManager.minimize(id)"
 
     title="{{ $name }}"

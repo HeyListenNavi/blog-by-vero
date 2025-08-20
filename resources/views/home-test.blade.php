@@ -14,7 +14,7 @@
             src="{{ route('journal') }}"
             frameborder="0"
             loading="lazy"
-            class="min-h-[750px] min-w-[600px] w-full h-full"
+            class="w-[90vw] h-[70vh] max-h-[700px] max-w-[600px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -30,7 +30,7 @@
             src="{{ route('camera') }}"
             frameborder="0"
             loading="lazy"
-            class="min-w-[700px] min-h-[800px] w-full h-full"
+            class="w-[90vw] h-[60vh] max-h-[650px] max-w-[600px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -47,7 +47,7 @@
             src="{{ route('comments') }}"
             frameborder="0"
             loading="lazy"
-            class="w-56 h-96 space-y-4 mx-auto"
+            class="w-[90vw] h-[60vh] max-h-[500px] max-w-[300px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -58,7 +58,6 @@
         extension="user"
         description="create your very own profile"
         location="/profiles"
-        :open="true"
     >
         <iframe
             @guest
@@ -71,7 +70,7 @@
             
             frameborder="0"
             loading="lazy"
-            class="min-w-[450px] min-h-[650px] w-full h-full"
+            class="w-[90vw] h-[60vh] max-h-[600px] max-w-[600px]"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -87,7 +86,7 @@
             src="{{ route('terminal') }}"
             frameborder="0"
             loading="lazy"
-            class="min-h-[350px] min-w-[450px] w-full h-full"
+            class="w-[90vw] h-[50vh] max-h-[500px] max-w-[600px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -99,12 +98,13 @@
         extension="user"
         description="connect with others that loved this website"
         location="/usr/share"
+        :open="true"
     >
         <iframe
             src="{{ route('community') }}"
             frameborder="0"
             loading="lazy"
-            class="min-h-[550px] min-w-[650px] w-full h-full"
+            class="w-[90vw] h-[70vh] max-h-[650px] max-w-[650px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
