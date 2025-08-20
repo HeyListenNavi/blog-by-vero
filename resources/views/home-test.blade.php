@@ -14,7 +14,7 @@
             src="{{ route('journal') }}"
             frameborder="0"
             loading="lazy"
-            class="w-[90vw] h-[70vh] max-h-[700px] max-w-[600px] space-y-4 mx-auto"
+            class="w-[80svw] h-[80svh] max-h-[850px] max-w-[650px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -25,12 +25,13 @@
         extension="psd"
         description="all of veronicas camera roll"
         location="/home/naviheylisten/vero/camera"
+
     >
         <iframe
             src="{{ route('camera') }}"
             frameborder="0"
             loading="lazy"
-            class="w-[90vw] h-[60vh] max-h-[650px] max-w-[600px] space-y-4 mx-auto"
+            class="w-[80svw] h-[80svh] max-h-[750px] max-w-[600px]"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -47,7 +48,7 @@
             src="{{ route('comments') }}"
             frameborder="0"
             loading="lazy"
-            class="w-[90vw] h-[60vh] max-h-[500px] max-w-[300px] space-y-4 mx-auto"
+            class="w-[80svw] h-[80svh] max-h-[600px] max-w-[300px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -70,7 +71,7 @@
             
             frameborder="0"
             loading="lazy"
-            class="w-[90vw] h-[60vh] max-h-[600px] max-w-[600px]"
+            class="w-[80svw] h-[80svh] max-h-[650px] max-w-[450px]"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -86,7 +87,7 @@
             src="{{ route('terminal') }}"
             frameborder="0"
             loading="lazy"
-            class="w-[90vw] h-[50vh] max-h-[500px] max-w-[600px] space-y-4 mx-auto"
+            class="w-[80svw] h-[80svh] max-h-[500px] max-w-[600px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -104,7 +105,7 @@
             src="{{ route('community') }}"
             frameborder="0"
             loading="lazy"
-            class="w-[90vw] h-[70vh] max-h-[650px] max-w-[650px] space-y-4 mx-auto"
+            class="w-[80svw] h-[80svh] max-h-[750px] max-w-[700px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
