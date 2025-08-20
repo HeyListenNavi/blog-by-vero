@@ -23,7 +23,7 @@
         @forelse ($comments as $comment)
         <article class="relative">
             @auth
-                @if ($comment->user->id == Auth::id())
+                @if ($comment->user->id === Auth::id() || $comment->commentable->id === Auth::id())
                 <x-options-button>
                     <form method="POST" action="{{ route('comment.destroy', $comment) }}">
                         @csrf
