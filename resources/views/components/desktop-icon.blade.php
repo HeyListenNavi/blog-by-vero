@@ -18,7 +18,7 @@
                 inertia: true,
                 bounds: '#desktop',
                 snap: function(endValue) { 
-                    return Math.round(endValue / 112) * 112;
+                    return Math.round(endValue / 80) * 80;
                 },
                 throwResistance: 100000,
                 maxDuration: 0.1,
@@ -53,10 +53,10 @@
     x-on:long-press.prevent="$store.windowManager.spawn($refs.properties)"
     
     x-bind:id="id"
-    class="icon w-28 h-28 py-2 flex flex-col gap-2 items-center justify-center select-none hover:bg-background-primary/30 hover:text-highlight-secondary"
+    class="icon min-h-20 w-18 py-2 px-1 flex flex-col gap-2 items-center justify-center select-none hover:bg-background-primary/30 hover:text-highlight-secondary"
 >
-    <img class="h-full pointer-events-none" src="{{ $icon }}">
-    <p class="text-shadow-outline text-shadow-background-primary/60">{{ $name }}</p>
+    <img class="size-10" src="{{ $icon }}">
+    <p class="w-full text-center wrap-break-word text-[10px] text-shadow-outline text-shadow-background-primary/60">{{ $name }}</p>
 
     <template x-ref="app" name="{{ $name }}">
         <x-window.desktop name="{{ $name }}" {{ $attributes->merge() }}>
