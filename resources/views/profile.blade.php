@@ -2,15 +2,13 @@
 
 @section('body')
 <div class="min-h-screen w-screen grid grid-rows-[auto_1fr] bg-background-primary">
-    <nav class="py-1 px-2 w-full bg-background-tertiary">
-        <div class="max-w-xl mx-auto grid grid-cols-[30%_1fr_30%] items-center justify-items-center">
-            <a class="w-full text-center underline cursor-pointer hover:text-highlight-secondary transition-colors" href="{{ route('community') }}">← Profile</a>
-            <div class="w-full text-center py-1 md:px-12 px-2 bg-background-primary">naviheylisten.space</div>
-            <span class="w-full text-center font-emoji text-4xl">B</span>
-        </div>
+    <nav class="py-3 w-full bg-background-tertiary grid grid-cols-3 items-center text-center wrap-break-word">
+        <a class="underline cursor-pointer hover:text-highlight-secondary transition-colors" href="{{ route('community') }}">← Profile</a>
+        <div class="py-2 w-full px-4 bg-background-primary">naviheylisten.space</div>
+        <span class="font-emoji text-3xl">B</span>
     </nav>
 
-    <main class="mx-auto w-full max-w-xl p-4 flex flex-col gap-4">
+    <main class="p-4 flex flex-col gap-4">
         <section class="relative grid grid-cols-[auto_1fr] items-center gap-4">
             <x-profile-picture letter="{{ $user->username[0] }}"/>
             <div>
