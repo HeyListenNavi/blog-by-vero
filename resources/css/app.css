@@ -15,6 +15,13 @@
 
     --spacing: 4px;
 
+    --breakpoint-xs: 200px;
+    --breakpoint-sm: 300px;
+    --breakpoint-md: 400px;
+    --breakpoint-lg: 500px;
+    --breakpoint-xl: 600px;
+    --breakpoint-2xl: 700px;
+
     --color-background-primary: #151515;
     --color-background-secondary: #100e0f;
     --color-background-tertiary: #0c0a0a;
@@ -26,7 +33,10 @@
     --background-image-header: url("@images/banner.jpg");
 
     --text-shadow-outline: -1px -1px 0, 1px -1px 0, -1px 1px 0, 1px 1px 0;
-    --shadow-window-outline: inset -6px -6px var(--color-background-tertiary), inset 6px 6px var(--color-background-tertiary), inset 8px 8px var(--color-highlight), inset -8px -8px var(--color-highlight);
+    --shadow-window-outline: inset -6px -6px var(--color-background-tertiary),
+        inset 6px 6px var(--color-background-tertiary),
+        inset 8px 8px var(--color-highlight),
+        inset -8px -8px var(--color-highlight);
     --text-shadow-terminal-glow: 0 0 2px, 0 0 2px, 0 0 3px;
 
     --text-display-large: 72px;
