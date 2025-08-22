@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('body')
-<div class="w-full min-h-screen grid grid-rows-[auto_1fr] bg-background-primary">
-    <nav class="py-1 px-6 w-full bg-background-tertiary">
-        <div class="max-w-xl mx-auto grid grid-cols-[20%_1fr_20%] items-center justify-items-center">
-            <a class="underline cursor-pointer hover:text-highlight-secondary transition-colors" href="{{ route('community') }}">← Profile</a>
-            <div class="py-1 px-8 bg-background-primary">naviheylisten.space</div>
-            <span class="font-emoji text-4xl">B</span>
+<div class="min-h-screen w-screen grid grid-rows-[auto_1fr] bg-background-primary">
+    <nav class="py-1 px-2 w-full bg-background-tertiary">
+        <div class="max-w-xl mx-auto grid grid-cols-[30%_1fr_30%] items-center justify-items-center">
+            <a class="w-full text-center underline cursor-pointer hover:text-highlight-secondary transition-colors" href="{{ route('community') }}">← Profile</a>
+            <div class="w-full text-center py-1 md:px-12 px-2 bg-background-primary">naviheylisten.space</div>
+            <span class="w-full text-center font-emoji text-4xl">B</span>
         </div>
     </nav>
 
