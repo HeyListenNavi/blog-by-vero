@@ -4,7 +4,7 @@
 <div
     x-data="terminal" 
     x-ref="terminal"
-    class="w-screen h-svh overflow-auto p-2 text-shadow-terminal-glow text-shadow-highlight/60 font-mono space-y-4 flex flex-col"
+    class="w-screen h-svh overflow-auto p-2 text-shadow-terminal-glow text-shadow-highlight/60 md:text-base text-[10px] font-mono space-y-4 flex flex-col bg-background-primary"
 >
     <div class="space-y-2">
         <template x-for="output in outputHistory">
