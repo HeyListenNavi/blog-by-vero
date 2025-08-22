@@ -23,26 +23,26 @@ class UserController
     public function register(Request $request)
     {
         $rules = [
-            'email' => 'required|email|unique:users',
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:50|unique:users',
+            'register_email' => 'required|email|unique:users,email',
+            'register_name' => 'required|string|max:255',
+            'register_username' => 'required|string|max:50|unique:users,username',
             'password' => 'required|string|min:8|confirmed',
             'description' => 'nullable|string|max:1000',
         ];
 
         $messages = [
-            'email.required' => 'you must sacrifice your email to Vero (psst, just put your email, she wont steal anything, promise <3)',
-            'email.email' => 'what youre not fooling me, thats not an email',
-            'email.unique' => 'hmmm, weird, i already have you in my book of users, did you forget your account?',
+            'register_email.required' => 'you must sacrifice your email to Vero (psst, just put your email, she wont steal anything, promise <3)',
+            'register_email.email' => 'what youre not fooling me, thats not an email',
+            'register_email.unique' => 'hmmm, weird, i already have you in my book of users, did you forget your account?',
 
-            'name.required' => 'how am i supposed to call you?!?? please enter your name',
-            'name.string' => 'thats for sure not a name dude, enter your actual name',
-            'name.max' => 'what, if your name is that long sorry but im not remembering that, put a shorter name or smth',
+            'register_name.required' => 'how am i supposed to call you?!?? please enter your name',
+            'register_name.string' => 'thats for sure not a name dude, enter your actual name',
+            'register_name.max' => 'what, if your name is that long sorry but im not remembering that, put a shorter name or smth',
 
-            'username.required' => 'your username is required :p',
-            'username.string' => 'thats simply not an username wtf',
-            'username.max' => 'pleeaaasee just use a normal username, i only have space for 50 characters',
-            'username.unique' => 'hmmm, weird, i already have you in my book of users, did you forget your account?',
+            'register_username.required' => 'your username is required :p',
+            'register_username.string' => 'thats simply not an username wtf',
+            'register_username.max' => 'pleeaaasee just use a normal username, i only have space for 50 characters',
+            'register_username.unique' => 'hmmm, weird, i already have you in my book of users, did you forget your account?',
 
             'password.required' => 'what. do you want everyone in your account? enter your password',
             'password.string' => 'what, just enter a normal characters password',
@@ -56,10 +56,10 @@ class UserController
         $credentials = $request->validateWithBag('register', $rules, $messages);
 
         $user = User::create([
-            'username' => $credentials['username'],
-            'name' => $credentials['name'],
-            'email' => $credentials['email'],
-            'password' => Hash::make($credentials['password']),
+            'username' => $credentials['register_username'],
+            'name' => $credentials['register_name'],
+            'email' => $credentials['register_email'],
+            'password' => bcrypt($credentials['password']),
             'description' => $credentials['description'] ?? null,
             'role' => 'User',
         ]);
@@ -72,18 +72,18 @@ class UserController
     public function login(Request $request)
     {
         $rules = [
-            'email' => 'required|email',
+            'login_email' => 'required|email',
             'password' => 'required'
         ];
 
         $messages = [
-            'email' => 'An email is required',
+            'login_email' => 'An email is required',
             'password' => 'A password is required'
         ];
 
         $credentials = $request->validateWithBag('login', $rules, $messages);
 
-        if (!Auth::attempt($credentials, $request->remember)) {
+        if (!Auth::attempt(['email' => $credentials['login_email'], 'password' => $credentials['password']], $request->remember)) {
             throw ValidationException::withMessages([
                 'credentials' => 'The email and password don\'t match'
             ])->errorBag('login');
@@ -120,7 +120,7 @@ class UserController
     public function edit()
     {
         $user = Auth::user();
-        
+
         return view('profile-edit', compact('user'));
     }
 

@@ -27,12 +27,12 @@
             <div class="flex flex-col gap-2">
                 <x-text-input
                     label="Email:"
-                    id="email"
+                    id="login_email"
                     type="email"
                     :required="true"
                     placeholder="email"
                     :autofocus="true"
-                    value="{{ old('email') }}"
+                    value="{{ old('login_email') }}"
                 />
                 <x-text-input
                     label="Password:"
@@ -70,28 +70,28 @@
             <div class="flex flex-col gap-2">
                 <x-text-input
                     label="Email:"
-                    id="email"
+                    id="register_email"
                     type="email"
                     :required="true"
                     placeholder="email"
                     :autofocus="true"
-                    value="{{ old('email') }}"
+                    value="{{ old('register_email') }}"
                 />
 
                 <x-text-input
                     label="Name:"
-                    id="name"
+                    id="register_name"
                     :required="true"
                     placeholder="name"
-                    value="{{ old('name') }}"
+                    value="{{ old('register_name') }}"
                 />
 
                 <x-text-input
                     label="Username:"
-                    id="username"
+                    id="register_username"
                     :required="true"
                     placeholder="username"
-                    value="{{ old('username') }}"
+                    value="{{ old('register_username') }}"
                 />
 
                 <x-text-input
