@@ -23,6 +23,7 @@
                 throwResistance: 100000,
                 maxDuration: 0.1,
                 allowContextMenu: true,
+                allowEventDefault: true,
                 onPress: function() {
                     iframes.forEach(iframe => {
                         iframe.style.pointerEvents = 'none';

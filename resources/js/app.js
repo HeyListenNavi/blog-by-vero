@@ -88,6 +88,7 @@ class Window {
             inertia: true,
             bounds: '#screen',
             trigger: `#${this.id} > #titlebar`,
+            allowEventDefault: true,
             onPress: function () {
                 iframes.forEach(iframe => {
                     iframe.style.pointerEvents = 'none';
