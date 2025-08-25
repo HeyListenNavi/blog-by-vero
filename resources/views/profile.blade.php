@@ -2,9 +2,9 @@
 
 @section('body')
 <div class="min-h-screen w-screen grid grid-rows-[auto_1fr] bg-background-primary">
-    <nav class="py-3 w-full bg-background-tertiary grid grid-cols-3 items-center text-center wrap-break-word">
+    <nav class="py-3 w-full bg-background-tertiary flex justify-around items-center gap-2 text-center">
         <a class="underline cursor-pointer hover:text-highlight-secondary transition-colors" href="{{ route('community') }}">← Profile</a>
-        <div class="py-2 w-full px-4 bg-background-primary">naviheylisten.space</div>
+        <div class="py-2 w-fit md:w-full md:max-w-64 px-4 bg-background-primary wrap-break-word">naviheylisten.space</div>
         <span class="font-emoji text-3xl">B</span>
     </nav>
 
