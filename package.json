@@ -25,6 +25,7 @@
         "@alpinejs/resize": "^3.14.9",
         "@marcreichel/alpine-typewriter": "^1.2.1",
         "alpinejs": "^3.14.9",
-        "gsap": "^3.13.0"
+        "gsap": "^3.13.0",
+        "shiki": "^3.11.0"
     }
 }
