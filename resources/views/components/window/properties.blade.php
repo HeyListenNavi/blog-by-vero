@@ -14,7 +14,7 @@
     
     {{ $attributes->merge(['class' => 'absolute top-1/2 left-1/2 -translate-1/2 w-fit']) }}
 >
-    <ul class="flex flex-col gap-2">
+    <ul class="p-2 flex flex-col gap-2">
         <li class="flex flex-col gap-0">
             <span class="font-bold">
                 Title
