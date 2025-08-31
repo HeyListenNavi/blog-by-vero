@@ -14,28 +14,16 @@ class UsersTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('created_at', 'desc')
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('username')
                     ->searchable(),
-                TextColumn::make('avatar_color')
-                    ->searchable(),
-                TextColumn::make('favorite_color')
-                    ->searchable(),
-                TextColumn::make('favorite_fruit')
-                    ->searchable(),
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
                 TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
