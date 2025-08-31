@@ -17,6 +17,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Support\Enums\FontWeight;
 use Filament\Support\Enums\Size;
@@ -31,24 +32,38 @@ class CommentsRelationManager extends RelationManager
     {
         return $schema
             ->components([
-                TextEntry::make('user.name'),
-
-                TextEntry::make('user.username'),
-
-                TextEntry::make('user.email'),
-
-                TextEntry::make('created_at')
-                    ->dateTime('d-M-y h:i A'),
-                    
-                TextEntry::make('content')
-                    ->columnSpanFull(),
+                Section::make('User')
+                    ->icon('heroicon-o-user')
+                    ->columns(2)
+                    ->columnSpanFull()
+                    ->schema([
+                        TextEntry::make('user.name')
+                            ->label('Name'),
+                        TextEntry::make('user.username')
+                            ->label('Username')
+                            ->icon('heroicon-s-at-symbol'),
+                        TextEntry::make('user.email')
+                            ->label('Email')
+                            ->icon('heroicon-s-envelope'),
+                    ]),
+                Section::make('Comment Details')
+                    ->icon('heroicon-o-chat-bubble-left-ellipsis')
+                    ->columnSpanFull()
+                    ->schema([
+                        TextEntry::make('created_at')
+                            ->label('Posted')
+                            ->dateTime('d-M-y h:i A'),
+                        TextEntry::make('content')
+                            ->label('Comment')
+                            ->columnSpanFull(),
+                    ]),
             ]);
     }
 
     public function table(Table $table): Table
     {
         return $table
-           ->defaultSort('created_at', 'desc')
+            ->defaultSort('created_at', 'desc')
             ->columns([
                 TextColumn::make('commentable_type')
                     ->label('Type')
@@ -71,7 +86,7 @@ class CommentsRelationManager extends RelationManager
                 DeleteAction::make()
                     ->button()
                     ->size(Size::ExtraSmall),
-                    
+
                 ViewAction::make()
                     ->hiddenLabel()
                     ->icon(null),

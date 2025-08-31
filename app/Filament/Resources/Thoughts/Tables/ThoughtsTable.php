@@ -14,15 +14,23 @@ class ThoughtsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('created_at', 'desc')
             ->columns([
                 TextColumn::make('mood')
+                    ->label('Mood')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('content')
+                    ->label('Content')
+                    ->limit(50, '...')
                     ->searchable(),
                 TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->label('Posted')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable(),
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Updated')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])

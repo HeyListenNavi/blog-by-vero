@@ -17,17 +17,31 @@ class UsersTable
             ->defaultSort('created_at', 'desc')
             ->columns([
                 TextColumn::make('name')
-                    ->searchable(),
+                    ->label('Full Name')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('username')
-                    ->searchable(),
+                    ->icon('heroicon-s-at-symbol')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('email')
-                    ->label('Email address')
-                    ->searchable(),
+                    ->label('Email Address')
+                    ->icon('heroicon-s-envelope')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('role')
+                    ->badge()
+                    ->colors([
+                        'gray' => 'User',
+                        'primary' => 'Admin',
+                    ])
+                    ->sortable(),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Joined')
+                    ->dateTime('M d, Y H:i')
+                    ->icon('heroicon-s-calendar')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('role'),
             ])
             ->filters([
                 //

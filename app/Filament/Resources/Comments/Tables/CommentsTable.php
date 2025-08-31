@@ -28,7 +28,7 @@ class CommentsTable
 
                 TextColumn::make('user.name')
                     ->label('Comment')
-                    ->description(fn(Comment $comment): string => str($comment->content)->limit(70, '...'))
+                    ->description(fn(Comment $comment): string => str($comment->content)->limit(100, '...'))
                     ->weight(FontWeight::Bold)
                     ->grow(true)
                     ->searchable(['content', 'name']),

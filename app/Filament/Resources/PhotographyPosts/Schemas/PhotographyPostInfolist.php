@@ -19,52 +19,62 @@ class PhotographyPostInfolist
         return $schema
             ->components([
                 Section::make('Camera Roll')
+                    ->icon('heroicon-o-camera')
                     ->columns(2)
                     ->schema([
                         Flex::make([
                             ImageEntry::make('icon.path')
                                 ->disk('public')
                                 ->hiddenLabel()
-                                ->grow(false),
-                            TextEntry::make('title'),
+                                ->grow(false)
+                                ->imageWidth('64px')
+                                ->imageHeight('64px'),
+                            TextEntry::make('title')
+                                ->label('Title')
+                                ->size('xl'),
                         ])
                             ->verticallyAlignCenter()
                             ->columnSpanFull(),
 
                         TextEntry::make('created_at')
-                            ->label('Published at')
+                            ->label('Published At')
                             ->badge()
                             ->color('success')
-                            ->dateTime(),
+                            ->dateTime('M d, Y H:i')
+                            ->icon('heroicon-s-calendar'),
 
                         TextEntry::make('updated_at')
                             ->label('Last Update')
                             ->badge()
                             ->color('gray')
-                            ->dateTime(),
+                            ->dateTime('M d, Y H:i')
+                            ->icon('heroicon-s-clock'),
                     ]),
 
                 Section::make('Description')
+                    ->icon('heroicon-o-document-text')
                     ->collapsible()
                     ->schema([
                         TextEntry::make('description')
                             ->markdown()
                             ->hiddenLabel(),
                     ]),
-                    
+
                 Section::make('Photographies')
+                    ->icon('heroicon-o-photo')
                     ->columnSpanFull()
                     ->collapsible()
                     ->schema([
                         RepeatableEntry::make('photographies')
+                            ->label('Photos')
                             ->schema([
                                 Section::make(fn(Photography $photography): string => $photography->title)
                                     ->schema([
                                         ImageEntry::make('path')
                                             ->hiddenLabel()
                                             ->imageWidth('100%')
-                                            ->imageHeight('auto')
-                                    ])
+                                            ->imageHeight('auto'),
+                                    ]),
                             ])
                             ->grid(2)
                             ->gap('2rem')

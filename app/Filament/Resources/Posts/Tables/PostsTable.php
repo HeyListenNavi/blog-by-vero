@@ -25,7 +25,7 @@ class PostsTable
                 TextColumn::make('title')
                     ->grow(true)
                     ->weight(FontWeight::Bold)
-                    ->description(fn(Post $post): string => str($post->content)->limit(90, '...'))
+                    ->description(fn(Post $post): string => str($post->content)->limit(50, '...'))
                     ->searchable(['title', 'content']),
 
                 TextColumn::make('date')

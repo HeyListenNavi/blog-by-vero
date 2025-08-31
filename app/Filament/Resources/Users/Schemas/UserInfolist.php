@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Users\Schemas;
 
 use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class UserInfolist
@@ -11,20 +12,44 @@ class UserInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
-                TextEntry::make('username'),
-                TextEntry::make('avatar_color'),
-                TextEntry::make('favorite_color'),
-                TextEntry::make('favorite_fruit'),
-                TextEntry::make('email')
-                    ->label('Email address'),
-                TextEntry::make('email_verified_at')
-                    ->dateTime(),
-                TextEntry::make('created_at')
-                    ->dateTime(),
-                TextEntry::make('updated_at')
-                    ->dateTime(),
-                TextEntry::make('role'),
+                Section::make('Profile')
+                    ->icon('heroicon-o-user')
+                    ->description('Basic user details')
+                    ->columns(2)
+                    ->columnSpanFull()
+                    ->schema([
+                        TextEntry::make('name')
+                            ->label('Full Name')
+                            ->icon('heroicon-s-identification'),
+                        TextEntry::make('username')
+                            ->label('Username')
+                            ->icon('heroicon-s-at-symbol'),
+                        TextEntry::make('email')
+                            ->label('Email Address')
+                            ->icon('heroicon-s-envelope'),
+                        TextEntry::make('description')
+                            ->label('Description')
+                            ->columnSpanFull()
+                    ]),
+                Section::make('Account Details')
+                    ->icon('heroicon-o-cog')
+                    ->description('Account creation and update info')
+                    ->columns(3)
+                    ->columnSpanFull()
+                    ->schema([
+                        TextEntry::make('role')
+                            ->label('Role')
+                            ->badge()
+                            ->icon('heroicon-s-shield-check'),
+                        TextEntry::make('created_at')
+                            ->label('Created')
+                            ->dateTime('M d, Y H:i')
+                            ->icon('heroicon-s-calendar'),
+                        TextEntry::make('updated_at')
+                            ->label('Last Updated')
+                            ->dateTime('M d, Y H:i')
+                            ->icon('heroicon-s-clock'),
+                    ]),
             ]);
     }
 }
