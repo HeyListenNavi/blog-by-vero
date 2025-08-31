@@ -17,6 +17,7 @@ class PhotographyPostsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('created_at', 'desc')
             ->columns([
                 ImageColumn::make('icon.path')
                     ->disk('public'),
