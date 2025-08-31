@@ -2,6 +2,13 @@
 
 namespace App\Providers\Filament;
 
+use App\Livewire\BlogStatsWidget;
+use App\Livewire\CommentTrendWidget;
+use App\Livewire\PostsTrendWidget;
+use App\Livewire\PostTrendWidget;
+use App\Livewire\UsersTableWidget;
+use App\Livewire\UserTrendWidget;
+use Filament\FontProviders\LocalFontProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -26,11 +33,17 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
+            ->brandName('Blog by Vero')
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#eabbb9',
             ])
+            ->font(
+                'Pixeloid',
+                url: asset('css/filament/filament/app.css'),
+                provider: LocalFontProvider::class,
+            )
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -38,8 +51,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+                BlogStatsWidget::class,
+                UserTrendWidget::class,
+                PostsTrendWidget::class,
+                UsersTableWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -54,6 +69,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->viteTheme('resources/css/filament/admin/theme.css');;
     }
 }
