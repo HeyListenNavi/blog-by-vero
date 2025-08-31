@@ -20,7 +20,7 @@ class SketchResource extends Resource
 {
     protected static ?string $model = Sketch::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-code-bracket';
 
     public static function form(Schema $schema): Schema
     {

@@ -20,7 +20,7 @@ class ThoughtResource extends Resource
 {
     protected static ?string $model = Thought::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-pencil-square';
 
     public static function form(Schema $schema): Schema
     {

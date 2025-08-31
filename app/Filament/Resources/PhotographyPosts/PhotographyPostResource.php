@@ -26,7 +26,7 @@ class PhotographyPostResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Camera Rolls';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-camera';
 
     protected static ?SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Top;
 
