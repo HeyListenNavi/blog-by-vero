@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
     public function home(): View
     {
-        return view('home-test');
+        return view('home');
     }
 
     public function aboutMe(): View
