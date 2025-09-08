@@ -13,6 +13,9 @@ Route::get('/', [PagesController::class, 'home'])
 Route::get('/about-me', [PagesController::class, 'aboutMe'])
     ->name('aboutme');
 
+Route::get('/decobar', [PagesController::class, 'decobar'])
+    ->name('decobar');
+
 Route::get('/terminal', [PagesController::class, 'terminal'])
     ->name('terminal');
 

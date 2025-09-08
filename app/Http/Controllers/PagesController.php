@@ -28,4 +28,9 @@ class PagesController extends Controller
     {
         return view('terminal');
     }
+
+    public function decobar(): View
+    {
+        return view('decobar');
+    }
 }
