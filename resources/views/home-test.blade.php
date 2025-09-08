@@ -5,6 +5,23 @@
 @section('content')
 <main class="flex flex-col flex-wrap h-full content-start">
     <x-desktop-icon
+        name="home/"
+        extension="home"
+        description="you've met a terrible fate, haven't you"
+        location="/home/naviheylisten/vero/home"
+        :open="true"
+    >
+        <iframe
+            src="{{ route('welcome') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[850px] max-w-[550px] space-y-4 mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Deco Bar"
         extension="blink"
         description="just some decorations"

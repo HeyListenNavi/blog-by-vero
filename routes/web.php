@@ -22,6 +22,8 @@ Route::get('/sidebar', [PagesController::class, 'sidebar'])
 Route::get('/terminal', [PagesController::class, 'terminal'])
     ->name('terminal');
 
+Route::get('/welcome', [PagesController::class, 'welcome'])
+    ->name('welcome');
 
 
 Route::middleware('guest')->group(function () {

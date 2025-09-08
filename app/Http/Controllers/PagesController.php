@@ -38,4 +38,9 @@ class PagesController extends Controller
     {
         return view('sidebar');
     }
+
+    public function welcome(): View
+    {
+        return view('welcome');
+    }
 }
