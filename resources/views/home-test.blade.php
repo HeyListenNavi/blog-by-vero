@@ -20,6 +20,21 @@
         </iframe>
     </x-desktop-icon>
 
+    <x-desktop-icon
+        name="Side Dish"
+        extension="side"
+        description="just some warnings lol"
+        location="/home/naviheylisten/vero/info"
+    >
+        <iframe
+            src="{{ route('sidebar') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[600px] max-w-[350px] space-y-4 mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
 
     <x-desktop-icon
         name="Journal"

@@ -33,4 +33,9 @@ class PagesController extends Controller
     {
         return view('decobar');
     }
+
+    public function sidebar(): View
+    {
+        return view('sidebar');
+    }
 }
