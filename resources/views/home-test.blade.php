@@ -22,6 +22,22 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="About Me"
+        extension="psd"
+        description="all the things you gotta now 'bout me"
+        location="/home/naviheylisten/vero/"
+    >
+        <iframe
+            src="{{ route('aboutme') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[850px] max-w-[650px] space-y-4 mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Deco Bar"
         extension="blink"
         description="just some decorations"
@@ -74,7 +90,6 @@
         extension="psd"
         description="all of veronicas camera roll"
         location="/home/naviheylisten/vero/camera"
-
     >
         <iframe
             src="{{ route('camera') }}"
@@ -148,7 +163,6 @@
         extension="user"
         description="connect with others that loved this website"
         location="/usr/share"
-        :open="true"
     >
         <iframe
             src="{{ route('community') }}"
