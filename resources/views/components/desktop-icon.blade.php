@@ -10,30 +10,58 @@
     'location' => '/home/naviheylisten/projects/blog-by-vero',
 ])
 
-@pushOnce('scripts')       
+@pushOnce('scripts')
     <script>
         function makeIconDraggable(id) {
             const iframes = document.querySelectorAll('iframe');
+            const allIcons = document.querySelectorAll('.icon'); 
+
             Draggable.create(`#${id}`, {
                 inertia: true,
                 bounds: '#desktop',
-                snap: function(endValue) { 
+                snap: function(endValue) {
                     return Math.round(endValue / 80) * 80;
                 },
                 throwResistance: 100000,
                 maxDuration: 0.1,
                 allowContextMenu: true,
                 allowEventDefault: true,
+
                 onPress: function() {
                     iframes.forEach(iframe => {
                         iframe.style.pointerEvents = 'none';
                     });
+                    
+                    this.startX = this.x;
+                    this.startY = this.y;
                 },
+
                 onRelease: function() {
                     iframes.forEach(iframe => {
                         iframe.style.pointerEvents = 'auto';
                     });
                 },
+
+                onDragEnd: function() {
+                    let isOverlapping = false;
+                    
+                    allIcons.forEach(otherIcon => {
+                        if (otherIcon !== this.target) {
+                            if (this.hitTest(otherIcon, "50%")) {
+                                isOverlapping = true;
+                            }
+                        }
+                    });
+
+                    if (isOverlapping) {
+                        gsap.to(this.target, {
+                            x: this.startX,
+                            y: this.startY,
+                            duration: 0.3, 
+                            ease: 'power2.out'
+                        });
+                    }
+                }
             });
         }
     </script>

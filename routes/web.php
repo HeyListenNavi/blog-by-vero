@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BanController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotographyPostController;
@@ -29,7 +30,7 @@ Route::get('/welcome', [PagesController::class, 'welcome'])
 Route::middleware('guest')->group(function () {
     Route::get('/auth', [PagesController::class, 'auth'])
         ->name('auth');
-    
+
     Route::post('/register', [UserController::class, 'register'])
         ->name('register.submit');
 
@@ -54,6 +55,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profile/edit', [UserController::class, 'edit'])
         ->name('profile.edit');
+
+    Route::post('/ban-self', [BanController::class, 'ban'])
+        ->name('ban.self');
 });
 
 
@@ -65,7 +69,7 @@ Route::get('/posts/{post}', [PostController::class, 'show'])
     ->name('journal.post');
 
 Route::get('/photography-posts', [PhotographyPostController::class, 'index'])
-        ->name('camera');
+    ->name('camera');
 
 Route::get('/photography-posts/{photographyPost}', [PhotographyPostController::class, 'show'])
     ->name('camera.roll');
