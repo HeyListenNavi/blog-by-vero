@@ -3,7 +3,6 @@
 @section('title', 'this is home')
 
 @section('content')
-<main class="flex flex-col flex-wrap h-full content-start">
     <x-desktop-icon
         name="home/"
         extension="home"
@@ -132,7 +131,7 @@
             @auth
             src="{{ route('profile', Auth::user()) }}"
             @endauth
-            
+
             frameborder="0"
             loading="lazy"
             class="w-[80svw] h-[80svh] max-h-[650px] max-w-[450px]"
@@ -157,7 +156,7 @@
         </iframe>
     </x-desktop-icon>
 
-    
+
     <x-desktop-icon
         name="Community"
         extension="user"
@@ -173,5 +172,4 @@
             <p>Your browser does not support iframes</p>
         </iframe>
     </x-desktop-icon>
-</main>
 @endsection

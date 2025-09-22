@@ -46,7 +46,7 @@
         </template>
     </nav>
 
-    <div x-data="timeAndDate()" x-init="init()" class="w-34 flex h-full flex-col items-end text-end">
+    <div x-data="timeAndDate()" x-init="init()" class="w-48 flex h-full flex-col items-end text-end">
         <span x-text="getTime()"></span>
         <span x-text="getDate()"></span>
     </div>

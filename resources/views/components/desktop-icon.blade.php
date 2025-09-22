@@ -14,13 +14,18 @@
     <script>
         function makeIconDraggable(id) {
             const iframes = document.querySelectorAll('iframe');
-            const allIcons = document.querySelectorAll('.icon'); 
+            const allIcons = document.querySelectorAll('.icon');
 
             Draggable.create(`#${id}`, {
                 inertia: true,
                 bounds: '#desktop',
-                snap: function(endValue) {
-                    return Math.round(endValue / 80) * 80;
+                snap: {
+                    x: function(endValue) {
+                        return Math.round(endValue / 72) * 72;
+                    },
+                    y: function(endValue) {
+                        return Math.round(endValue / 80) * 80;
+                    }
                 },
                 throwResistance: 100000,
                 maxDuration: 0.1,
@@ -31,7 +36,7 @@
                     iframes.forEach(iframe => {
                         iframe.style.pointerEvents = 'none';
                     });
-                    
+
                     this.startX = this.x;
                     this.startY = this.y;
                 },
@@ -44,7 +49,7 @@
 
                 onDragEnd: function() {
                     let isOverlapping = false;
-                    
+
                     allIcons.forEach(otherIcon => {
                         if (otherIcon !== this.target) {
                             if (this.hitTest(otherIcon, "50%")) {
@@ -57,7 +62,7 @@
                         gsap.to(this.target, {
                             x: this.startX,
                             y: this.startY,
-                            duration: 0.3, 
+                            duration: 0.3,
                             ease: 'power2.out'
                         });
                     }
@@ -76,11 +81,11 @@
         "
     @endif
     x-init="makeIconDraggable(id)"
-    
+
     x-on:click="$store.windowManager.spawn($refs.app)"
     x-on:contextmenu.prevent="$store.windowManager.spawn($refs.properties)"
     x-on:long-press.prevent="$store.windowManager.spawn($refs.properties)"
-    
+
     x-bind:id="id"
     class="icon min-h-20 w-18 py-2 px-1 flex flex-col gap-2 items-center justify-center select-none hover:bg-background-primary/30 hover:text-highlight-secondary"
 >
