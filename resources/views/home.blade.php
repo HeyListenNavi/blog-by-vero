@@ -8,6 +8,7 @@
         extension="home"
         description="you've met a terrible fate, haven't you"
         location="/home/naviheylisten/vero/home"
+        icon="{{ Vite::image('icons/computer.png') }}"
         :open="true"
     >
         <iframe
@@ -25,6 +26,7 @@
         extension="psd"
         description="all the things you gotta now 'bout me"
         location="/home/naviheylisten/vero/"
+        icon="{{ Vite::image('icons/notepad.png') }}"
     >
         <iframe
             src="{{ route('aboutme') }}"
@@ -73,6 +75,7 @@
         extension="md"
         description="bunch of rambles compressed into a list"
         location="/home/naviheylisten/vero/thoughts"
+        icon="{{ Vite::image('icons/directory-file.png') }}"
     >
         <iframe
             src="{{ route('journal') }}"
@@ -89,6 +92,7 @@
         extension="psd"
         description="all of veronicas camera roll"
         location="/home/naviheylisten/vero/camera"
+        icon="{{ Vite::image('icons/camera.png') }}"
     >
         <iframe
             src="{{ route('camera') }}"
@@ -106,6 +110,7 @@
         description="leave any comments you'd like here"
         location="/home/naviheylisten/blog/"
         :buttons="['close']"
+        icon="{{ Vite::image('icons/directory-explorer.png') }}"
     >
         <iframe
             src="{{ route('comments') }}"
@@ -122,6 +127,7 @@
         extension="user"
         description="create your very own profile"
         location="/profiles"
+        icon="{{ Vite::image('icons/floppy-drive.png') }}"
     >
         <iframe
             @guest
@@ -145,6 +151,7 @@
         extension=""
         description="checkout all these crazy commands"
         location="/usr/bin/kitty"
+        icon="{{ Vite::image('icons/terminal.png') }}"
     >
         <iframe
             src="{{ route('terminal') }}"
@@ -162,6 +169,7 @@
         extension="user"
         description="connect with others that loved this website"
         location="/usr/share"
+        icon="{{ Vite::image('icons/internet.png') }}"
     >
         <iframe
             src="{{ route('community') }}"

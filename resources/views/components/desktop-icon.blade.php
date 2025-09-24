@@ -1,6 +1,6 @@
 @props([
     'name' => 'File',
-    'icon' => Vite::image('music-cd.png'),
+    'icon' => Vite::image('icons/directory.png'),
     'open' => false,
 
     'extension' => 'exe',
