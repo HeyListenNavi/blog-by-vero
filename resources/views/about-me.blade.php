@@ -13,7 +13,7 @@
             </p>
         </div>
     </div>
-    
+
     <div class="flex flex-col gap-2">
         <h2 class="text-body-medium font-bold">things i love</h2>
         <ul class="pl-4 p-2 flex flex-col gap-4">
@@ -136,14 +136,14 @@
                     <div class="flex gap-4 mx-4 py-2 overflow-x-auto">
                         <template x-for="film in films" :key="film.poster">
                             <div class="flex flex-col gap-1">
-                                <img class="w-48 max-w-none" loading="lazy" :src="`{{ Vite::poster('${film.poster}') }}`" :alt="`${film.title} (${film.year}) poster`" />
+                                <img class="w-48 max-w-none" loading="lazy" :src="`/images/posters/${film.poster}`" :alt="`${film.title} (${film.year}) poster`" />
                                 <p class="text-xs" x-text="`${film.title} (${film.director}. ${film.year})`"></p>
                             </div>
                         </template>
                     </div>
                 </x-window>
             </div>
- 
+
             <div x-data="{
                 series: [
                     { title: 'Arcane', creators: 'Christian Linke and Alex Yee', poster: 'arcane-poster.jpg' },
@@ -171,7 +171,7 @@
                     <div class="flex gap-4 mx-4 py-2 overflow-x-auto">
                         <template x-for="s in series" :key="s.poster">
                             <div class="flex flex-col gap-1">
-                                <img class="w-48 max-w-none" loading="lazy" :src="`{{ Vite::poster('${s.poster}') }}`" :alt="`${s.title} poster`">
+                                <img class="w-48 max-w-none" loading="lazy" :src="`/images/posters/${s.poster}`" :alt="`${s.title} poster`">
                                 <p class="text-xs" x-text="`${s.title} (${s.creators})`"></p>
                             </div>
                         </template>
@@ -206,14 +206,14 @@
                     <div class="flex gap-4 mx-4 py-2 overflow-x-auto">
                         <template x-for="g in games" :key="g.poster">
                             <div class="flex flex-col gap-1">
-                                <img class="w-48 max-w-none" loading="lazy" :src="`{{ Vite::poster('${g.poster}') }}`" :alt="`${g.title} poster`">
+                                <img class="w-48 max-w-none" loading="lazy" :src="`/images/posters/${g.poster}`" :alt="`${g.title} poster`">
                                 <p class="text-xs" x-text="g.title"></p>
                             </div>
                         </template>
                     </div>
                 </x-window>
             </div>
-            
+
             <div x-data="{
                 music: [
                     { title: 'Be the Cowboy', artist: 'Mitski', type: 'album', cover: 'be-the-cowboy.jpg' },
@@ -250,7 +250,7 @@
                     <div class="flex gap-4 mx-4 py-8 overflow-x-auto pr-[130px]">
                         <template x-for="m in music" :key="m.cover">
                             <div class="relative z-10">
-                                <img class="peer w-48 max-w-none hover:translate-y-[-10px] hover:shadow-[0_0_8px_5px_black] hover:mr-[130px] transition-[shadow_transform_margin-right] duration-300 ease-in-out" loading="lazy" :src="`{{ Vite::music('${m.cover}') }}`" :alt="`${m.title} album cover`">
+                                <img class="peer w-48 max-w-none hover:translate-y-[-10px] hover:shadow-[0_0_8px_5px_black] hover:mr-[130px] transition-[shadow_transform_margin-right] duration-300 ease-in-out" loading="lazy" :src="`/images/music/'${m.cover}`" :alt="`${m.title} album cover`">
                                 <img class="w-48 max-w-none absolute -top-2 left-0 peer-hover:left-[35%] -z-10 block animate-[spin_3s_linear_infinite] filter drop-shadow-[0_0_8px_black] transition-[box-shadow_left] duration-300 ease-in-out" loading="lazy" src="{{ Vite::image('vinyl-disc.png') }}" alt="Vinyl disc">
                                 <p class="w-48 text-xs" x-text="`${m.title} by ${m.artist} (${m.type})`"></p>
                             </div>
