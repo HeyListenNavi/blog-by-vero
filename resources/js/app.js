@@ -52,6 +52,7 @@ class Window {
             this.id = window.id;
             this.element = window;
 
+            this.element.style.zIndex = 9999;
             this.makeDraggable();
             callback();
         });
@@ -269,7 +270,7 @@ const files = {
 
     "cat.txt": `╱|_
 (＞.＜7
- |       \\ 
+ |       \\
  | |  | |  \\ノ`,
 
     bow: `⠀⣾⣿⣦⣀⣴⣿⣷
