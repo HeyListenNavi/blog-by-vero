@@ -14,12 +14,11 @@ class DefaultAdminSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory([
-            'name' => Env('ADMIN_NAME'),
-            'email' => Env('ADMIN_EMAIL'),
-            'password' => Env('ADMIN_PASSWORD'),
-        ])
-            ->setAdminRole()
-            ->create();
+        User::create([
+            'name' => env('ADMIN_NAME'),
+            'email' => env('ADMIN_EMAIL'),
+            'password' => env('ADMIN_PASSWORD'),
+            'role' => 'Admin'
+        ]);
     }
 }
