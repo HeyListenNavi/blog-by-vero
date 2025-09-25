@@ -44,7 +44,7 @@ Route::post('/logout', [UserController::class, 'logout'])
 
 
 Route::middleware('auth')->group(function () {
-    Route::post('/comments/{model}/comments', [CommentController::class, 'store'])
+    Route::post('/comments/{model}/{id}', [CommentController::class, 'store'])
         ->name('comment.store');
 
     Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])
