@@ -74,13 +74,12 @@
 
 <article
     x-data="{ id: $id('icon') }"
-    @if ($open)
-        x-init="
-            $store.windowManager.spawn($refs.app);
-            makeIconDraggable(id);
-        "
-    @endif
-    x-init="makeIconDraggable(id)"
+    x-init="
+        @if($open)
+        $store.windowManager.spawn($refs.app);
+        @endif
+        $nextTick(() => makeIconDraggable(id));
+    "
 
     x-on:click="$store.windowManager.spawn($refs.app)"
     x-on:contextmenu.prevent="$store.windowManager.spawn($refs.properties)"
