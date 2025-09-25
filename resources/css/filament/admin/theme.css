@@ -20,8 +20,3 @@
     src: url("@fonts/PixeloidMono.woff") format("woff");
     font-weight: normal;
 }
-
-@font-face {
-    font-family: "Vero's Emojis";
-    src: url("@fonts/EmojiFont.ttf") format("OpenType");
-}
