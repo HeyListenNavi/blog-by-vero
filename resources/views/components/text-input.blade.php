@@ -21,7 +21,9 @@
             placeholder="{{ $placeholder }}"
             @endisset
             type="{{ $type }}"
+            @if($type == "password")
             x-bind:type="showPassword ? 'text' : 'password'"
+            @endif
             name="{{ $name }}"
             @if ($required)
             required
