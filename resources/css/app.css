@@ -101,7 +101,7 @@
 
 @font-face {
     font-family: "Vero's Emojis";
-    src: url("@fonts/EmojiFont.ttf") format("OpenType");
+    src: url("@fonts/IconFont.ttf") format("OpenType");
 }
 
 [x-cloak] {
