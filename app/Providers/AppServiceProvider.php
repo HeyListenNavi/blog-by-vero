@@ -57,7 +57,7 @@ class AppServiceProvider extends ServiceProvider
             'user' => User::class,
         ]);
 
-        if ($this->app->environment('production')) {
+        if(config('app.env') !== 'local') {
             URL::forceScheme('https');
         }
     }
