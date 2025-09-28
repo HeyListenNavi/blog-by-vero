@@ -11,8 +11,8 @@
         @forelse ($photographyPosts as $post)
         <article class="flex flex-col gap-8 items-center justify-center">
             <div class="flex flex-col gap-4 items-center">
+                <img class="max-h-48 max-w-48 w-auto h-auto" src="{{ asset('storage/' . $post->icon->path) }}">
                 <h1 class="text-center text-body-medium leading-tight">{{ $post->title }}</h1>
-                <img class="size-48" src="{{ asset('storage/' . $post->icon->path) }}">
                 <p class="text-center">{{ $post->description }}</p>
             </div>
             <x-button href="{{ route('camera.roll', $post) }}">Open this Camera Roll</x-button>
