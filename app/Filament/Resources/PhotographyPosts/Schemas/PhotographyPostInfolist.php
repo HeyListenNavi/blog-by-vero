@@ -68,7 +68,7 @@ class PhotographyPostInfolist
                         RepeatableEntry::make('photographies')
                             ->label('Photos')
                             ->schema([
-                                Section::make(fn(Photography $photography): string => $photography->title)
+                                Section::make(fn(Photography $photography): string => $photography->title ?? 'Untitled Photo')
                                     ->schema([
                                         ImageEntry::make('path')
                                             ->hiddenLabel()
