@@ -48,7 +48,6 @@ class PhotographyPostForm
                     ->schema([
                         MarkdownEditor::make('description')
                             ->label('Description')
-                            ->required()
                             ->columnSpanFull(),
                         Repeater::make('photographies')
                             ->label('Photographies')
