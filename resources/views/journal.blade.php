@@ -6,7 +6,7 @@
         <h1 class="text-body-large">This is my journal &lt;3</h1>
         <h2>welcome! you've found the collection of veronica's thoughts, sometimes, when she feels the need to share something to the world, she comes here to depoist all of it into a centralized database</h2>
     </header>
-    <section class="px-2 flex flex-wrap justify-center gap-2"> 
+    <section class="px-2 flex flex-wrap justify-center gap-2">
         @forelse ($posts as $post)
         <x-post-icon
             :title="$post->title"
