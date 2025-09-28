@@ -62,7 +62,6 @@ class PhotographyPostForm
                                     ->label('Image')
                                     ->disk('public')
                                     ->directory('photographies')
-                                    ->image()
                                     ->downloadable()
                                     ->required(),
                             ]),
