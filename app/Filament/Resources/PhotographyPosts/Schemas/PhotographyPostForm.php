@@ -58,7 +58,6 @@ class PhotographyPostForm
                             ->schema([
                                 TextInput::make('title')
                                     ->label('Photo Title')
-                                    ->required()
                                     ->maxLength(255),
                                 FileUpload::make('path')
                                     ->label('Image')
