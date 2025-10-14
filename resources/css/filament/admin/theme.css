@@ -1,0 +1,22 @@
+@import "../../../../vendor/filament/filament/resources/css/theme.css";
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+@font-face {
+    font-family: "Pixeloid";
+    src: url("@fonts/PixeloidSans.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Pixeloid";
+    src: url("@fonts/PixeloidSans-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Pixeloid Mono";
+    src: url("@fonts/PixeloidMono.woff") format("woff");
+    font-weight: normal;
+}

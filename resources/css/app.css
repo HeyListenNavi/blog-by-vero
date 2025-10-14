@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* 🌀 Theme */
+@theme {
+    --font-sans: "Pixeloid";
+    --font-mono: "Pixeloid Mono";
+    --font-emoji: "Vero's Emojis";
+
+    --text-base: 12px;
+
+    --spacing: 4px;
+
+    --breakpoint-xs: 200px;
+    --breakpoint-sm: 300px;
+    --breakpoint-md: 400px;
+    --breakpoint-lg: 500px;
+    --breakpoint-xl: 600px;
+    --breakpoint-2xl: 700px;
+
+    --color-background-primary: #151515;
+    --color-background-secondary: #100e0f;
+    --color-background-tertiary: #0c0a0a;
+    --color-foreground: #f0e2f3;
+    --color-highlight: #eabbb9;
+    --color-highlight-secondary: #b3cbf2;
+
+    --background-image-background: url("@images/background-tile.gif");
+    --background-image-header: url("@images/banner.jpg");
+
+    --text-shadow-outline: -1px -1px 0, 1px -1px 0, -1px 1px 0, 1px 1px 0;
+    --shadow-window-outline: inset -6px -6px var(--color-background-tertiary),
+        inset 6px 6px var(--color-background-tertiary),
+        inset 8px 8px var(--color-highlight),
+        inset -8px -8px var(--color-highlight);
+    --text-shadow-terminal-glow: 0 0 2px, 0 0 2px, 0 0 3px;
+
+    --text-display-large: 72px;
+    --text-display-large--line-height: 120%;
+    --text-display-large--font-weight: bold;
+
+    --text-display-medium: 48px;
+    --text-display-medium--line-height: 120%;
+    --text-display-medium--font-weight: bold;
+
+    --text-headline-large: 40px;
+    --text-headline-large--line-height: 120%;
+    --text-headline-large--font-weight: regular;
+
+    --text-headline-medium: 32px;
+    --text-headline-medium--line-height: 120%;
+    --text-headline-medium--font-weight: regular;
+
+    --text-body-large: 24px;
+    --text-body-large--line-height: 140%;
+    --text-body-large--font-weight: bold;
+
+    --text-body-medium: 20px;
+    --text-body-medium--line-height: 160%;
+    --text-body-medium--font-weight: regular;
+
+    --text-body-small: 16px;
+    --text-body-small--line-height: 160%;
+    --text-body-small--font-weight: regular;
+
+    --text-label-large: 20px;
+    --text-label-large--line-height: 120%;
+    --text-label-large--font-weight: bold;
+
+    --text-label-medium: 14px;
+    --text-label-medium--line-height: 120%;
+    --text-label-medium--font-weight: regular;
+
+    --text-label-small: 12px;
+    --text-label-small--line-height: 120%;
+    --text-label-small--font-weight: regular;
+}
+
+/* 🪐 Font Faces */
+@font-face {
+    font-family: "Pixeloid";
+    src: url("@fonts/PixeloidSans.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Pixeloid";
+    src: url("@fonts/PixeloidSans-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Pixeloid Mono";
+    src: url("@fonts/PixeloidMono.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Vero's Emojis";
+    src: url("@fonts/IconFont.ttf") format("OpenType");
+}
+
+[x-cloak] {
+    display: none !important;
+}
