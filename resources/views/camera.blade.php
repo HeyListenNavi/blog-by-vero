@@ -14,8 +14,8 @@
         	<div class="wrap-break-word text-center text-sm">
             		<span>{{ $post->title }}</span>
             		<span>{{ $post->date }}</span>
-        <	/div>
-    </a>
+        	</div>
+    	</a>
 </article>
         @empty
         <p>No camera rolls yet, check back later!</p>

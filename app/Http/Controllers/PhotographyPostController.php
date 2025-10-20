@@ -14,7 +14,7 @@ class PhotographyPostController
     {
         $photographyPosts = PhotographyPost::with(['icon'])
             ->latest()
-            ->paginate(1);
+            ->paginate(10);
 
         return view('camera', compact('photographyPosts'));
     }
