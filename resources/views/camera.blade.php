@@ -22,7 +22,7 @@
         @endforelse
     </section>
     <section class="p-4">
-        {{ $posts->links('components.pagination') }}
+        {{ $photographyPosts->links('components.pagination') }}
     </section>
 </main>
 @endsection
