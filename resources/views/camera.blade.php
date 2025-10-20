@@ -6,7 +6,7 @@
         <h1 class="text-body-large">Vero's camera roll</h1>
         <h2>veronica has a bunch of cameras, here, all of the photographies she has ever taken have been listed into different camera rolls</h2>
     </header>
-    <section class="px-2 flex flex-wrap justify-center gap-2">
+    <section class="px-2 flex flex-wrap content-start gap-2">
         @forelse ($photographyPosts as $post)
 	<article class="h-fit w-24 p-2 hover:outline-2 hover:outline-dashed hover:outline-foreground/10 cursor-pointer">
     	<a class="flex flex-col items-center gap-1" href="{{ route('camera.roll', $post) }}">
