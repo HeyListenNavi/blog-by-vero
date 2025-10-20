@@ -9,7 +9,7 @@
         <p>{{ $photographyPost->description }}</p>
     </section>
 
-    <section class="max-w-4xl w-full self-center grid grid-cols-2 gap-4">
+    <section class="max-w-4xl w-full self-center lg:grid grid-cols-2 gap-4">
         @foreach ($photographyPost->photographies as $photography)
             <figure class="flex flex-col gap-2 items-center">
                 <img src="{{ asset('storage/' . $photography->path) }}">
