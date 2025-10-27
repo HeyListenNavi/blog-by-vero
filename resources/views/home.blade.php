@@ -39,6 +39,23 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="Thoughts"
+        extension="pdf"
+        description="estado: yap"
+        location="/home/naviheylisten/vero/thoughts"
+        icon="{{ Vite::image('icons/window-icons.png') }}"
+    >
+        <iframe
+            src="{{ route('thoughts') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[650px] max-w-[450px] mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Deco Bar"
         extension="blink"
         description="just some decorations"

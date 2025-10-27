@@ -5,6 +5,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotographyPostController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ThoughtController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -82,3 +83,6 @@ Route::get('/users/{user}', [UserController::class, 'show'])
 
 Route::get('/comments', [CommentController::class, 'index'])
     ->name('comments');
+
+Route::get('/thoughts', [ThoughtController::class, 'index'])
+    ->name('thoughts');

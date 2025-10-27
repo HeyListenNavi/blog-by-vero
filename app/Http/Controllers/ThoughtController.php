@@ -12,8 +12,8 @@ class ThoughtController
      */
     public function index()
     {
-        $thoughts = Thought::latest()->paginate(20);
+        $thoughts = Thought::latest()->paginate(10);
 
-        return view('', compact('thoughts'));
+        return view('thoughts', compact('thoughts'));
     }
 }
