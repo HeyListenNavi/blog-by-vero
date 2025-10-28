@@ -15,7 +15,7 @@ class SketchController
     {
         $sketches = Sketch::latest()->paginate(15);
 
-        return view('', compact('sketches'));
+        return view('sketches', compact('sketches'));
     }
 
     /**
@@ -23,6 +23,6 @@ class SketchController
      */
     public function show(Sketch $sketch)
     {
-        return view('', $sketch);
+        return view('layouts.sketch', compact('sketch'));
     }
 }

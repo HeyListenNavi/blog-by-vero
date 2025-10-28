@@ -197,4 +197,21 @@
             <p>Your browser does not support iframes</p>
         </iframe>
     </x-desktop-icon>
+
+    <x-desktop-icon
+        name="Sketches"
+        extension="js"
+        description="a bunch of sketches and interactive stuff that i want to put somewhere online"
+        location="/home/naviheylisten/projects"
+        icon="{{ Vite::image('icons/monitor-application.png') }}"
+    >
+        <iframe
+            src="{{ route('sketches') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[850px] max-w-[450px] space-y-4 mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
 @endsection

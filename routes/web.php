@@ -5,8 +5,10 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotographyPostController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SketchController;
 use App\Http\Controllers\ThoughtController;
 use App\Http\Controllers\UserController;
+use App\Models\Sketch;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'home'])
@@ -86,3 +88,9 @@ Route::get('/comments', [CommentController::class, 'index'])
 
 Route::get('/thoughts', [ThoughtController::class, 'index'])
     ->name('thoughts');
+
+Route::get('/sketches', [SketchController::class, 'index'])
+    ->name('sketches');
+
+Route::get('/sketches/{sketch}', [SketchController::class, 'show'])
+    ->name('sketch');
