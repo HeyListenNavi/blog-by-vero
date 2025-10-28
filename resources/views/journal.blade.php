@@ -11,8 +11,9 @@
         <x-post-icon
             :title="$post->title"
             :date="$post->date"
-            :icon="$post->icon->path"
+            icon="{{ asset('storage/' . $post->icon->path) }}"
             :href="route('journal.post', ['post' => $post->slug])"
+            newTab="{{ true }}"
         />
         @empty
         <p>No journal entries yet :&Backslash;</p>
