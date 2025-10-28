@@ -25,16 +25,16 @@
 
     <div class="flex gap-1">
         @if ($paginator->onFirstPage())
-        <x-button>← Previous</x-button>
+        <x-button class="text-[10px] md:text-[12px]">← Previous</x-button>
         @else
-        <x-button href="{{ $paginator->previousPageUrl() }}">
+        <x-button class="text-[10px] md:text-[12px]" href="{{ $paginator->previousPageUrl() }}">
             ← Previous
         </x-button>
         @endif
         @if ($paginator->onLastPage())
-        <x-button>Next →</x-button>
+        <x-button class="text-[10px] md:text-[12px]">Next →</x-button>
         @else
-        <x-button href="{{ $paginator->nextPageUrl() }}">
+        <x-button class="text-[10px] md:text-[12px]" href="{{ $paginator->nextPageUrl() }}">
             Next →
         </x-button>
         @endif
