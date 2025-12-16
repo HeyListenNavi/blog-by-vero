@@ -7,7 +7,7 @@
             <div class="mx-auto flex w-full max-w-lg gap-2 py-4">
                     <p class="font-emoji text-lg">{{ $thought->mood[0] }}</p>
                     <div>
-                        <p>"{{ $thought->content }}"</p>
+                        <p>{{ $thought->content }}</p>
                         <p class="text-[10px]">estado: <span class="font-bold">{{ $thought->mood }}</span></p>
                     </div>
                 </div>
