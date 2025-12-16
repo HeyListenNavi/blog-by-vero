@@ -72,6 +72,14 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="Internet"
+        description="welcome to da internet™"
+        location="/dev/tcp"
+        icon="{{ Vite::image('icons/internet-explorer.png') }}"
+        link="https://google.com"
+    />
+
+    <x-desktop-icon
         name="Side Dish"
         extension="side"
         description="just some warnings lol"
@@ -214,4 +222,26 @@
             <p>Your browser does not support iframes</p>
         </iframe>
     </x-desktop-icon>
+
+    @auth
+    @if(Auth::user()->role === 'Admin')
+        <x-desktop-icon
+            name="Admin"
+            extension="php"
+            description="go to the admin panel"
+            location="/root"
+            icon="{{ Vite::image('icons/admin-keys.png') }}"
+            link="{{ route('filament.admin.pages.dashboard') }}"
+        />
+
+        <x-desktop-icon
+            name="EasyPanel"
+            extension="sys"
+            description="wanna see more projects? checkout my easypanel"
+            location="/docker"
+            icon="{{ Vite::image('icons/file-code.png') }}"
+            link="https://panel.naviheylisten.is-a.dev"
+        />
+    @endif
+    @endauth
 @endsection
