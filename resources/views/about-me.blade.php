@@ -250,7 +250,7 @@
                     <div class="flex gap-4 mx-4 py-8 overflow-x-auto pr-[130px]">
                         <template x-for="m in music" :key="m.cover">
                             <div class="relative z-10">
-                                <img class="peer w-48 max-w-none hover:translate-y-[-10px] hover:shadow-[0_0_8px_5px_black] hover:mr-[130px] transition-[shadow_transform_margin-right] duration-300 ease-in-out" loading="lazy" :src="`/images/music/'${m.cover}`" :alt="`${m.title} album cover`">
+                                <img class="peer w-48 max-w-none hover:translate-y-[-10px] hover:shadow-[0_0_8px_5px_black] hover:mr-[130px] transition-[shadow_transform_margin-right] duration-300 ease-in-out" loading="lazy" :src="`/images/music/${m.cover}`" :alt="`${m.title} album cover`">
                                 <img class="w-48 max-w-none absolute -top-2 left-0 peer-hover:left-[35%] -z-10 block animate-[spin_3s_linear_infinite] filter drop-shadow-[0_0_8px_black] transition-[box-shadow_left] duration-300 ease-in-out" loading="lazy" src="{{ Vite::image('vinyl-disc.png') }}" alt="Vinyl disc">
                                 <p class="w-48 text-xs" x-text="`${m.title} by ${m.artist} (${m.type})`"></p>
                             </div>
