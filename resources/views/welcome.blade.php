@@ -138,31 +138,31 @@
                     website, and if you liked my website feel free to use my button!
                 </p>
                 <div class="flex max-w-md flex-wrap gap-1 self-center">
-                    <a class="max-w-22" href="https://hillhouse.neocities.org">
+                    <a class="max-w-22" href="https://hillhouse.neocities.org" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('hillhouse.png') }}" />
                     </a>
-                    <a class="max-w-22" href="https://errormine.net/">
+                    <a class="max-w-22" href="https://errormine.net/" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('errormine.gif') }}" />
                     </a>
-                    <a class="max-w-22" href="https://thegardenofmadeline.neocities.org/pages/foreverandalways">
+                    <a class="max-w-22" href="https://thegardenofmadeline.neocities.org/pages/foreverandalways" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('garden-of-madeline.gif') }}" />
                     </a>
-                    <a class="max-w-22" href="https://ilovebeingtrans.neocities.org/">
+                    <a class="max-w-22" href="https://ilovebeingtrans.neocities.org/" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('i-love-being-trans.png') }}" />
                     </a>
-                    <a class="max-w-22" href="https://32bit.cafe/">
+                    <a class="max-w-22" href="https://32bit.cafe/" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('32-bits-pcb.png') }}" />
                     </a>
-                    <a class="max-w-22" href="https://cabbagesorter.neocities.org/">
+                    <a class="max-w-22" href="https://cabbagesorter.neocities.org/" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('cabbage-sorter.gif') }}" />
                     </a>
-                    <a class="max-w-22" href="https://cloverbell.neocities.org/">
+                    <a class="max-w-22" href="https://cloverbell.neocities.org/" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('cloverbell.gif') }}" />
                     </a>
-                    <a class="max-w-22" href="https://lostlove.neocities.org/">
+                    <a class="max-w-22" href="https://lostlove.neocities.org/" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('lunospace.gif') }}" />
                     </a>
-                    <a class="max-w-22" href="https://oklama.com/">
+                    <a class="max-w-22" href="https://oklama.com/" target="_blank">
                         <img loading="lazy" src="{{ Vite::button('nu-thoughts.jpg') }}" />
                     </a>
                 </div>
@@ -185,7 +185,7 @@
                         </p>
                     </div>
                     <div class="border-foreground col-span-4 flex items-center justify-center border-[1px] p-2">
-                        <a class="max-w-32" href="https://heylistennavi.neocities.org/">
+                        <a class="max-w-32" href="https://heylistennavi.neocities.org/" target="_blank">
                             <img loading="lazy" src="{{ Vite::button('veros-site.gif') }}" />
                         </a>
                     </div>
@@ -200,7 +200,7 @@
                 <br />
                 *drumroll*
             </p>
-            <a class="text-body-small font-bold underline" href="https://www.instagram.com/snow_rise1">GABYYY</a>
+            <a class="text-body-small font-bold underline" href="https://www.instagram.com/snow_rise1" target="_blank">GABYYY</a>
             <p>
                 thank you so much gaby for always being there as the good friend you are and for your five bucks
             </p>

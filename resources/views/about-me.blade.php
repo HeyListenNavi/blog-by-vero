@@ -313,16 +313,16 @@
             <ul>
                 <li class="before:block before:content-['→'] before:text-highlight flex gap-1">
                     <a
-                        href="https://open.spotify.com/user/31wfjfd7x6lie7cvcfxbpkft3zcu?si=7174c0c75c114c18">spotify</a>
+                        href="https://open.spotify.com/user/31wfjfd7x6lie7cvcfxbpkft3zcu?si=7174c0c75c114c18" target="_blank">spotify</a>
                 </li>
                 <li class="before:block before:content-['→'] before:text-highlight flex gap-1">
-                    <a href="https://www.tumblr.com/naviheylisten9?source=share">tumblr: naviheylisten9</a>
+                    <a href="https://www.tumblr.com/naviheylisten9?source=share" target="_blank">tumblr: naviheylisten9</a>
                 </li>
                 <li class="before:block before:content-['→'] before:text-highlight flex gap-1">
-                    <a href="https://github.com/HeyListenNavi">github: HeyListenNavi</a>
+                    <a href="https://github.com/HeyListenNavi" target="_blank">github: HeyListenNavi</a>
                 </li>
                 <li class="before:block before:content-['→'] before:text-highlight flex gap-1">
-                    <a href="https://www.instagram.com/heylisten.navi?igsh=aGtub3I3dHJhbXRs">instagram:
+                    <a href="https://www.instagram.com/heylisten.navi?igsh=aGtub3I3dHJhbXRs" target="_blank">instagram:
                         heylisten.navi</a>
                 </li>
                 <li class="before:block before:content-['→'] before:text-highlight flex gap-1">
@@ -335,7 +335,7 @@
                     <span>email: heylistennavi@proton.me</span>
                 </li>
                 <li class="before:block before:content-['→'] before:text-highlight flex gap-1">
-                    <a href="https://ko-fi.com/naviheylisten">kofi: naviheylisten</a>
+                    <a href="https://ko-fi.com/naviheylisten" target="_blank">kofi: naviheylisten</a>
                 </li>
             </ul>
         </div>
