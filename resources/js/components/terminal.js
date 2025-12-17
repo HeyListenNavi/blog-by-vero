@@ -1,4 +1,4 @@
-import fileSystem from "../config/filesystem";
+import fileSystem from "../core/filesystem";
 import { commandRegistry } from "../core/command";
 
 export default () => ({
@@ -7,12 +7,12 @@ export default () => ({
     historyIndex: 0,
     fileSystem: fileSystem,
     input: "",
-    user: "user",
-    currentPath: "~",
+    user: "guest",
+    path: ['home', 'naviheylisten'],
     commands: commandRegistry,
 
     userPrompt() {
-        return `${this.user}@verOS: ${this.currentPath}$`;
+        return `${this.user}@verOS: ${this.path.join("/").replace('home/naviheylisten', '~')} $`;
     },
 
     runCommand(input) {
@@ -26,7 +26,6 @@ export default () => ({
 
         this.print(`${this.userPrompt()} ${input}`);
 
-        console.log(command)
         if (!command) {
             this.print("Command not found");
             return;

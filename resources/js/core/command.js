@@ -51,14 +51,35 @@ export const commandRegistry = {
         return "this blog was officially brought with the help of our sponsor\n*drumroll*\nGABYYY\nthank you so much gaby for always being there as the good friend you are and for your five bucks";
     }),
 
-    ls: new Command("ls", (_, __, terminal) => {
-        return Object.keys(terminal.fileSystem).join("\n");
+    cd: new Command("cd", (_, args, terminal) => {
+        const target = args[0];
+        if (!target) return;
+
+        const newPath = Alpine.store("fs").verifyDir(terminal.path, target);
+
+        if (newPath) {
+            terminal.path = newPath;
+        } else {
+            return `cd: ${target}: No such directory`;
+        }
     }),
 
     cat: new Command("cat", (_, args, terminal) => {
-        if (args.length === 0) return "cat: missing file operand";
-        const file = terminal.fileSystem[args[0]];
-        return file ? file : "cat: no such file";
+        if (!args[0]) return "cat: missing file operand";
+
+        const content = Alpine.store("fs").cat(terminal.path, args[0]);
+
+        return content ? content : "cat: no such file";
+    }),
+
+    ls: new Command("ls", (_, __, terminal) => {
+        const items = Alpine.store("fs").ls(terminal.path);
+
+        if (items.length === 0) return "(empty)";
+
+        return items
+            .map((i) => (i.type === "folder" ? `${i.name}/` : i.name))
+            .join("  ");
     }),
 
     git: new Command("git", async (_, __, terminal) => {
