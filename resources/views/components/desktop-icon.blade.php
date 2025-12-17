@@ -5,8 +5,8 @@
 
     'extension' => 'exe',
     'description' => 'No description',
-    'size' => fake()->numberBetween(0, 999),
-    'date' => fake()->date(),
+    'size' => rand(0, 999),
+    'date' => date('d-m-Y'),
     'location' => '/home/naviheylisten/projects/blog-by-vero',
     'link' => null
 ])
