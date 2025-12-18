@@ -40,7 +40,9 @@ FROM serversideup/php:8.4-fpm-nginx
 
 USER root
 
-RUN install-php-extensions intl
+RUN rm -f /etc/apt/sources.list.d/nginx.list \
+    && apt-get update \
+    && install-php-extensions intl
 
 WORKDIR /var/www/html
 
