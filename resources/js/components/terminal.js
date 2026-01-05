@@ -1,11 +1,11 @@
-import fileSystem from "../core/filesystem";
+import filesystemManager from "../components/filesystemManager";
 import { commandRegistry } from "../core/command";
 
 export default () => ({
     outputHistory: [],
     commandHistory: [],
     historyIndex: 0,
-    fileSystem: fileSystem,
+    filesystemManager: filesystemManager,
     input: "",
     user: "guest",
     path: ['home', 'naviheylisten'],

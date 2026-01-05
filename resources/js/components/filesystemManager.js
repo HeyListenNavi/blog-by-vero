@@ -1,6 +1,6 @@
 import initialTree from "../core/filesystem";
 
-const HOME_PATH = ['home', 'naviheylisten'];
+const HOME_PATH = ["home", "naviheylisten"];
 
 export default {
     tree: initialTree,
@@ -8,22 +8,26 @@ export default {
     resolvePath(currentPath, pathString) {
         let newPath;
 
-        if (pathString.startsWith('~')) {
-            newPath = [...HOME_PATH];
-            pathString = pathString.substring(1);
-        } else if (pathString.startsWith('/')) {
-            newPath = [];
-        } else {
-            newPath = [...currentPath];
+        switch (pathString[0]) {
+            case "~":
+                newPath = [...HOME_PATH];
+                pathString = pathString.substring(1);
+                break;
+            case "/":
+                newPath = [];
+                break;
+            default:
+                newPath = [...currentPath];
+                break;
         }
 
-        const segments = pathString.split('/');
+        const segments = pathString.split("/");
 
         for (const segment of segments) {
-            if (segment === '' || segment === '.') continue;
+            if (segment === "" || segment === ".") continue;
 
-            if (segment === '..') {
-                if (newPath.length > 0) newPath.pop();
+            if (segment === "..") {
+                newPath.pop();
             } else {
                 newPath.push(segment);
             }
@@ -35,23 +39,19 @@ export default {
         let current = this.tree;
 
         for (const segment of pathArray) {
-            if (current[segment]) {
-                current = current[segment];
-            } else if (current.children && current.children[segment]) {
-                current = current.children[segment];
-            } else {
-                return null;
-            }
+            current = current.children?.[segment];
+
+            if (!current) return null;
         }
         return current;
     },
 
-    ls(currentPath) {
-        const node = this.getNode(currentPath);
-        if (node && node.type === 'folder') {
-            return Object.keys(node.children).map(key => ({
+    ls(path) {
+        const node = this.getNode(path);
+        if (node && node.type === "folder") {
+            return Object.keys(node.children).map((key) => ({
                 name: key,
-                type: node.children[key].type
+                type: node.children[key].type,
             }));
         }
         return [];
@@ -61,7 +61,7 @@ export default {
         const fullPath = this.resolvePath(currentPath, pathString);
         const node = this.getNode(fullPath);
 
-        if (node && node.type === 'file') {
+        if (node && node.type === "file") {
             return node.content;
         }
         return null;
@@ -71,9 +71,9 @@ export default {
         const fullPath = this.resolvePath(currentPath, pathString);
         const node = this.getNode(fullPath);
 
-        if (node && node.type === 'folder') {
+        if (node && node.type === "folder") {
             return fullPath;
         }
         return false;
-    }
+    },
 };

@@ -61,11 +61,11 @@ export default {
                             children: {
                                 github: {
                                     type: "file",
-                                    content: "https://github.com/...",
+                                    content: "https://github.com/HeyListenNavi/blog-by-vero",
                                 },
                                 kofi: {
                                     type: "file",
-                                    content: "https://ko-fi.com/...",
+                                    content: "https://ko-fi.com/naviheylisten",
                                 },
                             },
                         },
