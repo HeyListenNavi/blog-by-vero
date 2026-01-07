@@ -1,21 +1,44 @@
-import Alpine from "alpinejs";
 import { Window } from "../core/window";
 
 export default {
     windows: {},
     desktop: null,
+    appRegistry: {},
 
     init() {
         this.desktop = document.getElementById("screen");
     },
 
-    spawn(appTemplate) {
+    register(appName, templateElement) {
+        const id = appName.toLowerCase().replace(/\s+/g, "-");
+        this.appRegistry[id] = templateElement;
+    },
+
+    open(appId, data = null) {
+        const id = appId.toLowerCase().replace(/\s+/g, "-");
+        const template = this.appRegistry[id];
+
+        if (template) {
+            this.spawn(template, data);
+        }
+    },
+
+    spawn(appTemplate, data = null) {
         if (!this.desktop) this.init();
 
         const name = appTemplate.getAttribute("name") || "Untitled";
 
         new Window(appTemplate, name, this.desktop, (winInstance) => {
             this.windows[winInstance.id] = winInstance;
+
+            if (data) {
+                winInstance.element.dispatchEvent(
+                    new CustomEvent("appdata", {
+                        detail: data,
+                        bubbles: true,
+                    })
+                );
+            }
         });
     },
 

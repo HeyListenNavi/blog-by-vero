@@ -4,11 +4,11 @@
 ])
 
 <x-window
-    x-data="{ id: $id('window') }"
+    x-data="{ id: $id('window'), appdataEvent: null }"
     x-bind:id="id"
 
     x-show="$store.windowManager.get(id)?.minimized === false"
-    x-bind:class="{ 
+    x-bind:class="{
         '!w-full !h-full !top-0 !left-0 !transform-none': $store.windowManager.get(id)?.maximized,
     }"
 
@@ -23,11 +23,12 @@
         });
     "
     x-on:minimize-window="$store.windowManager.minimize(id)"
+    x-on:appdata="appdataEvent = $event"
 
     title="{{ $name }}"
-    
+
     :buttons="$buttons"
-    
+
     {{ $attributes->merge(['class' => 'w-fit max-h-svh']) }}
 >
     {{ $slot }}

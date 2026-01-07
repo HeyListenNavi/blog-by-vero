@@ -77,6 +77,8 @@
     <article
         x-data="{ id: $id('icon') }"
         x-init="
+            $store.windowManager.register('{{ $name }}', $refs.app);
+
             @if($open)
             $store.windowManager.spawn($refs.app);
             @endif
