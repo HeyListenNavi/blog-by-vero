@@ -43,4 +43,9 @@ class PagesController extends Controller
     {
         return view('welcome');
     }
+
+    public function fileExplorer(): View
+    {
+        return view('file-explorer');
+    }
 }

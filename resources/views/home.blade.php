@@ -223,6 +223,54 @@
         </iframe>
     </x-desktop-icon>
 
+    <x-desktop-icon
+        name="Files"
+        extension="directory"
+        description="search up for files on my vault"
+        location="/home/naviheylisten/"
+        icon="{{ Vite::image('icons/directory.png') }}"
+    >
+        <iframe
+            src="{{ route('file-explorer') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[850px] max-w-[750px] space-y-4 mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+     <x-desktop-icon
+        name="Text Editor"
+        extension="txt"
+        description="edit any text you want"
+        location="/home/naviheylisten/vim"
+        icon="{{ Vite::image('icons/notepad.png') }}"
+    >
+        <div
+            class="w-[80svw] h-[80svh] max-h-[350px] max-w-[450px] grid grid-rows-[auto_1fr_auto]"
+            x-data="{ content: '' }"
+            x-effect="content = appdataEvent?.detail ?? ''"
+        >
+            <div class="flex gap-2 px-2 py-1 select-none">
+                <button class="hover:bg-background-tertiary cursor-pointer py-1 px-2">File</button>
+                <button class="hover:bg-background-tertiary cursor-pointer py-1 px-2">Edit</button>
+                <button class="hover:bg-background-tertiary cursor-pointer py-1 px-2">Format</button>
+            </div>
+
+            <textarea
+                class="flex-1 w-full p-2 font-mono text-sm resize-none border-none outline-none focus:ring-0"
+                x-text="content"
+                placeholder="Type something..."
+                spellcheck="false"
+            ></textarea>
+
+            <div class="px-2 py-0.5 text-[10px] flex justify-end">
+                <span x-text="content.length + ' chars'"></span>
+            </div>
+        </div>
+    </x-desktop-icon>
+
     @auth
     @if(Auth::user()->role === 'Admin')
         <x-desktop-icon
