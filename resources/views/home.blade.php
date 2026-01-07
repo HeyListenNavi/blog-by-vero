@@ -259,7 +259,7 @@
             </div>
 
             <textarea
-                class="flex-1 w-full p-2 font-mono text-sm resize-none border-none outline-none focus:ring-0"
+                class="flex-1 w-full p-2 font-mono text-sm resize-none whitespace-pre overflow-auto border-none outline-none focus:ring-0"
                 x-text="content"
                 placeholder="Type something..."
                 spellcheck="false"
