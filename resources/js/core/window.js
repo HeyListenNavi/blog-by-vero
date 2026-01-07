@@ -16,7 +16,7 @@ export class Window {
         requestAnimationFrame(() => {
             this.id = windowEl.id;
             this.element = windowEl;
-            this.element.style.zIndex = 9999;
+            this.element.style.zIndex = Draggable.zIndex - 1;
             this.makeDraggable();
             if (callback) callback(this);
         });
