@@ -4,8 +4,8 @@
 
 @section('content')
     <x-desktop-icon
-        name="home/"
-        extension="home"
+        name="home"
+        extension="folder"
         description="you've met a terrible fate, haven't you"
         location="/home/naviheylisten/vero/home"
         icon="{{ Vite::image('icons/computer.png') }}"
@@ -26,7 +26,7 @@
         extension="psd"
         description="all the things you gotta now 'bout me"
         location="/home/naviheylisten/vero/"
-        icon="{{ Vite::image('icons/notepad.png') }}"
+        icon="{{ Vite::image('icons/file-pin.png') }}"
     >
         <iframe
             src="{{ route('aboutme') }}"
@@ -43,7 +43,7 @@
         extension="pdf"
         description="estado: yap"
         location="/home/naviheylisten/vero/thoughts"
-        icon="{{ Vite::image('icons/window-icons.png') }}"
+        icon="{{ Vite::image('icons/notepad-pen.png') }}"
     >
         <iframe
             src="{{ route('thoughts') }}"
@@ -60,6 +60,7 @@
         extension="blink"
         description="just some decorations"
         location="/home/naviheylisten/vero/deco"
+        icon="{{ Vite::image('icons/msn.png') }}"
     >
         <iframe
             src="{{ route('decobar') }}"
@@ -80,10 +81,11 @@
     />
 
     <x-desktop-icon
-        name="Side Dish"
-        extension="side"
+        name="Note"
+        extension="md"
         description="just some warnings lol"
         location="/home/naviheylisten/vero/info"
+        icon="{{ Vite::image('icons/file.png') }}"
     >
         <iframe
             src="{{ route('sidebar') }}"
@@ -130,12 +132,12 @@
     </x-desktop-icon>
 
     <x-desktop-icon
-        name="Comments"
+        name="Mailbox"
         extension="txt"
         description="leave any comments you'd like here"
         location="/home/naviheylisten/blog/"
         :buttons="['close']"
-        icon="{{ Vite::image('icons/directory-explorer.png') }}"
+        icon="{{ Vite::image('icons/mailbox.png') }}"
     >
         <iframe
             src="{{ route('comments') }}"
@@ -148,11 +150,28 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="Community"
+        extension="user"
+        description="connect with others that loved this website"
+        location="/usr/share"
+        icon="{{ Vite::image('icons/address-book.png') }}"
+    >
+        <iframe
+            src="{{ route('community') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[750px] max-w-[700px] space-y-4 mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Profile"
         extension="user"
         description="create your very own profile"
         location="/profiles"
-        icon="{{ Vite::image('icons/floppy-drive.png') }}"
+        icon="{{ Vite::image('icons/address-card.png') }}"
     >
         <iframe
             @guest
@@ -173,7 +192,7 @@
 
     <x-desktop-icon
         name="Terminal"
-        extension=""
+        extension="bin"
         description="checkout all these crazy commands"
         location="/usr/bin/kitty"
         icon="{{ Vite::image('icons/terminal.png') }}"
@@ -183,24 +202,6 @@
             frameborder="0"
             loading="lazy"
             class="w-[80svw] h-[80svh] max-h-[500px] max-w-[600px] space-y-4 mx-auto"
-        >
-            <p>Your browser does not support iframes</p>
-        </iframe>
-    </x-desktop-icon>
-
-
-    <x-desktop-icon
-        name="Community"
-        extension="user"
-        description="connect with others that loved this website"
-        location="/usr/share"
-        icon="{{ Vite::image('icons/internet.png') }}"
-    >
-        <iframe
-            src="{{ route('community') }}"
-            frameborder="0"
-            loading="lazy"
-            class="w-[80svw] h-[80svh] max-h-[750px] max-w-[700px] space-y-4 mx-auto"
         >
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -269,6 +270,19 @@
                 <span x-text="content.length + ' chars'"></span>
             </div>
         </div>
+    </x-desktop-icon>
+
+    <x-desktop-icon
+        name="Style Guide"
+        extension=""
+        description="checkout how i built the styles of this site"
+        location="/home/naviheylisten/figma"
+        icon="{{ Vite::image('icons/cassette.png') }}"
+        :open="true"
+    >
+        <iframe loading="lazy" frameborder="0" width="800" height="450" src="{{ asset('styles-guide.pdf') }}" allowfullscreen>
+            <p>Your browser does not support iframes</p>
+        </iframe>
     </x-desktop-icon>
 
     @auth
