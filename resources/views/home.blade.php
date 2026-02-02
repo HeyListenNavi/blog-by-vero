@@ -278,7 +278,6 @@
         description="checkout how i built the styles of this site"
         location="/home/naviheylisten/figma"
         icon="{{ Vite::image('icons/cassette.png') }}"
-        :open="true"
     >
         <iframe loading="lazy" frameborder="0" width="800" height="450" src="{{ asset('styles-guide.pdf') }}" allowfullscreen>
             <p>Your browser does not support iframes</p>
