@@ -82,14 +82,15 @@
 
     <x-desktop-icon
         name="milanesa"
-        icon="{{ Vite::image('icons/file-code.png') }}"
+        icon="{{ Vite::image('icons/sticky-note-pin.png') }}"
         description="true representation of milanesa"
+        location="/home/naviheylisten/vero/milanesa"
         :open="true"
         class="right-4 bottom-14"
     >
         <div
             x-data="dancingCat"
-            class="bg-background-primary text-foreground flex items-center justify-center min-w-[150px] min-h-[100px]"
+            class="bg-background-primary text-foreground flex items-center justify-center my-auto min-w-[150px] min-h-[100px]"
         >
             <pre class="text-lg leading-tight whitespace-pre font-[Sans]" x-text="frames[index]"></pre>
         </div>
@@ -97,8 +98,9 @@
 
     <x-desktop-icon
         name="music"
-        icon="{{ Vite::image('icons/file-code.png') }}"
-        description="true representation of milanesa"
+        icon="{{ Vite::image('icons/cd-audio.png') }}"
+        description="play some of my favorite music"
+        location="/home/naviheylisten/vero/music"
         :open="true"
         class="right-2 top-2"
     >
