@@ -110,4 +110,16 @@ export const commandRegistry = {
         () =>
             "Also check my job! ByteByte Studio\n@bytebytestudio in all social media\ngo to bytebytestudio.com"
     ),
+
+    danny: new Command("danny", () => {
+        gsap.to(window.parent.document.body, {
+            rotation: "+=720",
+            duration: 2,
+            ease: "power2.inOut",
+            onComplete: () => {
+                gsap.set(window.parent.document.body, { rotation: 0 });
+            }
+        });
+        return "los mejores logins por dannyvergaboy";
+    }),
 };
