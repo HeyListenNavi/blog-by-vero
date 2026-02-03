@@ -225,6 +225,23 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="Blog by Vero"
+        extension="html"
+        description="a blog by vero.. inside the blog- by vero?!??"
+        location="/home/naviheylisten/vero/blog/home/naviheylisten/vero/blog"
+        icon="{{ Vite::image('icons/executable.png') }}"
+    >
+        <iframe
+            src="{{ config('app.url') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[500px] max-w-[600px] space-y-4 mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Terminal"
         extension="bin"
         description="checkout all these crazy commands"
