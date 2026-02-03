@@ -48,4 +48,9 @@ class PagesController extends Controller
     {
         return view('file-explorer');
     }
+
+    public function musicPlayer(): View
+    {
+        return view('music-player');
+    }
 }

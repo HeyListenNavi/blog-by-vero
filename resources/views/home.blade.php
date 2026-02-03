@@ -96,6 +96,23 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="music"
+        icon="{{ Vite::image('icons/file-code.png') }}"
+        description="true representation of milanesa"
+        :open="true"
+        class="right-2 top-2"
+    >
+        <iframe
+            src="{{ route('music-player') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[25svw] h-[40svh] min-h-[90px] min-w-[220px]"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Note"
         extension="md"
         description="just some warnings lol"

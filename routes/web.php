@@ -32,6 +32,9 @@ Route::get('/welcome', [PagesController::class, 'welcome'])
 Route::get('/file-explorer', [PagesController::class, 'fileExplorer'])
     ->name('file-explorer');
 
+Route::get('/music-player', [PagesController::class, 'musicPlayer'])
+    ->name('music-player');
+
 
 Route::middleware('guest')->group(function () {
     Route::get('/auth', [PagesController::class, 'auth'])
