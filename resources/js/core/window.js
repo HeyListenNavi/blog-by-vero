@@ -37,13 +37,13 @@ export class Window {
     }
 
     makeDraggable() {
-        gsap.set(this.element, {
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            xPercent: -50,
-            yPercent: -50,
-        });
+        const hasPositionClass = [...this.element.classList].some(
+            (cls) =>
+                cls.startsWith("top-") ||
+                cls.startsWith("left-") ||
+                cls.startsWith("right-") ||
+                cls.startsWith("bottom-"),
+        );
 
         const iframes = document.querySelectorAll("iframe");
         const togglePointerEvents = (state) => {
@@ -57,6 +57,24 @@ export class Window {
             allowEventDefault: true,
             onPress: () => togglePointerEvents("none"),
             onRelease: () => togglePointerEvents("auto"),
+        });
+
+        if (!hasPositionClass) {
+            gsap.set(this.element, {
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                xPercent: -50,
+                yPercent: -50,
+            });
+
+            return;
+        }
+
+        gsap.set(this.element, {
+            position: "absolute",
+            xPercent: 0,
+            yPercent: 0,
         });
     }
 }

@@ -81,6 +81,21 @@
     />
 
     <x-desktop-icon
+        name="milanesa"
+        icon="{{ Vite::image('icons/file-code.png') }}"
+        description="true representation of milanesa"
+        :open="true"
+        class="right-4 bottom-14"
+    >
+        <div
+            x-data="dancingCat"
+            class="bg-background-primary text-foreground flex items-center justify-center min-w-[150px] min-h-[100px]"
+        >
+            <pre class="text-lg leading-tight whitespace-pre font-[Sans]" x-text="frames[index]"></pre>
+        </div>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Note"
         extension="md"
         description="just some warnings lol"
