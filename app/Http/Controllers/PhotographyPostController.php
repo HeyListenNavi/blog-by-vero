@@ -12,7 +12,7 @@ class PhotographyPostController
      */
     public function index()
     {
-        $photographyPosts = PhotographyPost::with(['icon'])
+        $photographyPosts = PhotographyPost::with(['icon', 'photographies'])
             ->latest()
             ->paginate(10);
 
