@@ -5,7 +5,7 @@
 @endPushOnce
 
 @section('body')
-    <div x-data="musicPlayer()" class="flex flex-col items-center gap-4 p-4">
+    <div x-data="musicPlayer()" class="w-screen flex flex-col items-center gap-4 p-4">
         <div class="text-center">
             <p class="text-[10px] uppercase opacity-50">Now Playing</p>
             <h3 class="truncate text-sm font-bold" x-text="currentSong.name || 'Select a song'"></h3>
