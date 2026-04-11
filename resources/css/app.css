@@ -105,6 +105,10 @@
     src: url("@fonts/IconFont.ttf") format("OpenType");
 }
 
+.font-emoji {
+    font-family: "Vero's Emojis", sans-serif !important;
+}
+
 [x-cloak] {
     display: none !important;
 }
