@@ -10,7 +10,7 @@
 
     <div class="w-full max-w-2xl flex flex-col gap-4">
         <div class="flex items-center justify-between px-2">
-            <a class="text-[10px] uppercase tracking-widest hover:text-highlight transition-colors cursor-pointer" onclick="history.back()">[ Back to Camera ]</a>
+            <a class="underline cursor-pointer hover:text-highlight-secondary transition-colors" onclick="history.back()">← Camera</a>
             <div class="text-[10px] uppercase text-highlight">
                 Roll: {{ $photographyPost->title }}
             </div>
