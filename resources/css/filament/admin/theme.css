@@ -2,6 +2,7 @@
 
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
+@source '../../../../resources/views/forms/**/*';
 
 @font-face {
     font-family: "Pixeloid";
@@ -19,4 +20,13 @@
     font-family: "Pixeloid Mono";
     src: url("@fonts/PixeloidMono.woff") format("woff");
     font-weight: normal;
+}
+
+@font-face {
+    font-family: "Vero's Emojis";
+    src: url("@fonts/IconFont.ttf") format("truetype");
+}
+
+.font-emoji {
+    font-family: "Vero's Emojis", sans-serif !important;
 }
