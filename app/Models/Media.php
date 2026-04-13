@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use App\Observers\MediaObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
+#[ObservedBy([MediaObserver::class])]
 class Media extends Model
 {
     protected $casts = [
