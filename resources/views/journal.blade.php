@@ -11,7 +11,7 @@
         <x-post-icon
             :title="$post->title"
             :date="$post->date"
-            icon="{{ asset('storage/' . $post->icon->path) }}"
+            icon="{{ $post->icon->url }}"
             :href="route('journal.post', ['post' => $post->slug])"
             newTab="{{ true }}"
         />

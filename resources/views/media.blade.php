@@ -12,7 +12,7 @@
         <a href="{{ route('media.show', $media) }}" class="group bg-background-primary shadow-window-outline p-2 flex flex-col gap-2">
             <div class="relative aspect-3/4 overflow-hidden">
                 @if($media->poster)
-                    <img class="w-full h-full object-cover" src="{{ Storage::url($media->poster) }}" alt="{{ $media->title }}">
+                    <img class="w-full h-full object-cover" src="{{ $media->url }}" alt="{{ $media->title }}">
                 @else
                     <div class="flex items-center justify-center h-full text-[10px] opacity-20">NO POSTER</div>
                 @endif

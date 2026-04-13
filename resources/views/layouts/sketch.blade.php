@@ -7,7 +7,7 @@
     <section class="w-full max-w-2xl self-center flex flex-col gap-2">
         <h1 class="text-display-medium text-4xl">{{ $sketch->title }}</h1>
         <p>{{ $sketch->description }}</p>
-        <iframe class="aspect-3/2" src="{{ asset('storage/' . $sketch->path) }}" frameborder="0"></iframe>
+        <iframe class="aspect-3/2" src="{{ $sketch->url }}" frameborder="0"></iframe>
     </section>
 </main>
 @endsection

@@ -20,7 +20,7 @@
             <div class="relative aspect-square sm:aspect-video bg-black border-4 border-background-tertiary flex items-center justify-center overflow-hidden">
                 <template x-for="(photo, index) in photos" x-bind:key="photo.id">
                     <div x-show="current === index" class="absolute inset-0 w-full h-full flex items-center justify-center">
-                        <img x-bind:src="'{{ asset('storage') }}/' + photo.path"
+                        <img x-bind:src="photo.url"
                              x-bind:alt="photo.title"
                              class="max-w-full max-h-full object-contain">
                     </div>

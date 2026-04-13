@@ -37,8 +37,8 @@ class SketchInfolist
                     ->schema([
                         TextEntry::make('path')
                             ->label('HTML Preview')
-                            ->html(fn ($record) => 
-                                '<iframe src="' . asset('storage/' . $record->path) . '" style="width:100%;height:500px;border:none;"></iframe>'
+                            ->html(fn ($record) =>
+                                '<iframe src="' . $record->url . '" style="width:100%;height:500px;border:none;"></iframe>'
                             )
                             ->columnSpanFull(),
                     ]),

@@ -20,7 +20,7 @@ class PostInfolist
                     ->columnSpanFull()
                     ->schema([
                         Flex::make([
-                            ImageEntry::make('icon.path')
+                            ImageEntry::make('icon.url')
                                 ->hiddenLabel()
                                 ->grow(false)
                                 ->imageWidth('64px')
