@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Storage;
 
 class Icon extends Model
 {
@@ -14,6 +15,13 @@ class Icon extends Model
         'name',
         'path',
     ];
+
+    protected $appends = ['url'];
+
+    public function getUrlAttribute(): ?string
+    {
+        return $this->path ? Storage::url($this->path) : null;
+    }
 
     public function posts(): HasMany 
     {

@@ -20,4 +20,11 @@ class Media extends Model
         'review_date',
         'content',
     ];
+
+    protected $appends = ['url'];
+
+    public function getUrlAttribute(): ?string
+    {
+        return $this->poster ? Storage::url($this->poster) : null;
+    }
 }
