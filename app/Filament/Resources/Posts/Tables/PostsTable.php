@@ -19,8 +19,7 @@ class PostsTable
         return $table
             ->defaultSort('created_at', 'desc')
             ->columns([
-                ImageColumn::make('icon.path')
-                    ->disk('public'),
+                ImageColumn::make('icon.path'),
 
                 TextColumn::make('title')
                     ->grow(true)

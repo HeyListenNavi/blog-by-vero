@@ -21,7 +21,6 @@ class PostInfolist
                     ->schema([
                         Flex::make([
                             ImageEntry::make('icon.path')
-                                ->disk('public')
                                 ->hiddenLabel()
                                 ->grow(false)
                                 ->imageWidth('64px')

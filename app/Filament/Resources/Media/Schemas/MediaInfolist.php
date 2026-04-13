@@ -22,7 +22,6 @@ class MediaInfolist
                             ->hiddenLabel()
                             ->imageWidth('100%')
                             ->imageHeight('auto')
-                            ->disk('public')
                             ->columnSpanFull(),
                     ]),
 

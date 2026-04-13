@@ -24,7 +24,6 @@ class PhotographyPostInfolist
                     ->schema([
                         Flex::make([
                             ImageEntry::make('icon.path')
-                                ->disk('public')
                                 ->hiddenLabel()
                                 ->grow(false)
                                 ->imageWidth('64px')
@@ -71,7 +70,6 @@ class PhotographyPostInfolist
                                 Section::make(fn(Photography $photography): string => $photography->title ?? 'Untitled Photo')
                                     ->schema([
                                         ImageEntry::make('path')
-                                            ->disk('public')
                                             ->hiddenLabel()
                                             ->imageWidth('100%')
                                             ->imageHeight('auto'),

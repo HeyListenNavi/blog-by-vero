@@ -29,7 +29,6 @@ class MediaForm
                             ->image()
                             ->directory('posters')
                             ->imageEditor()
-                            ->disk('public')
                             ->downloadable()
                             ->columnSpanFull(),
                     ]),

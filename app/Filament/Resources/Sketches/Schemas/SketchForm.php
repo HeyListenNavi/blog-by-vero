@@ -33,7 +33,6 @@ class SketchForm
                             ->columnSpanFull(),
                         FileUpload::make('path')
                             ->label('HTML File')
-                            ->disk('public')
                             ->directory('sketches')
                             ->acceptedFileTypes(['text/html'])
                             ->required()

@@ -18,8 +18,7 @@ class MediaTable
             ->columns([
                 ImageColumn::make('poster')
                     ->label('Poster')
-                    ->disk('public')
-                    ->square(),
+                    ->imageHeight(200),
 
                 TextColumn::make('title')
                     ->label('Title')
