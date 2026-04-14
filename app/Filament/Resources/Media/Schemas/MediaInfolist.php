@@ -18,11 +18,10 @@ class MediaInfolist
                     ->icon('heroicon-o-photo')
                     ->columnSpan(4)
                     ->schema([
-                        ImageEntry::make('poster')
+                        ImageEntry::make('url')
                             ->hiddenLabel()
                             ->imageWidth('100%')
                             ->imageHeight('auto')
-                            ->disk('public')
                             ->columnSpanFull(),
                     ]),
 

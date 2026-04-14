@@ -60,7 +60,6 @@ class PhotographyPostForm
                                     ->maxLength(255),
                                 FileUpload::make('path')
                                     ->label('Image')
-                                    ->disk('public')
                                     ->directory('photographies')
                                     ->downloadable()
                                     ->required(),

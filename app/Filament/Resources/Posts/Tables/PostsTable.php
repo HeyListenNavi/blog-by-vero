@@ -19,8 +19,7 @@ class PostsTable
         return $table
             ->defaultSort('created_at', 'desc')
             ->columns([
-                ImageColumn::make('icon.path')
-                    ->disk('public'),
+                ImageColumn::make('icon.url'),
 
                 TextColumn::make('title')
                     ->grow(true)
@@ -38,7 +37,7 @@ class PostsTable
                     ->description(fn(Post $post): string => $post->created_at->format('d-M-y h:i A'))
                     ->sortable()
                     ->alignEnd(),
-                    
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()

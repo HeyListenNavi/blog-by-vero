@@ -28,7 +28,7 @@ class SketchesTable
                 TextColumn::make('path')
                     ->label('HTML File')
                     ->icon('heroicon-s-code-bracket')
-                    ->url(fn(Sketch $sketch) => asset('storage/' . $sketch->path))
+                    ->url(fn(Sketch $sketch) => $sketch->url)
                     ->openUrlInNewTab()
                     ->copyable(),
 

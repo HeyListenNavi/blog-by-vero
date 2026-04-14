@@ -17,7 +17,6 @@ class IconForm
 
                 FileUpload::make('path')
                     ->label('Icon')
-                    ->disk('public')
                     ->directory('icons')
                     ->image()
                     ->imageEditor()

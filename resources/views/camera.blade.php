@@ -12,16 +12,15 @@
         <a href="{{ route('camera.roll', $post) }}" class="block w-full h-full">
             <article class="bg-background-primary shadow-window-outline p-2 flex flex-col">
                 <div class="bg-background-secondary p-2 flex items-center gap-3 border-b-2 border-background-tertiary">
-                    <img class="size-10" src="{{ asset('storage/' . $post->icon->path) }}" alt="" />
+                    <img class="size-10" src="{{ $post->icon->url }}" alt="" />
                     <span class="font-bold text-highlight text-xs">{{ $post->title }}</span>
                 </div>
 
                 <div class="relative bg-black aspect-square overflow-hidden group">
                         @if($post->photographies->isNotEmpty())
                             <img class="w-full h-full object-cover"
-                                src="{{ asset('storage/' . $post->photographies->first()->path) }}"
-                                alt="{{ $post->photographies->first()->title }}">
-
+                                 src="{{ $post->photographies->first()->url }}"
+                                 alt="{{ $post->photographies->first()->title }}">
                             @if($post->photographies->count() > 1)
                                 <div class="absolute bottom-2 right-2 bg-background-tertiary border-2 border-highlight/30 px-2 py-0.5 text-[10px] text-highlight uppercase">
                                     +{{ $post->photographies->count() - 1 }} photos

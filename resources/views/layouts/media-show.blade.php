@@ -48,7 +48,7 @@
                 <div class="absolute inset-0 bg-linear-to-tr from-transparent via-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20"></div>
                 <div class="aspect-3/4 w-full bg-black border-4 border-background-tertiary overflow-hidden flex items-center justify-center">
                     @if($media->poster)
-                        <img class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" src="{{ Storage::url($media->poster) }}" alt="{{ $media->title }}">
+                        <img class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700" src="{{ $media->url }}" alt="{{ $media->title }}">
                     @else
                         <div class="text-[10px] opacity-20 italic uppercase tracking-widest text-center px-4 font-mono">Missing Strip</div>
                     @endif

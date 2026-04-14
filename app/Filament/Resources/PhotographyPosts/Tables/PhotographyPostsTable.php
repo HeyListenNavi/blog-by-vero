@@ -19,8 +19,7 @@ class PhotographyPostsTable
         return $table
             ->defaultSort('created_at', 'desc')
             ->columns([
-                ImageColumn::make('icon.path')
-                    ->disk('public'),
+                ImageColumn::make('icon.url'),
 
                 TextColumn::make('title')
                     ->description(fn(PhotographyPost $photographyPost): string => str($photographyPost->description)->limit(90, '...'))
