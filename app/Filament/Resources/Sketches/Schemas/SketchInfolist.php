@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Sketches\Schemas;
 
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\ViewEntry;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -35,11 +36,9 @@ class SketchInfolist
                     ->icon('heroicon-o-code-bracket')
                     ->columnSpanFull()
                     ->schema([
-                        TextEntry::make('path')
+                        ViewEntry::make('url')
                             ->label('HTML Preview')
-                            ->html(fn ($record) =>
-                                '<iframe src="' . $record->url . '" style="width:100%;height:500px;border:none;"></iframe>'
-                            )
+                            ->view('filament.sketches.components.html-preview')
                             ->columnSpanFull(),
                     ]),
             ]);
