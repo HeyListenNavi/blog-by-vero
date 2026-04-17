@@ -48,7 +48,7 @@
         x-transition:leave="transition-opacity duration-500"
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
-        class="fixed bottom-40 right-4 pt-3 text-xs text-center text-highlight-secondary animate-bounce"
+        class="fixed bottom-40 right-4 pt-3 text-xs text-center text-highlight-secondary animate-bounce z-50"
     >
         <p>POWER ON HERE</p>
         <p>↓</p>
