@@ -33,6 +33,30 @@ class Post extends Model
         return $this->hasMany(PostImage::class);
     }
 
+    public function previous(): ?Post
+    {
+        return static::where('created_at', '<', $this->created_at)
+            ->orWhere(function ($query) {
+                $query->where('created_at', $this->created_at)
+                      ->where('id', '<', $this->id);
+            })
+            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
+            ->first();
+    }
+
+    public function next(): ?Post
+    {
+        return static::where('created_at', '>', $this->created_at)
+            ->orWhere(function ($query) {
+                $query->where('created_at', $this->created_at)
+                      ->where('id', '>', $this->id);
+            })
+            ->orderBy('created_at', 'asc')
+            ->orderBy('id', 'asc')
+            ->first();
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';
