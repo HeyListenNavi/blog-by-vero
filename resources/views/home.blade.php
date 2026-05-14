@@ -39,6 +39,18 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="I exist"
+        extension="ascii"
+        description="hello friend"
+        location="/mnt/dev/not+found"
+        icon="{{ Vite::image('icons/file-pin.png') }}"
+    >
+        <div class="w-[80svw] h-[55svh] max-h-[441px] max-w-[534px] overflow-auto space-y-4 mx-auto">
+            <pre class="text-[2px]">{!! file_get_contents(resource_path('views/me.ascii')) !!}</pre>
+        </div>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Thoughts"
         extension="pdf"
         description="estado: yap"
