@@ -34,6 +34,11 @@
 
     --background-image-background: url("@images/background-tile.gif");
     --background-image-header: url("@images/banner.jpg");
+    --background-image-cutting-mat:
+        url("@images/cutting-mat-texture/top.png"),
+        url("@images/cutting-mat-texture/bottom.png"),
+        url("@images/cutting-mat-texture/middle.png");
+    --background-image-paper: url("@images/paper-texture/1.jpg");
 
     --text-shadow-outline: -1px -1px 0, 1px -1px 0, -1px 1px 0, 1px 1px 0;
     --shadow-window-outline: inset -6px -6px var(--color-background-tertiary),
@@ -41,6 +46,21 @@
         inset 8px 8px var(--color-highlight),
         inset -8px -8px var(--color-highlight);
     --text-shadow-terminal-glow: 0 0 2px, 0 0 2px, 0 0 3px;
+
+    @keyframes paper-throw {
+        0% {
+            transform: translateY(-120px) rotateX(15deg) rotateZ(-20deg) scale(1.1);
+            opacity: 0;
+            filter: blur(5px);
+        }
+        100% {
+            transform: translateY(0) rotateX(0) rotateZ(var(--paper-rotate, -0.6deg)) scale(1);
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
+
+    --animate-paper-throw: paper-throw 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 
     --text-display-large: 72px;
     --text-display-large--line-height: 120%;
@@ -113,4 +133,25 @@
 
 [x-cloak] {
     display: none !important;
+}
+
+@utility paper-bg {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background: #ffffff;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image: var(--background-image-paper);
+        background-size: cover;
+        opacity: 0.2;
+    }
 }
