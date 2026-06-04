@@ -10,7 +10,7 @@
         @forelse ($posts as $post)
         <x-post-icon
             :title="$post->title"
-            :date="$post->date"
+            :date="$post->date->format('d-m-Y')"
             icon="{{ $post->icon->url }}"
             :href="route('journal.post', ['post' => $post->slug])"
             newTab="{{ true }}"

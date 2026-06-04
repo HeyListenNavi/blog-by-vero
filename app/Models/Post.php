@@ -23,6 +23,10 @@ class Post extends Model
         'icon_id',
     ];
 
+    protected $casts = [
+        'date' => 'date',
+    ];
+
     public function icon(): BelongsTo
     {
         return $this->belongsTo(Icon::class);
