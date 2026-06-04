@@ -21,22 +21,29 @@
         </x-window>
     </section>
 
-    <nav class="w-full max-w-2xl flex justify-between gap-4 fixed bottom-0 left-1/2 -translate-x-1/2 px-8 py-3 bg-background-tertiary font-bold">
-        <div class="flex justify-start">
-            @if($prev = $post->previous())
-            <x-button href="{{ route('journal.post', $prev) }}">← Previous</x-button>
+    <x-window 
+        class="w-full max-w-md fixed bottom-2 left-1/2 -translate-x-1/2 scale-80 lg:scale-100"
+        title="NAVI-gation"
+    >
+        <div class="flex justify-between gap-4 py-2 px-4">
+            <div class="flex justify-start">
+                @if($prev = $post->previous())
+                <x-button href="{{ route('journal.post', $prev) }}">← Previous</x-button>
             @else
             <x-button disabled>← Previous</x-button>
             @endif
+            </div>
+            
+            <x-button href="#top">Top ^</x-button>
+            
+            <div class="flex justify-end">
+                @if($next = $post->next())
+                <x-button href="{{ route('journal.post', $next) }}">Next →</x-button>
+                @else
+                <x-button disabled>Next →</x-button>
+                @endif
+            </div>
         </div>
-        <x-button href="#top">Top ^</x-button>
-        <div class="flex justify-end">
-            @if($next = $post->next())
-            <x-button href="{{ route('journal.post', $next) }}">Next →</x-button>
-            @else
-            <x-button disabled>Next →</x-button>
-            @endif
-        </div>
-    </nav>
+    </x-window>
 </main>
 @endsection
