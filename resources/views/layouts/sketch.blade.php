@@ -152,9 +152,15 @@
                             <span class="text-highlight-secondary text-xs">●</span>
                             <h3 class="text-xs font-bold tracking-widest text-highlight">cat README.md</h3>
                         </div>
-                        <div class="text-xs text-foreground/70 leading-relaxed border-l-2 border-highlight/20 pl-4 py-1">
+                        <div class="text-xs prose prose-sm prose-headings:text-foreground prose-strong:text-highlight dark:prose-invert text-foreground/70 leading-relaxed border-l-2 border-highlight/20 pl-4 py-1">
                             @if($sketch->description)
-                                {{ $sketch->description }}
+                                {!! 
+                                    \Filament\Forms\Components\RichEditor\RichContentRenderer::make($sketch->description)
+                                        ->customBlocks([
+                                            \App\Filament\Forms\Components\RichEditor\RichContentCustomBlocks\PostLinkBlock::class,
+                                        ])
+                                        ->toHtml() 
+                                !!}
                             @else
                                 <span class="italic opacity-30">NO_DATA_STREAM_AVAILABLE</span>
                             @endif

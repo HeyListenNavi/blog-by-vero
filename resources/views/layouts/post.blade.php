@@ -46,7 +46,13 @@
                 </header>
 
                 <div class="prose w-full max-w-full text-xs leading-6">
-                    @markdown($post->content)
+                    {!! 
+                        \Filament\Forms\Components\RichEditor\RichContentRenderer::make($post->content)
+                            ->customBlocks([
+                                \App\Filament\Forms\Components\RichEditor\RichContentCustomBlocks\SketchLinkBlock::class,
+                            ])
+                            ->toHtml() 
+                    !!}
                 </div>
 
                 <footer class="flex items-center justify-between">

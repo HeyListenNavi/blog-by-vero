@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\Sketches\Schemas;
 
+use App\Filament\Forms\Components\RichEditor\RichContentCustomBlocks\PostLinkBlock;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -24,13 +25,13 @@ class SketchForm
                             ->required()
                             ->maxLength(255)
                             ->columnSpanFull(),
-                        Textarea::make('description')
+                        RichEditor::make('description')
                             ->label('Description')
-                            ->rows(3)
-                            ->maxLength(1000)
                             ->placeholder('Describe your sketch...')
-                            ->autosize()
-                            ->columnSpanFull(),
+                            ->columnSpanFull()
+                            ->customBlocks([
+                                PostLinkBlock::class,
+                            ]),
                         FileUpload::make('path')
                             ->label('HTML File')
                             ->directory('sketches')

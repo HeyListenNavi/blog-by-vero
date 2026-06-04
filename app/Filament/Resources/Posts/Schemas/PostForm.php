@@ -2,13 +2,12 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
-use App\Filament\Schemas\IconForm;
+use App\Filament\Forms\Components\RichEditor\RichContentCustomBlocks\SketchLinkBlock;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\RichEditor;
 use Filament\Schemas\Schema;
-use Filament\Forms\Components\MarkdownEditor;
 use Illuminate\Support\HtmlString;
 use Filament\Forms\Components\FileUpload;
 use App\Models\Icon;
@@ -51,10 +50,13 @@ class PostForm
                     ->icon('heroicon-o-chat-bubble-left-ellipsis')
                     ->columnSpanFull()
                     ->schema([
-                        MarkdownEditor::make('content')
+                        RichEditor::make('content')
                             ->label('Content')
                             ->required()
-                            ->columnSpanFull(),
+                            ->columnSpanFull()
+                            ->customBlocks([
+                                SketchLinkBlock::class,
+                            ]),
                     ]),
             ]);
     }
