@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BanController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\MusicController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\PhotographyPostController;
@@ -102,8 +103,7 @@ Route::get('/sketches', [SketchController::class, 'index'])
 Route::get('/sketches/{sketch}', [SketchController::class, 'show'])
     ->name('sketch');
 
-Route::get('/media', [MediaController::class, 'index'])
-    ->name('media.index');
+Route::get('/media', [MediaController::class, 'index'])->name('media.index');
+Route::get('/media/{media}', [MediaController::class, 'show'])->name('media.show');
 
-Route::get('/media/{media}', [MediaController::class, 'show'])
-    ->name('media.show');
+Route::get('/music', [MusicController::class, 'index'])->name('music.index');

@@ -195,6 +195,23 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="Music & Playlists"
+        extension="mp3"
+        description="a list of music and playlist that have touched my heart enough to immortalize them here"
+        location="/home/naviheylisten/vero/music"
+        icon="{{ Vite::image('icons/cassette.png') }}"
+    >
+        <iframe
+            src="{{ route('music.index') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[80svw] h-[80svh] max-h-[750px] max-w-[800px]"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Mailbox"
         extension="txt"
         description="leave any comments you'd like here"
