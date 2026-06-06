@@ -109,7 +109,7 @@
     </x-desktop-icon>
 
     <x-desktop-icon
-        name="music"
+        name="music player"
         icon="{{ Vite::image('icons/cd-audio.png') }}"
         description="play some of my favorite music"
         location="/home/naviheylisten/vero/music"
@@ -371,10 +371,10 @@
 
     <x-desktop-icon
         name="Style Guide"
-        extension=""
+        extension=".fig"
         description="checkout how i built the styles of this site"
         location="/home/naviheylisten/figma"
-        icon="{{ Vite::image('icons/cassette.png') }}"
+        icon="{{ Vite::image('icons/file-letter.png') }}"
     >
         <iframe loading="lazy" frameborder="0" width="800" height="450" src="{{ asset('styles-guide.pdf') }}" allowfullscreen>
             <p>Your browser does not support iframes</p>
