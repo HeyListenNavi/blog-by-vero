@@ -17,7 +17,7 @@ Alpine.data("terminal", terminal);
 Alpine.store("fs", filesystemManager);
 Alpine.data("fileExplorer", fileExplorer);
 Alpine.data("dancingCat", dancingCat);
-Alpine.data("musicPlayer", musicPlayer)
+Alpine.data("musicPlayer", musicPlayer);
 
 Alpine.start();
 
