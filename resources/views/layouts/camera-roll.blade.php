@@ -88,7 +88,9 @@
 
                 <div
                     class="w-full max-w-full prose prose-invert text-foreground border-foreground/10 mt-2 border-t-2 border-dashed p-2 text-xs italic leading-relaxed opacity-80">
-                    @markdown($photographyPost->description)
+                    @if($photographyPost->description)
+                        @markdown($photographyPost->description)
+                    @endif
                 </div>
             </div>
         </div>
