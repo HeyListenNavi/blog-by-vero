@@ -3,9 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Livewire\BlogStatsWidget;
-use App\Livewire\CommentTrendWidget;
 use App\Livewire\PostsTrendWidget;
-use App\Livewire\PostTrendWidget;
 use App\Livewire\UsersTableWidget;
 use App\Livewire\UserTrendWidget;
 use Filament\FontProviders\LocalFontProvider;
@@ -16,9 +14,6 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
-use Filament\Widgets\AccountWidget;
-use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -39,6 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => '#eabbb9',
             ])
+            ->homeUrl('/')
             ->font(
                 'Pixeloid',
                 url: asset('css/filament/filament/app.css'),
