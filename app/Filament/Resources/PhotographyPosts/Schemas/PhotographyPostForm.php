@@ -49,6 +49,13 @@ class PhotographyPostForm
                         MarkdownEditor::make('description')
                             ->label('Description')
                             ->columnSpanFull(),
+                        FileUpload::make('bulk_photos')
+                            ->label('Bulk Upload')
+                            ->helperText('Drop multiple images here and each one will be created as a separate photo entry.')
+                            ->multiple()
+                            ->image()
+                            ->directory('photographies')
+                            ->columnSpanFull(),
                         Repeater::make('photographies')
                             ->label('Photographies')
                             ->relationship('photographies')
