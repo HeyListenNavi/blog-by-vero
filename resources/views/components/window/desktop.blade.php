@@ -25,7 +25,7 @@
     x-on:minimize-window="$store.windowManager.minimize(id)"
     x-on:appdata="appdataEvent = $event"
 
-    title="{{ $name }}"
+    :title="$name"
 
     :buttons="$buttons"
 

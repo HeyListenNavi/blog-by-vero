@@ -8,7 +8,7 @@
     'location',
 ])
 <x-window.desktop
-    name="{{ $name }}"
+    :name="$name"
     
     :buttons="['close']"
     

@@ -96,7 +96,7 @@
         <p class="w-full text-center wrap-break-word text-[10px] text-shadow-outline text-shadow-background-primary/60">{{ $name }}</p>
 
         <template x-ref="app" name="{{ $name }}">
-            <x-window.desktop name="{{ $name }}" {{ $attributes->merge() }}>
+            <x-window.desktop :name="$name" {{ $attributes->merge() }}>
                 {{ $slot }}
             </x-window.desktop>
         </template>
