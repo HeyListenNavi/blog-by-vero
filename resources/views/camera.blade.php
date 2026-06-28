@@ -33,7 +33,7 @@
 
                 <div class="p-2 flex flex-col gap-1">
                     <p class="text-label-medium">
-                        <span class="text-highlight-secondary">{{ $post->title }}</span>: {{ $post->description }}
+                        <span class="text-highlight-secondary">{{ $post->title }}</span>: {{ $post->description ?? '' }}
                     </p>
                     <div class="flex items-center justify-between mt-2 opacity-50 text-[12px] uppercase tracking-tighter">
                         <span>{{ $post->created_at->format('Y-m-d') }}</span>
@@ -49,7 +49,7 @@
         @endforelse
     </section>
 
-    <section class="p-8">
+    <section class="p-1 lg:p-8">
         {{ $photographyPosts->links('components.pagination') }}
     </section>
 </main>

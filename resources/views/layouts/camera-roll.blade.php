@@ -17,23 +17,19 @@
                 onclick="history.back()"
             >← Camera</a>
 
-            <div class="bg-background-primary shadow-window-outline flex flex-col gap-4 p-4">
+            <div class="bg-background-primary flex flex-col gap-4 p-1 lg:p-4">
                 <div
-                    class="border-background-tertiary relative flex aspect-square items-center justify-center overflow-hidden border-4 bg-black sm:aspect-video">
+                    class="border-background-tertiary relative flex flex-col overflow-hidden border-4 bg-black">
                     <template
                         x-for="(photo, index) in photos"
                         x-bind:key="photo.id"
                     >
-                        <div
-                            class="absolute inset-0 flex h-full w-full items-center justify-center"
+                        <img
+                            class="w-full h-auto"
                             x-show="current === index"
+                            x-bind:src="photo.url"
+                            x-bind:alt="photo.title"
                         >
-                            <img
-                                class="max-h-full max-w-full object-contain"
-                                x-bind:src="photo.url"
-                                x-bind:alt="photo.title"
-                            >
-                        </div>
                     </template>
 
                     <div class="border-16 pointer-events-none absolute inset-0 border-black/10"></div>
