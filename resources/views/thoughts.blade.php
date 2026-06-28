@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('show-home-button')
+
 @section('body')
     <main class="bg-background-primary grid min-h-screen w-screen grid-rows-[auto_1fr_auto] gap-4 p-2">
         <section class="divide-foreground/10 divide-y-2 divide-dashed px-2">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('show-home-button')
+
 @section('body')
 <main class="min-h-screen w-screen p-4 flex flex-col gap-6 bg-background-primary">
     <header class="p-4 border-b-2 border-dashed border-highlight/30">
@@ -9,7 +11,7 @@
 
     <section class="flex flex-col gap-10">
         @forelse ($photographyPosts as $post)
-        <a href="{{ route('camera.roll', $post) }}" class="block w-full h-full">
+        <a href="{{ route('camera.roll', $post) }}" class="block w-full h-full cursor-pointer" style="touch-action: manipulation">
             <article class="bg-background-primary shadow-window-outline p-2 flex flex-col">
                 <div class="bg-background-secondary p-2 flex items-center gap-3 border-b-2 border-background-tertiary">
                     <img class="size-10" src="{{ $post->icon->url }}" alt="" />
