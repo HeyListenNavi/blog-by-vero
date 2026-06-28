@@ -2,7 +2,7 @@
 <x-window.desktop
     :name="$name"
     :buttons="['close']"
-    {{ $attributes->merge(['class' => 'absolute top-1/2 left-1/2 -translate-1/2 w-fit']) }}
+    {{ $attributes->merge(['class' => 'absolute w-fit']) }}
 >
     <ul class="relative flex flex-col gap-2 p-2">
         <li class="flex flex-col gap-0">
