@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.10.1",
         "league/commonmark": "^2.7",
         "league/flysystem-aws-s3-v3": "^3.32",
+        "spatie/browsershot": "^5.4",
         "spatie/laravel-image-optimizer": "^1.8",
         "spatie/laravel-markdown": "^2.7"
     },
