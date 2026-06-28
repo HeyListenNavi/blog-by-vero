@@ -1,20 +1,10 @@
-@props([
-    'name',
-    'icon',
-    'extension',
-    'description',
-    'size',
-    'date',
-    'location',
-])
+@props(['name', 'appName' => null, 'icon', 'extension', 'description', 'size', 'date', 'location'])
 <x-window.desktop
     :name="$name"
-    
     :buttons="['close']"
-    
     {{ $attributes->merge(['class' => 'absolute top-1/2 left-1/2 -translate-1/2 w-fit']) }}
 >
-    <ul class="p-2 flex flex-col gap-2">
+    <ul class="relative flex flex-col gap-2 p-2">
         <li class="flex flex-col gap-0">
             <span class="font-bold">
                 Title
@@ -68,9 +58,48 @@
             <span class="font-bold">
                 Id
             </span>
-            <span x-data x-text="$store.windowManager.get(id)?.id"></span>
+            <span
+                x-data
+                x-text="$store.windowManager.get(id)?.id"
+            ></span>
         </li>
-        
+
         <li>{{ config('app.name') }}</li>
+
+        <li
+            class="absolute right-0 top-0 px-6 py-2"
+            x-data="{
+                copied: false,
+                get appId() {
+                    return @js($appName ?? $name).toLowerCase().replace(/\s+/g, '-');
+                },
+                shareUrl() {
+                    return window.location.origin + '/?app=' + this.appId;
+                },
+                copy() {
+                    navigator.clipboard.writeText(this.shareUrl()).then(() => {
+                        this.copied = true;
+                        setTimeout(() => this.copied = false, 2000);
+                    });
+                }
+            }"
+        >
+            <button
+                class="font-emoji hover:text-highlight w-fit cursor-pointer text-left text-2xl transition-colors"
+                href=""
+                x-on:click="copy"
+                x-show="!copied"
+            >
+                4
+            </button>
+            <button
+                class="w-full text-left text-sm"
+                type="button"
+                x-show="copied"
+                disabled
+            >
+                Copied!
+            </button>
+        </li>
     </ul>
 </x-window.desktop>

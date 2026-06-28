@@ -103,6 +103,7 @@
 
         <template x-ref="properties" name="{{ $name }} Properties">
             <x-window.properties
+                :app-name="$name"
                 name="{{ $name }} Properties"
                 icon="{{ $icon }}"
                 extension="{{ $extension }}"
@@ -133,6 +134,7 @@
 
         <template x-ref="properties" name="{{ $name }} Properties">
             <x-window.properties
+                :app-name="$name"
                 name="{{ $name }} Properties"
                 icon="{{ $icon }}"
                 extension="{{ $extension }}"
