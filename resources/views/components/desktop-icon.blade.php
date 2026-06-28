@@ -40,6 +40,11 @@
 
                     this.startX = this.x;
                     this.startY = this.y;
+
+                    if (this._overlapCheck) {
+                        this._overlapCheck.kill();
+                        this._overlapCheck = null;
+                    }
                 },
 
                 onRelease: function() {
@@ -49,24 +54,40 @@
                 },
 
                 onDragEnd: function() {
-                    let isOverlapping = false;
+                    var self = this;
+                    var startX = this.startX;
+                    var startY = this.startY;
 
-                    allIcons.forEach(otherIcon => {
-                        if (otherIcon !== this.target) {
-                            if (this.hitTest(otherIcon, "50%")) {
-                                isOverlapping = true;
+                    self.target.style.pointerEvents = 'none';
+
+                    this._overlapCheck = gsap.delayedCall(0.15, function() {
+                        self._overlapCheck = null;
+
+                        let isOverlapping = false;
+
+                        allIcons.forEach(otherIcon => {
+                            if (otherIcon !== self.target) {
+                                if (self.hitTest(otherIcon, "50%")) {
+                                    isOverlapping = true;
+                                }
                             }
+                        });
+
+                        if (isOverlapping) {
+                            gsap.to(self.target, {
+                                x: startX,
+                                y: startY,
+                                duration: 0.3,
+                                ease: 'power2.out',
+                                onComplete: function() {
+                                    self.target.style.pointerEvents = 'auto';
+                                    self.update();
+                                }
+                            });
+                        } else {
+                            self.target.style.pointerEvents = 'auto';
                         }
                     });
-
-                    if (isOverlapping) {
-                        gsap.to(this.target, {
-                            x: this.startX,
-                            y: this.startY,
-                            duration: 0.3,
-                            ease: 'power2.out'
-                        });
-                    }
                 }
             });
         }
@@ -93,7 +114,7 @@
         class="icon min-h-20 w-18 py-2 px-1 flex flex-col gap-2 items-center justify-center select-none hover:bg-background-primary/30 hover:text-highlight-secondary"
     >
         <img class="size-10" src="{{ $icon }}">
-        <p class="w-full text-center wrap-break-word text-[10px] text-shadow-outline text-shadow-background-primary/60">{{ $name }}</p>
+        <p class="w-full text-center truncate text-[10px] text-shadow-outline text-shadow-background-primary/60" title="{{ $name }}">{{ $name }}</p>
 
         <template x-ref="app" name="{{ $name }}">
             <x-window.desktop :name="$name" {{ $attributes->merge() }}>
@@ -130,7 +151,7 @@
             <img class="size-10 absolute -bottom-1 -left-1" src="{{ Vite::image('icons/shortcut.png') }}">
             <img class="size-10" src="{{ $icon }}">
         </div>
-        <p class="w-full text-center wrap-break-word text-[10px] text-shadow-outline text-shadow-background-primary/60">{{ $name }}</p>
+        <p class="w-full text-center truncate text-[10px] text-shadow-outline text-shadow-background-primary/60" title="{{ $name }}">{{ $name }}</p>
 
         <template x-ref="properties" name="{{ $name }} Properties">
             <x-window.properties
