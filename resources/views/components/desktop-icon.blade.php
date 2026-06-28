@@ -80,7 +80,7 @@
             $store.windowManager.register('{{ $name }}', $refs.app);
 
             @if($open)
-            $store.windowManager.spawn($refs.app);
+            if (!$store.windowManager.autoOpenApp) $store.windowManager.spawn($refs.app);
             @endif
             $nextTick(() => makeIconDraggable(id));
         "

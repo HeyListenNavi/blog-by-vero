@@ -7,11 +7,16 @@ export default {
 
     init() {
         this.desktop = document.getElementById("screen");
+        this.autoOpenApp = window.__autoOpenApp || null;
     },
 
     register(appName, templateElement) {
         const id = appName.toLowerCase().replace(/\s+/g, "-");
         this.appRegistry[id] = templateElement;
+
+        if (this.autoOpenApp?.toLowerCase().replace(/\s+/g, "-") === id) {
+            this.spawn(templateElement);
+        }
     },
 
     open(appId, data = null) {

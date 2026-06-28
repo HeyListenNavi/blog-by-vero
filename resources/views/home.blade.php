@@ -2,6 +2,10 @@
 
 @section('title', 'this is home')
 
+@push('scripts')
+    <script>window.__autoOpenApp = '{{ $activeApp }}';</script>
+@endpush
+
 @section('content')
     <x-desktop-icon
         name="home"

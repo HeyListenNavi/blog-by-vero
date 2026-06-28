@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class PagesController extends Controller
 {
-    public function home(): View
+    public function home(Request $request): View
     {
-        return view('home');
+        return view('home', [
+            'activeApp' => $request->query('app'),
+        ]);
     }
 
     public function aboutMe(): View
