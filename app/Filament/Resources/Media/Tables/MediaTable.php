@@ -2,10 +2,15 @@
 
 namespace App\Filament\Resources\Media\Tables;
 
+use App\Jobs\GenerateStoryVideoJob;
+use App\Models\Media;
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Notifications\Notification;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -44,7 +49,8 @@ class MediaTable
                     ->formatStateUsing(function (int $state) {
                         $active = str_repeat('<span style="color: #eabbb9;">G</span>', $state);
                         $inactive = str_repeat('<span style="color: #444;">F</span>', 5 - $state);
-                        return '<div style="font-family: \'Vero\\\'s Emojis\', sans-serif !important; font-size: 1.5rem; line-height: 1; display: flex; gap: 2px;">' . $active . $inactive . '</div>';
+
+                        return '<div style="font-family: \'Vero\\\'s Emojis\', sans-serif !important; font-size: 1.5rem; line-height: 1; display: flex; gap: 2px;">'.$active.$inactive.'</div>';
                     })
                     ->sortable(),
 
@@ -52,7 +58,7 @@ class MediaTable
                     ->label('Fav')
                     ->html()
                     ->formatStateUsing(fn (bool $state): string => '
-                        <div style="font-family: \'Vero\\\'s Emojis\', sans-serif !important; font-size: 1.5rem; line-height: 1; color: ' . ($state ? '#ef4444' : '#444') . ';">
+                        <div style="font-family: \'Vero\\\'s Emojis\', sans-serif !important; font-size: 1.5rem; line-height: 1; color: '.($state ? '#ef4444' : '#444').';">
                             C
                         </div>
                     ')
@@ -72,8 +78,29 @@ class MediaTable
                 //
             ])
             ->recordActions([
-                ViewAction::make()->icon('heroicon-o-eye'),
-                EditAction::make()->icon('heroicon-o-pencil'),
+                ActionGroup::make([
+                    Action::make('generate_story')
+                        ->label('Story')
+                        ->icon('heroicon-o-film')
+                        ->color('primary')
+                        ->requiresConfirmation()
+                        ->action(function (Media $record) {
+                            $html = view('stories.media', ['media' => $record])->render();
+
+                            dispatch(new GenerateStoryVideoJob(
+                                html: $html,
+                                userId: auth()->id(),
+                                label: $record->title,
+                            ));
+
+                            Notification::make()
+                                ->title('Generating Story :3')
+                                ->success()
+                                ->send();
+                        }),
+                    ViewAction::make()->icon('heroicon-o-eye'),
+                    EditAction::make()->icon('heroicon-o-pencil'),
+                ]),
             ])
             ->bulkActions([
                 BulkActionGroup::make([

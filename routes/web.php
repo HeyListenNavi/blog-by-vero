@@ -2,15 +2,15 @@
 
 use App\Http\Controllers\BanController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\MediaController;
 use App\Http\Controllers\PhotographyPostController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SketchController;
+use App\Http\Controllers\StoryVideoController;
 use App\Http\Controllers\ThoughtController;
 use App\Http\Controllers\UserController;
-use App\Models\Sketch;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'home'])
@@ -37,7 +37,6 @@ Route::get('/file-explorer', [PagesController::class, 'fileExplorer'])
 Route::get('/music-player', [PagesController::class, 'musicPlayer'])
     ->name('music-player');
 
-
 Route::middleware('guest')->group(function () {
     Route::get('/auth', [PagesController::class, 'auth'])
         ->name('auth');
@@ -49,10 +48,13 @@ Route::middleware('guest')->group(function () {
         ->name('login.submit');
 });
 
+Route::get('/stories/{filename}/download', [StoryVideoController::class, 'download'])
+    ->middleware('auth')
+    ->where('filename', '[a-f0-9-]+')
+    ->name('stories.download');
+
 Route::post('/logout', [UserController::class, 'logout'])
     ->name('logout');
-
-
 
 Route::middleware('auth')->group(function () {
     Route::post('/comments/{model}/{id}', [CommentController::class, 'store'])
@@ -70,8 +72,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/ban-self', [BanController::class, 'ban'])
         ->name('ban.self');
 });
-
-
 
 Route::get('/posts', [PostController::class, 'index'])
     ->name('journal');

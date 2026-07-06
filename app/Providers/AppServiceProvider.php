@@ -5,9 +5,10 @@ namespace App\Providers;
 use App\Models\Site;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Vite;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Vite;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -57,7 +58,9 @@ class AppServiceProvider extends ServiceProvider
             'user' => User::class,
         ]);
 
-        if(config('app.env') !== 'local') {
+        Storage::disk('local')->makeDirectory('stories');
+
+        if (config('app.env') !== 'local') {
             URL::forceScheme('https');
         }
     }
