@@ -1,2 +1,3 @@
 - Take pictures of my computer with different apps/ideas and allow the user to select which picture to see using a rack, simulating as if you were using consoles. Source: https://7nonsense.neocities.org/images/special/consoles/ca.html
 - lunar day, showing the next full moon and a digram of the moon today
+- id generator, create a cool id template and allow people to create and download their own id
