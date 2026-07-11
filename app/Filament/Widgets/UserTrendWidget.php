@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Filament\Widgets;
 
 use App\Models\User;
 use Filament\Widgets\ChartWidget;
@@ -9,6 +9,8 @@ use Flowframe\Trend\TrendValue;
 
 class UserTrendWidget extends ChartWidget
 {
+    protected static ?int $sort = 3;
+
     protected ?string $heading = 'Users';
 
     protected function getData(): array
@@ -25,12 +27,12 @@ class UserTrendWidget extends ChartWidget
             'datasets' => [
                 [
                     'label' => 'Users',
-                    'data' => $data->map(fn(TrendValue $value) => $value->aggregate)->toArray(),
+                    'data' => $data->map(fn (TrendValue $value) => $value->aggregate)->toArray(),
                     'backgroundColor' => '#eabbb9',
                     'borderColor' => '#eabbb9',
                 ],
             ],
-            'labels' => $data->map(fn(TrendValue $value) => $value->date)->toArray(),
+            'labels' => $data->map(fn (TrendValue $value) => $value->date)->toArray(),
         ];
     }
 

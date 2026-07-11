@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Filament\Widgets;
 
 use App\Models\Comment;
 use App\Models\PhotographyPost;
@@ -12,6 +12,8 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class BlogStatsWidget extends StatsOverviewWidget
 {
+    protected static ?int $sort = 2;
+
     protected function getStats(): array
     {
         return [

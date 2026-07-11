@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Filament\Widgets;
 
 use App\Models\User;
 use Filament\Actions\BulkActionGroup;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
-use Illuminate\Database\Eloquent\Builder;
 
 class UsersTableWidget extends TableWidget
 {
-    protected int | string | array $columnSpan = 'full';
+    protected static ?int $sort = 5;
+
+    protected int|string|array $columnSpan = 'full';
 
     public function table(Table $table): Table
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Filament\Widgets;
 
 use App\Models\PhotographyPost;
 use App\Models\Post;
@@ -10,6 +10,8 @@ use Flowframe\Trend\TrendValue;
 
 class PostsTrendWidget extends ChartWidget
 {
+    protected static ?int $sort = 4;
+
     protected ?string $heading = 'Posts';
 
     protected ?string $pollingInterval = null;
@@ -17,7 +19,7 @@ class PostsTrendWidget extends ChartWidget
     protected function getData(): array
     {
         $postData = Trend::model(Post::class)
-            ->dateAlias('created_at') 
+            ->dateAlias('created_at')
             ->between(
                 start: now()->subMonths(6),
                 end: now(),
@@ -37,18 +39,18 @@ class PostsTrendWidget extends ChartWidget
             'datasets' => [
                 [
                     'label' => 'Normal Posts',
-                    'data' => $postData->map(fn(TrendValue $value) => $value->aggregate),
+                    'data' => $postData->map(fn (TrendValue $value) => $value->aggregate),
                     'backgroundColor' => '#eabbb9',
                     'borderColor' => '#eabbb9',
                 ],
                 [
                     'label' => 'Photography Posts',
-                    'data' => $photoData->map(fn(TrendValue $value) => $value->aggregate),
+                    'data' => $photoData->map(fn (TrendValue $value) => $value->aggregate),
                     'backgroundColor' => '#b3cbf2',
                     'borderColor' => '#b3cbf2',
                 ],
             ],
-            'labels' => $postData->map(fn(TrendValue $value) => $value->date),
+            'labels' => $postData->map(fn (TrendValue $value) => $value->date),
         ];
     }
 

@@ -2,10 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Livewire\BlogStatsWidget;
-use App\Livewire\PostsTrendWidget;
-use App\Livewire\UsersTableWidget;
-use App\Livewire\UserTrendWidget;
 use Filament\FontProviders\LocalFontProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -46,12 +42,7 @@ class AdminPanelProvider extends PanelProvider
                 Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
-            ->widgets([
-                BlogStatsWidget::class,
-                UserTrendWidget::class,
-                PostsTrendWidget::class,
-                UsersTableWidget::class,
-            ])
+            ->widgets([])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
