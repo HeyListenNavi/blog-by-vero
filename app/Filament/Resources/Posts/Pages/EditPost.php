@@ -26,16 +26,16 @@ class EditPost extends EditRecord
                 ->action(function (Post $record) {
                     $html = view('stories.post', ['post' => $record])->render();
 
-                    dispatch(new GenerateStoryVideoJob(
-                        html: $html,
-                        userId: auth()->id(),
-                        label: $record->title,
-                    ));
-
                     Notification::make()
                         ->title('Generating Story :3')
                         ->success()
                         ->send();
+
+                    dispatch(new GenerateStoryVideoJob(
+                        html: $html,
+                        user: auth()->user(),
+                        label: $record->title,
+                    ));
                 }),
             ViewAction::make(),
             DeleteAction::make(),

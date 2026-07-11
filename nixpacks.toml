@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["...", "python311Packages.supervisor", "ffmpeg"]
+nixPkgs = ["...", "python311Packages.supervisor", "ffmpeg", "chromium", "fontconfig", "dejavu_fonts"]
 
 [phases.build]
 cmds = [
@@ -17,8 +17,15 @@ cmd = '/assets/start.sh'
 "start.sh" = '''
 #!/bin/bash
 
+# Resolve fontconfig's config file dynamically — Nix store paths are hashed
+# and shift between builds, so this can't be hardcoded.
+export FONTCONFIG_FILE=$(find /nix/store -maxdepth 1 -name "*-fontconfig-*" ! -name "*-lib" -exec find {} -name "fonts.conf" \; 2>/dev/null | head -n 1)
+
 # Transform the nginx configuration
 node /assets/scripts/prestart.mjs /assets/nginx.template.conf /etc/nginx.conf
+
+# Fix permissions so php-fpm (www-data) can write logs and cache
+chmod -R 777 /app/storage /app/bootstrap/cache
 
 # Start supervisor
 supervisord -c /etc/supervisord.conf -n
@@ -80,8 +87,10 @@ killasgroup=true
 numprocs=12 # To reduce memory/CPU usage, change to 2.
 startsecs=0
 stopwaitsecs=3600
-stdout_logfile=/var/log/worker-laravel.log
-stderr_logfile=/var/log/worker-laravel.log
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
 '''
 
 "php-fpm.conf" = '''

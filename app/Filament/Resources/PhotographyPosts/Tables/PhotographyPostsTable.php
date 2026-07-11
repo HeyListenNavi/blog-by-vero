@@ -54,7 +54,7 @@ class PhotographyPostsTable
 
                             dispatch(new GenerateStoryVideoJob(
                                 html: $html,
-                                userId: auth()->id(),
+                                user: auth()->user(),
                                 label: $record->title,
                             ));
 

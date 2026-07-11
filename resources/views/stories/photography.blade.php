@@ -4,7 +4,7 @@
     <div class="flex size-full flex-col gap-3 p-4">
         <div class="mt-12 flex flex-col gap-4">
             <img
-                class="mx-auto size-16 shrink-0"
+                class="story-icon mx-auto size-16 shrink-0"
                 src="{{ Vite::image('icons/directory-film.png') }}"
             />
             <div class="flex flex-col gap-1 text-center">

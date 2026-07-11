@@ -37,6 +37,10 @@
         .font-emoji {
             font-family: "Vero's Emojis", sans-serif !important;
         }
+
+        .story-icon {
+            image-rendering: pixelated;
+        }
     </style>
 
     @stack('scripts')
