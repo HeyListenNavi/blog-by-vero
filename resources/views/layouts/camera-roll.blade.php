@@ -43,16 +43,16 @@
                 </div>
 
                 <div
-                    class="bg-background-secondary border-background-tertiary flex items-center justify-between border-2 p-4">
+                    class="bg-background-secondary border-background-tertiary flex flex-col gap-2 border-2 p-4">
                     <div class="flex flex-col gap-1">
                         <span class="text-highlight text-[10px] uppercase opacity-50">Photo Title</span>
                         <span
-                            class="text-sm font-bold"
+                            class="text-sm font-bold break-words"
                             x-text="photos[current]?.title || 'Untitled'"
                         ></span>
                     </div>
 
-                    <div class="flex items-center gap-4">
+                    <div class="flex justify-between items-center gap-4">
                         <div
                             class="border-background-tertiary text-highlight border-2 bg-black px-3 py-1 font-mono text-lg">
                             <span x-text="String(current + 1).padStart(2, '0')"></span>/<span
