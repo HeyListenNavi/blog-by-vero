@@ -118,6 +118,18 @@ return [
     |
     */
 
+    /*
+    |--------------------------------------------------------------------------
+    | Panel URL
+    |--------------------------------------------------------------------------
+    |
+    | This URL is used for the external deployment/management panel link
+    | displayed in the admin dashboard widget.
+    |
+    */
+
+    'panel_url' => env('PANEL_URL'),
+
     'maintenance' => [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
