@@ -4,7 +4,7 @@
 @endsection
 
 @section('body')
-<main class="min-h-screen w-full p-6 md:p-12 flex flex-col items-center justify-center bg-background-primary overflow-x-hidden">
+<main class="min-h-screen w-full p-4 flex flex-col items-center justify-center bg-background-primary overflow-x-hidden">
     <div class="w-full max-w-5xl mb-6">
         <a class="underline cursor-pointer hover:text-highlight-secondary transition-colors" onclick="history.back()">← Return</a>
     </div>
