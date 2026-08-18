@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('show-home-button')
+@section('show-home-button', true)
 
 @section('body')
 <main class="min-h-screen w-screen p-2 grid grid-rows-[auto_1fr_auto] gap-4 bg-background-primary">

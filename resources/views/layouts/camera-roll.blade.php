@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('show-home-button')
+@section('show-home-button', true)
 
 @section('body')
     <main
