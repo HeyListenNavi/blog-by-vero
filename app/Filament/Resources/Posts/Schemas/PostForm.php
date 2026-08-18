@@ -34,6 +34,15 @@ class PostForm
                             ->placeholder(now()->startOfMonth())
                             ->defaultFocusedDate(now()->startOfMonth())
                             ->required(),
+                        Select::make('layout')
+                            ->label('Layout')
+                            ->options([
+                                'window' => 'Window',
+                                'redacted' => 'Redacted',
+                            ])
+                            ->default('window')
+                            ->native(false)
+                            ->required(),
                         Select::make('icon_id')
                             ->label('Icon')
                             ->relationship('icon', 'id')

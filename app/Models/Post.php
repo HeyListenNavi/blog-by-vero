@@ -19,6 +19,7 @@ class Post extends Model
         'title',
         'slug',
         'content',
+        'layout',
         'date',
         'icon_id',
     ];
