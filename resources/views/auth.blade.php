@@ -18,10 +18,8 @@
             @csrf
             <h1>Login</h1>
                 
-            @if($errors->login->any())
-                @foreach ($errors->login->all() as $error)
-                    <p style="color: red">{{ $error }}</p>
-                @endforeach
+            @if($errors->login->has('credentials'))
+                <p class="text-red-500 text-sm">{{ $errors->login->first('credentials') }}</p>
             @endif
                     
             <div class="w-full flex flex-col gap-2">
@@ -33,6 +31,7 @@
                     placeholder="email"
                     :autofocus="true"
                     value="{{ old('login_email') }}"
+                    :error="$errors->login->first('login_email')"
                 />
                 <x-text-input
                     label="Password:"
@@ -40,6 +39,7 @@
                     type="password"
                     :required="true"
                     placeholder="password"
+                    :error="$errors->login->first('password')"
                 />
 
                 <label class="flex gap-1 items-center select-none">
@@ -60,12 +60,6 @@
         >
             @csrf
             <h1>Register</h1>
-
-            @if($errors->register->any())
-                @foreach ($errors->register->all() as $error)
-                    <p style="color: red">{{ $error }}</p>
-                @endforeach
-            @endif
             
             <div class="w-full flex flex-col gap-2">
                 <x-text-input
@@ -76,6 +70,7 @@
                     placeholder="email"
                     :autofocus="true"
                     value="{{ old('register_email') }}"
+                    :error="$errors->register->first('register_email')"
                 />
 
                 <x-text-input
@@ -84,6 +79,7 @@
                     :required="true"
                     placeholder="name"
                     value="{{ old('register_name') }}"
+                    :error="$errors->register->first('register_name')"
                 />
 
                 <x-text-input
@@ -92,6 +88,7 @@
                     :required="true"
                     placeholder="username"
                     value="{{ old('register_username') }}"
+                    :error="$errors->register->first('register_username')"
                 />
 
                 <x-text-input
@@ -100,6 +97,7 @@
                     type="password"
                     :required="true"
                     placeholder="password"
+                    :error="$errors->register->first('password')"
                 />
 
                 <x-text-input
@@ -108,6 +106,7 @@
                     type="password"
                     :required="true"
                     placeholder="repeat your password"
+                    :error="$errors->register->first('password_confirmation')"
                 />
 
                 <x-button class="self-end" type="submit">Register</x-button>
