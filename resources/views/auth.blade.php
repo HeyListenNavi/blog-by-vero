@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('body')
-<main x-data="{ page: 'login' }" class="h-svh w-screen grid grid-rows-[auto_1fr] items-center justify-items-center gap-4 bg-background-primary">
+<main x-data="{ page: '{{ $errors->register->any() ? 'register' : 'login' }}' }" class="h-svh w-screen grid grid-rows-[auto_1fr] items-center justify-items-center gap-4 bg-background-primary">
     <header class="w-screen flex">
         <x-button class="w-full" x-on:click="page = 'login'" type="button">Login</x-button>
         <x-button class="w-full" x-on:click="page = 'register'" type="button">Register</x-button>
