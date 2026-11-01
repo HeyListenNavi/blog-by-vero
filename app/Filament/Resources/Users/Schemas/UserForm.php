@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
-use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -27,11 +26,21 @@ class UserForm
                         TextInput::make('username')
                             ->label('Username')
                             ->required()
-                            ->maxLength(50),
+                            ->maxLength(50)
+                            ->unique(ignoreRecord: true),
                         TextInput::make('email')
                             ->label('Email Address')
                             ->email()
-                            ->required(),
+                            ->required()
+                            ->maxLength(255)
+                            ->unique(ignoreRecord: true),
+                        TextInput::make('password')
+                            ->label('Password')
+                            ->password()
+                            ->revealable()
+                            ->required(fn (string $operation): bool => $operation === 'create')
+                            ->dehydrated(fn (?string $state): bool => filled($state))
+                            ->maxLength(255),
                         Select::make('role')
                             ->label('Role')
                             ->options(['Admin' => 'Admin', 'User' => 'User'])
