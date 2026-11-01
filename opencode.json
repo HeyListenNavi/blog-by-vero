@@ -7,7 +7,7 @@
             "command": [
                 "wsl.exe",
                 "/usr/bin/php",
-                "/home/navi/projects/blog-by-vero/artisan",
+                "/home/veronica/projects/blog-by-vero/artisan",
                 "boost:mcp"
             ]
         }
