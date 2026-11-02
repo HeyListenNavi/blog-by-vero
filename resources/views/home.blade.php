@@ -72,6 +72,23 @@
     </x-desktop-icon>
 
     <x-desktop-icon
+        name="Notebook"
+        extension="pdf"
+        description="una defragmentación de todos mis cuadernos"
+        location="/home/naviheylisten/vero/notebook"
+        icon="{{ Vite::image('icons/defragment.png') }}"
+    >
+        <iframe
+            src="{{ route('notebook') }}"
+            frameborder="0"
+            loading="lazy"
+            class="w-[90svw] h-[80svh] max-h-[1050px] max-w-[1050px] mx-auto"
+        >
+            <p>Your browser does not support iframes</p>
+        </iframe>
+    </x-desktop-icon>
+
+    <x-desktop-icon
         name="Deco Bar"
         extension="blink"
         description="just some decorations"

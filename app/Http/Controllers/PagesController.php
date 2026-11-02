@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Vite;
 use Illuminate\View\View;
 
 class PagesController extends Controller
@@ -52,5 +53,17 @@ class PagesController extends Controller
     public function musicPlayer(): View
     {
         return view('music-player');
+    }
+
+    public function notebook(): View
+    {
+        $pages = collect(range(1, 22))
+            ->map(fn (int $page): string => Vite::image("notebook/{$page}.webp"))
+            ->values()
+            ->all();
+
+        return view('notebook', [
+            'pages' => $pages,
+        ]);
     }
 }

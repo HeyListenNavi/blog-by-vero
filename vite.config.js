@@ -28,7 +28,7 @@ export default defineConfig({
           gif: {},
           webp: {
             // https://sharp.pixelplumbing.com/api-output#webp
-            lossless: true,
+            quality: 85,
           },
         })
     ],

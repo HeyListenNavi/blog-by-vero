@@ -7,6 +7,7 @@ import filesystemManager from "./components/filesystemManager";
 import fileExplorer from "./components/fileExplorer";
 import dancingCat from "./components/dancingCat";
 import musicPlayer from "./components/musicPlayer";
+import notebook from "./components/notebook";
 
 import.meta.glob(["../images/**", "../fonts/**"]);
 
@@ -18,6 +19,7 @@ Alpine.store("fs", filesystemManager);
 Alpine.data("fileExplorer", fileExplorer);
 Alpine.data("dancingCat", dancingCat);
 Alpine.data("musicPlayer", musicPlayer);
+Alpine.data("notebook", notebook);
 
 Alpine.start();
 

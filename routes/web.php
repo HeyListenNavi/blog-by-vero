@@ -111,3 +111,6 @@ Route::get('/media/{media}', [MediaController::class, 'show'])
 
 Route::get('/music', [MusicController::class, 'index'])
     ->name('music.index');
+
+Route::get('/notebook', [PagesController::class, 'notebook'])
+    ->name('notebook');
