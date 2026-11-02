@@ -24,7 +24,7 @@
 </head>
 
 <body
-    class="text-foreground bg-background-primary @hasSection('show-home-button') pb-12 @endif relative flex min-h-dvh flex-col items-center justify-center text-base"
+    class="text-foreground bg-background-primary relative flex min-h-dvh flex-col items-center justify-center text-base"
 >
     @yield('body')
 

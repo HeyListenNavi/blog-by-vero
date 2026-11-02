@@ -103,7 +103,11 @@ Route::get('/sketches', [SketchController::class, 'index'])
 Route::get('/sketches/{sketch}', [SketchController::class, 'show'])
     ->name('sketch');
 
-Route::get('/media', [MediaController::class, 'index'])->name('media.index');
-Route::get('/media/{media}', [MediaController::class, 'show'])->name('media.show');
+Route::get('/media', [MediaController::class, 'index'])
+    ->name('media.index');
 
-Route::get('/music', [MusicController::class, 'index'])->name('music.index');
+Route::get('/media/{media}', [MediaController::class, 'show'])
+    ->name('media.show');
+
+Route::get('/music', [MusicController::class, 'index'])
+    ->name('music.index');
