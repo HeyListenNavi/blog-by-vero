@@ -4,7 +4,7 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite"
-        },
+    },
     "puppeteer": {
         "skipDownload": true
     },
@@ -14,12 +14,12 @@
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^1.2.0",
+        "puppeteer": "^25.2.1",
         "sass": "^1.86.0",
         "sharp": "^0.34.0",
         "svgo": "^3.3.2",
         "tailwindcss": "^4.1.12",
         "vite": "^6.0.11",
-        "puppeteer": "^25.2.1",
         "vite-plugin-image-optimizer": "^1.1.8"
     },
     "dependencies": {
@@ -31,6 +31,7 @@
         "@marcreichel/alpine-typewriter": "^1.2.1",
         "alpinejs": "^3.14.9",
         "gsap": "^3.13.0",
+        "page-flip": "^2.0.7",
         "shiki": "^3.11.0"
     }
 }
