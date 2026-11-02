@@ -20,7 +20,7 @@ export default (pages = []) => ({
                 size: "stretch",
                 maxWidth: 600,
                 maxShadowOpacity: 0.1,
-                mobileScrollSupport: true,
+                mobileScrollSupport: false,
             });
 
             const pages = bookElement.querySelectorAll(".page");
